@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Mirrored from themesdesign.in/qovex-node/layouts/pages-register.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 11 Jun 2024 08:15:41 GMT -->
+  <head>
+    <meta charset="utf-8" />
+    <title>Free Register | Qovex - Admin & Dashboard Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      content="Premium Multipurpose Admin & Dashboard Template"
+      name="description"
+    />
+    <meta content="Themesbrand" name="author" />
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.ico" />
+
+    <!-- Bootstrap Css -->
+    <link
+      href="assets/css/bootstrap.min.css"
+      id="bootstrap-style"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <!-- Icons Css -->
+    <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <!-- App Css-->
+    <link
+      href="assets/css/app.min.css"
+      id="app-style"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <link
+      href="assets/libs/bootstrap-datepicker/css/bootstrap-datepicker.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/libs/select2/css/select2.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+  </head>
+
+  <body>
+    <style>
+      .form-check-input:checked {
+        background-color: #2b6e25;
+        border-color: #2b6e25;
+      }
+
+      .nav-primary.nav-tabs .nav-link.active {
+        color: #fff;
+        border-color: #388A1C #388A1C #fff;
+        background: #388A1C;
+      }
+
+      .nav-link:focus,
+      .nav-link:hover {
+        color: #388A1C;
+      }
+
+      .nav-link {
+        color: #388A1C;
+      }
+
+      .special_radio {
+        display: none;
+      }
+
+      .special_radio_label {
+        position: relative;
+        color: #388A1C;
+        font-family: "Poppins", sans-serif;
+        font-size: 18px;
+        border: 2px solid #388A1C;
+        border-radius: 5px;
+        padding: 10px 50px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+      }
+
+      .special_radio_label:before {
+        content: " ";
+        height: 20px;
+        width: 20px;
+        border: 12px solid #388A1C;
+        border-radius: 50%;
+        margin-right: 20px;
+      }
+
+      .special_radio:checked + .special_radio_label {
+        background-color: #388A1C;
+        color: white;
+      }
+
+      .special_radio:checked + .special_radio_label:before {
+        height: 16px;
+        width: 16px;
+        border: 15px solid white;
+        background-color: #388A1C;
+      }
+
+      /* Media Queries for Responsive Design */
+      @media (max-width: 576px) {
+        .row.mb-3 {
+          flex-direction: column;
+        }
+
+        .col-6 {
+          width: 100%;
+          margin-bottom: 10px;
+        }
+
+        .special_radio_label {
+          width: 100%;
+          padding: 10px;
+          text-align: center;
+        }
+
+        .special_radio_label:before {
+          display: none;
+        }
+      }
+
+        .full-height {
+            height: 100vh;
+        }
+    </style>
+    <!--wrapper-->
+    <div class="wrapper">
+      <div class="section-authentication-cover">
+        <div class="">
+          <div class="row g-0">
+            <div
+              class="col-12 col-xl-5 col-xxl-5 auth-cover-left align-items-center justify-content-center d-none d-xl-flex"
+            >
+              <div
+                class="card shadow-none bg-transparent shadow-none rounded-0 mb-0"
+              >
+                <div class="card-body">
+                  <img
+                    src="assets/images/login-images/register-cover.svg"
+                    class="img-fluid auth-img-cover-login"
+                    width="550"
+                    alt=""
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div
+            id="sub-container"
+              style="background-color: white"
+              class="full-height col-12 col-xl-7 col-xxl-7 auth-cover-right align-items-center justify-content-center"
+            >
+              <div class="card rounded-0 m-3 shadow-none bg-transparent mb-0">
+                <div class="card-body p-sm-5">
+                  <div class="">
+                    <div class="mb-3 text-center">
+                      <img
+                        src="assets/images/logo-municipio.png"
+                        width="160"
+                        alt=""
+                      />
+                    </div>
+
+                    <div class="text-center mb-4">
+                      <h5 class="">Balcão virtual</h5>
+                      <p class="mb-0">
+                        Preencha os detalhes abaixo para criar sua conta
+                      </p>
+                    </div>
+
+                    <p class="mb-4"></p>
+                    <div class="row mb-3 type_user">
+                      <h5 class="mb-1">Que tipo municipe és?</h5>
+                      <div class="col-6">
+                        <input
+                          class="special_radio"
+                          type="radio"
+                          name="size"
+                          value="2"
+                          id="small"
+                          checked
+                        />
+                        <label class="special_radio_label" for="small"
+                          >Individual</label
+                        >
+                      </div>
+                      <div class="col-6">
+                        <input
+                          class="special_radio"
+                          type="radio"
+                          name="size"
+                          value="1"
+                          id="large"
+                        />
+                        <label class="special_radio_label" for="large"
+                          >Empresa</label
+                        >
+                      </div>
+
+                      <div class="col-12 mt-5 text-center">
+                        <div onclick="RemoveHidden()" class="btn btn-primary btn-lg">Proximo <i class="fas fa-arrow-circle-right"></i></div>
+                      </div>
+                    </div>
+
+                    <form
+                      hidden
+                      id="form-horizontal"
+                      class="form-horizontal form-wizard-wrapper confirmation-form"
+                    >
+                      <h3>Dados Pessoais</h3>
+                      <fieldset class="mb-3">
+                        <div class="row">
+                          <div class="col-6">
+                            <label for="inputSelectCountry" class="form-label"
+                              >Provincia</label
+                            >
+                            <select
+                              class="form-select"
+                              id="inputSelectCountry"
+                              aria-label="Default select example"
+                            >
+                              <option selected>Maputo</option>
+                              <option value="1">Gaza</option>
+                              <option value="2">Tete</option>
+                              <option value="3">Cabo delgado</option>
+                            </select>
+                          </div>
+                          <div class="col-6">
+                            <label for="inputSelectCountry" class="form-label"
+                              >Distrito</label
+                            >
+                            <select
+                              class="form-select"
+                              id="inputSelectCountry"
+                              aria-label="Default select example"
+                            >
+                              <option selected>KaMachava</option>
+                              <option value="1">United Kingdom</option>
+                              <option value="2">America</option>
+                              <option value="3">Dubai</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="col-12">
+                          <label for="inputUsername" class="form-label"
+                            >Endereço</label
+                          >
+                          <input
+                            type="email"
+                            class="form-control"
+                            id="inputUsername"
+                            placeholder="Rua 6732, Av. Julios"
+                          />
+                        </div>
+                        <div class="row">
+
+                          <div class="col-6">
+                            <label for="inputEmailAddress" class="form-label"
+                              >Contacto Principal</label
+                            >
+  
+                            <div class="input-group mb-3">
+                              <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1"
+                                  >+258</span
+                                >
+                              </div>
+                              <input
+                                type="email"
+                                class="form-control"
+                                id="inputEmailAddress"
+                                placeholder=""
+                              />
+                            </div>
+                          </div>
+                          <div class="col-6">
+                            <label for="inputEmailAddress" class="form-label"
+                              >Contacto Alternativo</label
+                            >
+  
+                            <div class="input-group mb-3">
+                              <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1"
+                                  >+258</span
+                                >
+                              </div>
+                              <input
+                                type="email"
+                                class="form-control"
+                                id="inputEmailAddress"
+                                placeholder=""
+                              />
+                            </div>
+                          </div>
+
+                        </div>
+                      </fieldset>
+                      <h3>Documntos</h3>
+                      <fieldset class="mb-3">
+
+                        
+
+                        <fieldset
+                          style="border: 1px solid rgba(0, 0, 0, 0.178)"
+                          class="px-3 py-3"
+                        >
+                          <legend>Documentos</legend>
+
+                          <div class="col-12">
+                            <div class="mb-3">
+                              <label class="form-label"
+                                >Tipo de documentos</label
+                              >
+                              <select class="form-control select2">
+                                <option selected disabled>
+                                  --Selecione aqui--
+                                </option>
+                                <option value="AL">NUIT</option>
+                                <option value="AR">BI</option>
+                                <option value="IL">Declaração do bairo</option>
+                              </select>
+                            </div>
+                            </div>
+                            <div class="row">
+
+                              <div class="col-6">
+                              <label for="inputUsername" class="form-label"
+                                >Número</label
+                              >
+                              <input
+                                type="email"
+                                class="form-control"
+                                id="inputUsername"
+                                placeholder="435-872-738"
+                              />
+                            </div>
+  
+                            <div class="col-6"> 
+                            <div class="mb-3">
+                              <label for="formFileMultiple" class="form-label"
+                                >Anexo
+                              </label>
+                              <input
+                                class="form-control"
+                                type="file"
+                                id="formFileMultiple"
+                                multiple
+                              />
+                            </div>
+                            </div>
+                            </div>
+
+                          <div class="col-lg-12">
+                            <div class="mb-3">
+                              <div class="row">
+                                <div class="col">
+                                  <label class="form-label"
+                                    >Data de emissão</label
+                                  >
+                                  <div class="input-group" id="datepicker1">
+                                    <input
+                                      type="text"
+                                      class="form-control"
+                                      placeholder="mm/dd/yyyy"
+                                      data-date-container="#datepicker1"
+                                      data-provide="datepicker"
+                                    />
+                                    <span class="input-group-text"
+                                      ><i class="mdi mdi-calendar"></i
+                                    ></span>
+                                  </div>
+                                </div>
+                                <div class="col">
+                                  <label class="form-label"
+                                    >Data de validade</label
+                                  >
+                                  <div class="input-group" id="datepicker1">
+                                    <input
+                                      type="text"
+                                      class="form-control"
+                                      placeholder="mm/dd/yyyy"
+                                      data-date-container="#datepicker1"
+                                      data-provide="datepicker"
+                                    />
+                                    <span class="input-group-text"
+                                      ><i class="mdi mdi-calendar"></i
+                                    ></span>
+                                  </div>
+                                  <!-- input-group -->
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="col text-end">
+                            <div class="btn btn-outline-primary">Adicionar documento <i class="fas fa-folder-plus"></i></div>
+                          </div>
+                        </fieldset>
+
+                        <h4 hidden class="card-title mt-3">Documentos adicionados</h4>
+
+                                <div class="table-rep-plugin" hidden>
+                                    <div class="table-responsive mb-0" data-pattern="priority-columns">
+                                        <table id="tech-companies-1" class="table table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th data-priority="1">Tipo de documento</th>
+                                                    <th data-priority="3">Número</th>
+                                                    <th data-priority="3">Emissão</th>
+                                                    <th data-priority="3">Validade</th>
+                                                    <th data-priority="3">Ação</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th>Bilhete de Identidade</th>
+                                                    <td>87388347829Y</td>
+                                                    <td>22/05/2024</td>
+                                                    <td>22/05/2027</td>
+                                                    <td><a href="" class="btn btn-primary">Visualizar</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <th>NUIT</th>
+                                                    <td>87388347829Y</td>
+                                                    <td>22/05/2024</td>
+                                                    <td>22/05/2027</td>
+                                                    <td><a href="" class="btn btn-primary">Visualizar</a></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                </div>
+
+                        <div class="col-12" hidden>
+                          <label for="inputSelectCountry" class="form-label"
+                            >Distrito</label
+                          >
+                          <select
+                            class="form-select"
+                            id="inputSelectCountry"
+                            aria-label="Default select example"
+                          >
+                            <option selected>India</option>
+                            <option value="1">United Kingdom</option>
+                            <option value="2">America</option>
+                            <option value="3">Dubai</option>
+                          </select>
+                        </div>
+
+                        <div hidden class="col-12">
+                          <label for="inputUsername" class="form-label"
+                            >Nome de usuário</label
+                          >
+                          <input
+                            type="email"
+                            class="form-control"
+                            id="inputUsername"
+                            placeholder="Jhon"
+                          />
+                        </div>
+                        <div hidden class="col-12">
+                          <label for="inputEmailAddress" class="form-label"
+                            >Contactos</label
+                          >
+                          <input
+                            type="email"
+                            class="form-control"
+                            id="inputEmailAddress"
+                            placeholder="example@user.com"
+                          />
+                        </div>
+                      </fieldset>
+                    </form>
+
+                    <div class="login-separater text-center mb-5" hidden>
+                      <span>OR SIGN UP WITH EMAIL</span>
+                      <hr />
+                    </div>
+                    <div class="list-inline contacts-social text-center" hidden>
+                      <a
+                        href="javascript:;"
+                        class="list-inline-item bg-facebook text-white border-0 rounded-3"
+                        ><i class="bx bxl-facebook"></i
+                      ></a>
+                      <a
+                        href="javascript:;"
+                        class="list-inline-item bg-twitter text-white border-0 rounded-3"
+                        ><i class="bx bxl-twitter"></i
+                      ></a>
+                      <a
+                        href="javascript:;"
+                        class="list-inline-item bg-google text-white border-0 rounded-3"
+                        ><i class="bx bxl-google"></i
+                      ></a>
+                      <a
+                        href="javascript:;"
+                        class="list-inline-item bg-linkedin text-white border-0 rounded-3"
+                        ><i class="bx bxl-linkedin"></i
+                      ></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--end row-->
+        </div>
+      </div>
+    </div>
+    <!--end wrapper-->
+
+    <!-- JAVASCRIPT -->
+    <!-- JAVASCRIPT -->
+
+    <script>
+      function RemoveHidden(){
+        $(".type_user").prop('hidden',true)
+        $(".confirmation-form").removeAttr('hidden')
+        $("#sub-container").removeClass("full-height")
+      }
+    </script>
+
+    <script src="assets/libs/jquery/jquery.min.js"></script>
+    <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/libs/metismenu/metisMenu.min.js"></script>
+    <script src="assets/libs/simplebar/simplebar.min.js"></script>
+    <script src="assets/libs/node-waves/waves.min.js"></script>
+    <script src="assets/libs/jquery-sparkline/jquery.sparkline.min.js"></script>
+
+    <!-- form wizard -->
+    <script src="assets/libs/jquery-steps/build/jquery.steps.min.js"></script>
+    <!-- form wizard init -->
+    <script src="assets/js/pages/form-wizard.init.js"></script>
+
+    <script src="assets/libs/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+    <script src="assets/libs/select2/js/select2.min.js"></script>
+
+    <script src="assets/js/app.js"></script>
+  </body>
+
+  <!-- Mirrored from themesdesign.in/qovex-node/layouts/pages-register.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 11 Jun 2024 08:15:41 GMT -->
+</html>
