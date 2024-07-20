@@ -63,19 +63,17 @@ NOTE: This is main stylesheet of template, This file contains the styling for th
 /*****************************
 	Typography
 *****************************/
-.highlighted-border {
-  border-width: 5px !important; /* Aumenta a espessura da borda */
-  border-color: #007bff !important; /* Define a cor da borda */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra para destaque */
+/* CLASSES - HARRISON */
+/* Define a custom class to remove hover effect */
+.no-hover:hover,
+.no-hover:focus,
+.no-hover:active {
+  background-color: transparent !important;
+  border-color: currentColor !important;
+  color: #358719 !important;
 }
 
-.highlighted-border:hover .feature-info-icon i {
-  color: #212529 !important; /* Muda a cor do ícone para preto ao passar o mouse */
-}
-.highlighted-border:hover .text-black {
-  color: #358719 !important; /* Muda a cor do texto ao passar o mouse */
-}
-
+/* pre definido */
 body {
   font-family: "Poppins", sans-serif;
   font-weight: normal;
