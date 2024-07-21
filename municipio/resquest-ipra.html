@@ -1387,85 +1387,45 @@
                           style="border: 5px dotted rgba(0, 0, 0, 0.178)"
                           class="px-3 py-3"
                         >
-                          <legend  style="font-size: 16px; font-weight: bold;">Informações sobre o proprietário</legend>
+                          <legend  style="font-size: 16px; font-weight: bold;">Informações sobre as áreas</legend>
                             <div class="row">
                               <div class="col-4">
                               <label for="inputUsername" class="form-label"
-                                >Primeiro nome</label
+                                >Áreas do terreno</label
                               >
                               <input
                                 type="email"
                                 class="form-control"
                                 id="inputUsername"
-                                placeholder="Informe o nome"
+                                placeholder="000000,00"
                               />
                             </div>
   
                             <div class="col-4">
                               <label for="inputUsername" class="form-label"
-                                >Outros nomes</label
+                                >Área edificada</label
                               >
                               <input
                                 type="email"
                                 class="form-control"
                                 id="inputUsername"
-                                placeholder="Informe os outros nomes"
+                                placeholder="000000,00"
                               />
                             </div>
                             <div class="col-4">
                               <label for="inputUsername" class="form-label"
-                                >Apelido</label
+                                >Área que serve de logradouro</label
                               >
                               <input
                                 type="email"
                                 class="form-control"
                                 id="inputUsername"
-                                placeholder="Informe o apelido"
+                                placeholder="000000,00"
                               />
                             </div>
   
                             </div>
 
-                            <div class="row mt-2">
-                              <div class="col-6">
-                              <label for="inputUsername" class="form-label"
-                                >Número do BI</label
-                              >
-                              <input
-                                type="email"
-                                class="form-control"
-                                id="inputUsername"
-                                placeholder="Informe o número do BI"
-                              />
-                               </div>
-  
-                            <div class="col-6">
-                              <label for="inputUsername" class="form-label"
-                                >NUIT do proprietário</label
-                              >
-                              <input
-                                type="email"
-                                class="form-control"
-                                id="inputUsername"
-                                placeholder="Informe o NUIT"
-                              />
-                            </div>
-                        
-  
-                            </div>
-
-                            <div class="row mt-2">
-                              <div class="col-6">
-                              <label for="inputUsername" class="form-label"
-                                >Tipo</label
-                              >
-                              <input
-                                type="email"
-                                class="form-control"
-                                id="inputUsername"
-                                placeholder="Informe o tipo de propretário"
-                                />
-                                </div>
                               </fieldset>
                             </fieldset>
                           </fieldset>
@@ -1475,93 +1435,366 @@
 
                       
 
-                      <fieldset class="mb-3">
-                        <fieldset
-                          style="border: 5px dotted rgba(0, 0, 0, 0.178)"
-                          class="px-3 py-3"
-                        >
-                          <legend  style="font-size: 16px; font-weight: bold;">Informações sobre o proprietário</legend>
-                            <div class="row">
-                              <div class="col-4">
-                              <label for="inputUsername" class="form-label"
-                                >Primeiro nome</label
-                              >
-                              <input
-                                type="email"
-                                class="form-control"
-                                id="inputUsername"
-                                placeholder="Informe o nome"
-                              />
-                            </div>
-  
-                            <div class="col-4">
-                              <label for="inputUsername" class="form-label"
-                                >Outros nomes</label
-                              >
-                              <input
-                                type="email"
-                                class="form-control"
-                                id="inputUsername"
-                                placeholder="Informe os outros nomes"
-                              />
-                            </div>
-                            <div class="col-4">
-                              <label for="inputUsername" class="form-label"
-                                >Apelido</label
-                              >
-                              <input
-                                type="email"
-                                class="form-control"
-                                id="inputUsername"
-                                placeholder="Informe o apelido"
-                              />
-                            </div>
-  
-                            </div>
-
-                            <div class="row mt-2">
-                              <div class="col-6">
-                              <label for="inputUsername" class="form-label"
-                                >Número do BI</label
-                              >
-                              <input
-                                type="email"
-                                class="form-control"
-                                id="inputUsername"
-                                placeholder="Informe o número do BI"
-                              />
-                               </div>
-  
+                        <fieldset class="mb-3">
+                          <div class="row mb-2">
                             <div class="col-6">
-                              <label for="inputUsername" class="form-label"
-                                >NUIT do proprietário</label
+                              <fieldset
+                                style="border: 5px dotted rgba(0, 0, 0, 0.178)"
+                                class="px-3 py-3"
                               >
-                              <input
-                                type="email"
-                                class="form-control"
-                                id="inputUsername"
-                                placeholder="Informe o NUIT"
-                              />
-                            </div>
-                        
-  
-                            </div>
-
-                            <div class="row mt-2">
-                              <div class="col-6">
-                              <label for="inputUsername" class="form-label"
-                                >Tipo</label
-                              >
-                              <input
-                                type="email"
-                                class="form-control"
-                                id="inputUsername"
-                                placeholder="Informe o tipo de propretário"
-                                />
+                                <legend  style="font-size: 16px; font-weight: bold;">Propriedade propria?</legend>
+                                <div class="form-check mb-2">
+                                  <input
+                                    class="form-check-input"
+                                    type="radio"
+                                    name="owner"
+                                    id="owner1"
+                                  />
+                                  <label
+                                    class="form-check-label"
+                                    for="owner1"
+                                  >
+                                    Sim
+                                  </label>
+                                </div>
+                                <div class="form-check">
+                                  <input
+                                    class="form-check-input"
+                                    type="radio"
+                                    name="owner"
+                                    id="owner2"
+                                  />
+                                  <label
+                                    class="form-check-label"
+                                    for="owner2"
+                                  >
+                                    Não
+                                  </label>
                                 </div>
                               </fieldset>
-                            </fieldset>
+                            </div>
+
+                            <div class="col-6">
+                              <fieldset
+                                style="border: 5px dotted rgba(0, 0, 0, 0.178)"
+                                class="px-3 py-3"
+                              >
+                                <legend  style="font-size: 16px; font-weight: bold;">Exerce actividades comerciais?</legend>
+                                <div class="form-check mb-2">
+                                  <input
+                                    class="form-check-input"
+                                    type="radio"
+                                    name="company"
+                                    id="company1"
+                                  />
+                                  <label
+                                    class="form-check-label"
+                                    for="company1"
+                                  >
+                                    Sim
+                                  </label>
+                                </div>
+                                <div class="form-check">
+                                  <input
+                                    class="form-check-input"
+                                    type="radio"
+                                    name="company"
+                                    id="company2"
+                                  />
+                                  <label
+                                    class="form-check-label"
+                                    for="company2"
+                                  >
+                                    Não
+                                  </label>
+                                </div>
+                              </fieldset>
+                            </div>
+                          </div>
+
+
+                          <div class="card">
+                            <div class="card-body">
+
+                                <!-- Nav tabs -->
+                                <ul class="nav nav-tabs nav-tabs-custom nav-justified" role="tablist">
+                                  
+                                    <li class="nav-item">
+                                      <a class="nav-link active" data-bs-toggle="tab" href="#moreData" role="tab">
+                                          <span class="d-block d-sm-none"><i class="far fa-envelope"></i></span>
+                                          <span class="d-none d-sm-block">Mais dados</span>
+                                      </a>
+                                  </li>
+                                    <li class="nav-item" >
+                                        <a class="nav-link" data-bs-toggle="tab" href="#proprietario" role="tab">
+                                            <span class="d-block d-sm-none"><i class="fas fa-home"></i></span>
+                                            <span class="d-none d-sm-block"> Proprietário</span>
+                                        </a>
+                                    </li>
+                                    <li  class="nav-item">
+                                        <a class="nav-link" data-bs-toggle="tab" href="#empresa" role="tab">
+                                            <span class="d-block d-sm-none"><i class="far fa-user"></i></span>
+                                            <span class="d-none d-sm-block">Dados da empresa</span>
+                                        </a>
+                                    </li>
+                                </ul>
+
+                                <!-- Tab panes -->
+                                <div class="tab-content p-3 text-muted">
+                                  
+                                    <div class="tab-pane active" id="moreData" role="tabpanel">
+                                        <fieldset
+                                        style="border: 5px dotted rgba(0, 0, 0, 0.178)"
+                                        class="px-3 py-3"
+                                      >
+                                        <legend  style="font-size: 16px; font-weight: bold;">Mais dados</legend>
+                                          <div class="row">
+                                            <div class="col-12">
+                                            <label for="inputUsername" class="form-label"
+                                              >Finalidade do Imóvel</label
+                                            >
+                                            <textarea name="finalidade" id="finalidade" class="form-control"></textarea>
+                                          </div>
+                
+                                          </div>
+
+                                          <div class="row mt-2">
+                                            <div class="col-12">
+                                            <label for="inputUsername" class="form-label"
+                                              >Descrição Pormenorizada do Imóvel</label
+                                            >
+                                            <textarea name="finalidade" id="finalidade" class="form-control"></textarea>
+                                          </div>
+                
+                                          </div>
+
+                                          <div class="row mt-2">
+                                            <div class="col-12">
+                                            <label for="inputUsername" class="form-label"
+                                              >Observações e Informações Completas</label
+                                            >
+                                            <textarea name="finalidade" id="finalidade" class="form-control"></textarea>
+                                          </div>
+                
+                                          </div>
+                                      </fieldset>
+                                    </div>
+                                    <div  class="tab-pane" id="proprietario" role="tabpanel">                                       
+                                          <fieldset
+                                          style="border: 5px dotted rgba(0, 0, 0, 0.178)"
+                                          class="px-3 py-3"
+                                        >
+                                          <legend  style="font-size: 16px; font-weight: bold;">Informações sobre o proprietário</legend>
+                                            <div class="row">
+                                              <div class="col-4">
+                                              <label for="inputUsername" class="form-label"
+                                                >Primeiro nome</label
+                                              >
+                                              <input
+                                                type="email"
+                                                class="form-control"
+                                                id="inputUsername"
+                                                placeholder="Informe o nome"
+                                              />
+                                            </div>
+                  
+                                            <div class="col-4">
+                                              <label for="inputUsername" class="form-label"
+                                                >Outros nomes</label
+                                              >
+                                              <input
+                                                type="email"
+                                                class="form-control"
+                                                id="inputUsername"
+                                                placeholder="Informe os outros nomes"
+                                              />
+                                            </div>
+                                            <div class="col-4">
+                                              <label for="inputUsername" class="form-label"
+                                                >Apelido</label
+                                              >
+                                              <input
+                                                type="email"
+                                                class="form-control"
+                                                id="inputUsername"
+                                                placeholder="Informe o apelido"
+                                              />
+                                            </div>
+                  
+                                            </div>
+
+                                            <div class="row mt-2">
+                                              <div class="col-6">
+                                              <label for="inputUsername" class="form-label"
+                                                >Número do BI</label
+                                              >
+                                              <input
+                                                type="email"
+                                                class="form-control"
+                                                id="inputUsername"
+                                                placeholder="Informe o número do BI"
+                                              />
+                                              </div>
+                  
+                                            <div class="col-6">
+                                              <label for="inputUsername" class="form-label"
+                                                >NUIT do proprietário</label
+                                              >
+                                              <input
+                                                type="email"
+                                                class="form-control"
+                                                id="inputUsername"
+                                                placeholder="Informe o NUIT"
+                                              />
+                                            </div>
+                                        
+                  
+                                            </div>
+
+                                            <div class="row mt-2">
+                                              <div class="col-6">
+                                              <label for="inputUsername" class="form-label"
+                                                >Tipo</label
+                                              >
+                                              <input
+                                                type="email"
+                                                class="form-control"
+                                                id="inputUsername"
+                                                placeholder="Informe o tipo de propretário"
+                                                />
+                                                </div>
+
+                                                <div class="col-6">
+                                                  <label for="inputUsername" class="form-label"
+                                                    >Denominação da via</label
+                                                  >
+                                                  <input
+                                                    type="email"
+                                                    class="form-control"
+                                                    id="inputUsername"
+                                                    placeholder="Informe a denominação da via"
+                                                    />
+                                                    </div>
+                                              </div>
+
+                                              <div class="row mt-2">
+                                                <div class="col-4">
+                                                <label for="inputUsername" class="form-label"
+                                                  >Número de polícia</label
+                                                >
+                                                <input
+                                                  type="email"
+                                                  class="form-control"
+                                                  id="inputUsername"
+                                                  placeholder="Informe o número de polícia"
+                                                  />
+                                                  </div>
+  
+                                                  <div class="col-4">
+                                                    <label for="inputUsername" class="form-label"
+                                                      >Andar</label
+                                                    >
+                                                    <input
+                                                      type="email"
+                                                      class="form-control"
+                                                      id="inputUsername"
+                                                      placeholder="Informe o andar"
+                                                      />
+                                                      </div>
+
+                                                  <div class="col-4">
+                                                    <label for="inputUsername" class="form-label"
+                                                      >Número da porta/flat</label
+                                                    >
+                                                    <input
+                                                      type="email"
+                                                      class="form-control"
+                                                      id="inputUsername"
+                                                      placeholder="Informe o número da porta/flat"
+                                                      />
+                                                      </div>
+                                                </div>
+
+                                                <div class="row mt-2">
+                                                  <div class="col-4">
+                                                  <label for="inputUsername" class="form-label"
+                                                    >Bairro</label
+                                                  >
+                                                  <input
+                                                    type="email"
+                                                    class="form-control"
+                                                    id="inputUsername"
+                                                    placeholder="Informe bairro"
+                                                    />
+                                                    </div>
+    
+                                                    <div class="col-4">
+                                                      <label for="inputUsername" class="form-label"
+                                                        >Município</label
+                                                      >
+                                                      <input
+                                                        type="email"
+                                                        class="form-control"
+                                                        id="inputUsername"
+                                                        placeholder="Informe o município"
+                                                        />
+                                                        </div>
+  
+                                                    <div class="col-4">
+                                                      <label for="inputUsername" class="form-label"
+                                                        >Caixa postal</label
+                                                      >
+                                                      <input
+                                                        type="email"
+                                                        class="form-control"
+                                                        id="inputUsername"
+                                                        placeholder="Informe a caixa postal"
+                                                        />
+                                                        </div>
+                                                  </div>
+                                        </fieldset>
+                                    </div>
+                                    <div class="tab-pane" id="empresa" role="tabpanel">
+                                        <fieldset
+                                        style="border: 5px dotted rgba(0, 0, 0, 0.178)"
+                                        class="px-3 py-3"
+                                      >
+                                        <legend  style="font-size: 16px; font-weight: bold;">Informações sobre a empresa</legend>
+                                          <div class="row">
+                                            <div class="col-6">
+                                            <label for="inputUsername" class="form-label"
+                                              >Nome da empresa</label
+                                            >
+                                            <input
+                                              type="email"
+                                              class="form-control"
+                                              id="inputUsername"
+                                              placeholder="Informe o nome da empresa"
+                                            />
+                                          </div>
+                
+                                          <div class="col-6">
+                                            <label for="inputUsername" class="form-label"
+                                              >NUIT</label
+                                            >
+                                            <input
+                                              type="email"
+                                              class="form-control"
+                                              id="inputUsername"
+                                              placeholder="Informe o NUIT"
+                                            />
+                                          </div>
+                
+                                          </div>
+                                      </fieldset>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
                           </fieldset>
+                        </fieldset>
 
 
                           </div>
@@ -1678,6 +1911,30 @@
                   <div class="rightbar-overlay"></div>
               
                   <!-- JAVASCRIPT -->
+
+                  <script>
+
+                    document.addEventListener('DOMContentLoaded', (event) => {
+                      const radio1 = document.getElementById('owner1');
+                      const radio2 = document.getElementById('owner2');
+                    
+                      radio1.addEventListener('change', handleRadioChange);
+                      radio2.addEventListener('change', handleRadioChange);
+                    
+                      function handleRadioChange(event) {
+                        alert("jhdfklfkl")
+                        if (radio1.checked) {
+                          console.log('Sim selecionado');
+                          // Adicione o código adicional para quando "Sim" for selecionado
+                        } else if (radio2.checked) {
+                          console.log('Não selecionado');
+                          // Adicione o código adicional para quando "Não" for selecionado
+                        }
+                      }
+                    });
+                    
+                  </script>
+
                   <!-- JAVASCRIPT -->
                   <script src="assets/libs/jquery/jquery.min.js"></script>
                   <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -1687,9 +1944,9 @@
                   <script src="assets/libs/jquery-sparkline/jquery.sparkline.min.js"></script>
               
                       <!-- form wizard -->
-    <script src="assets/libs/jquery-steps/build/jquery.steps.min.js"></script>
-    <!-- form wizard init -->
-    <script src="assets/js/pages/form-wizard.init.js"></script>
+                      <script src="assets/libs/jquery-steps/build/jquery.steps.min.js"></script>
+                      <!-- form wizard init -->
+                      <script src="assets/js/pages/form-wizard.init.js"></script>
 
                   <!-- App js -->
                   <script src="assets/js/app.js"></script>
