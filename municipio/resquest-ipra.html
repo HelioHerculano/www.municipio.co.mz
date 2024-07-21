@@ -1447,12 +1447,12 @@
                                   <input
                                     class="form-check-input"
                                     type="radio"
-                                    name="flexRadioDefault"
-                                    id="flexRadioDefault1"
+                                    name="owner"
+                                    id="owner1"
                                   />
                                   <label
                                     class="form-check-label"
-                                    for="flexRadioDefault1"
+                                    for="owner1"
                                   >
                                     Sim
                                   </label>
@@ -1461,12 +1461,12 @@
                                   <input
                                     class="form-check-input"
                                     type="radio"
-                                    name="flexRadioDefault"
-                                    id="flexRadioDefault2"
+                                    name="owner"
+                                    id="owner2"
                                   />
                                   <label
                                     class="form-check-label"
-                                    for="flexRadioDefault2"
+                                    for="owner2"
                                   >
                                     Não
                                   </label>
@@ -1531,7 +1531,7 @@
                                             <span class="d-none d-sm-block"> Proprietário</span>
                                         </a>
                                     </li>
-                                    <li class="nav-item">
+                                    <li  class="nav-item">
                                         <a class="nav-link" data-bs-toggle="tab" href="#empresa" role="tab">
                                             <span class="d-block d-sm-none"><i class="far fa-user"></i></span>
                                             <span class="d-none d-sm-block">Dados da empresa</span>
@@ -1911,6 +1911,30 @@
                   <div class="rightbar-overlay"></div>
               
                   <!-- JAVASCRIPT -->
+
+                  <script>
+
+                    document.addEventListener('DOMContentLoaded', (event) => {
+                      const radio1 = document.getElementById('owner1');
+                      const radio2 = document.getElementById('owner2');
+                    
+                      radio1.addEventListener('change', handleRadioChange);
+                      radio2.addEventListener('change', handleRadioChange);
+                    
+                      function handleRadioChange(event) {
+                        alert("jhdfklfkl")
+                        if (radio1.checked) {
+                          console.log('Sim selecionado');
+                          // Adicione o código adicional para quando "Sim" for selecionado
+                        } else if (radio2.checked) {
+                          console.log('Não selecionado');
+                          // Adicione o código adicional para quando "Não" for selecionado
+                        }
+                      }
+                    });
+                    
+                  </script>
+
                   <!-- JAVASCRIPT -->
                   <script src="assets/libs/jquery/jquery.min.js"></script>
                   <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -1920,9 +1944,9 @@
                   <script src="assets/libs/jquery-sparkline/jquery.sparkline.min.js"></script>
               
                       <!-- form wizard -->
-    <script src="assets/libs/jquery-steps/build/jquery.steps.min.js"></script>
-    <!-- form wizard init -->
-    <script src="assets/js/pages/form-wizard.init.js"></script>
+                      <script src="assets/libs/jquery-steps/build/jquery.steps.min.js"></script>
+                      <!-- form wizard init -->
+                      <script src="assets/js/pages/form-wizard.init.js"></script>
 
                   <!-- App js -->
                   <script src="assets/js/app.js"></script>
