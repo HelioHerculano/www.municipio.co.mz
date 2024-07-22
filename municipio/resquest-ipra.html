@@ -1,0 +1,1933 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Mirrored from themesdesign.in/qovex-node/layouts/form-elements.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 11 Jun 2024 08:15:54 GMT -->
+  <head>
+    <meta charset="utf-8" />
+    <title>Form Elements | Qovex - Admin & Dashboard Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      content="Premium Multipurpose Admin & Dashboard Template"
+      name="description"
+    />
+    <meta content="Themesbrand" name="author" />
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.ico" />
+
+    <!-- Bootstrap Css -->
+    <link
+      href="assets/css/bootstrap.min.css"
+      id="bootstrap-style"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <!-- Icons Css -->
+    <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <!-- App Css-->
+    <link
+      href="assets/css/app.min.css"
+      id="app-style"
+      rel="stylesheet"
+      type="text/css"
+    />
+  </head>
+
+  <body data-layout="detached" data-topbar="colored">
+    <!-- <body data-layout="horizontal" data-topbar="dark"> -->
+
+    <div class="container-fluid">
+      <!-- Begin page -->
+      <div id="layout-wrapper">
+        <header id="page-topbar">
+          <div class="navbar-header">
+            <div class="container-fluid">
+              <div class="float-end">
+                <div class="dropdown d-inline-block d-lg-none ms-2">
+                  <button
+                    type="button"
+                    class="btn header-item noti-icon waves-effect"
+                    id="page-header-search-dropdown"
+                    data-bs-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    <i class="mdi mdi-magnify"></i>
+                  </button>
+                  <div
+                    class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0"
+                    aria-labelledby="page-header-search-dropdown"
+                  >
+                    <form class="p-3">
+                      <div class="m-0">
+                        <div class="input-group">
+                          <input
+                            type="text"
+                            class="form-control"
+                            placeholder="Search ..."
+                            aria-label="Recipient's username"
+                          />
+                          <div class="input-group-append">
+                            <button class="btn btn-primary" type="submit">
+                              <i class="mdi mdi-magnify"></i>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+
+                <div class="dropdown d-none d-sm-inline-block">
+                  <button
+                    type="button"
+                    class="btn header-item waves-effect"
+                    data-bs-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    <img
+                      class=""
+                      src="assets/images/flags/us.jpg"
+                      alt="Header Language"
+                      height="16"
+                    />
+                  </button>
+                  <div class="dropdown-menu dropdown-menu-end">
+                    <!-- item-->
+                    <a
+                      href="javascript:void(0);"
+                      class="dropdown-item notify-item"
+                    >
+                      <img
+                        src="assets/images/flags/spain.jpg"
+                        alt="user-image"
+                        class="me-1"
+                        height="12"
+                      />
+                      <span class="align-middle">Spanish</span>
+                    </a>
+
+                    <!-- item-->
+                    <a
+                      href="javascript:void(0);"
+                      class="dropdown-item notify-item"
+                    >
+                      <img
+                        src="assets/images/flags/germany.jpg"
+                        alt="user-image"
+                        class="me-1"
+                        height="12"
+                      />
+                      <span class="align-middle">German</span>
+                    </a>
+
+                    <!-- item-->
+                    <a
+                      href="javascript:void(0);"
+                      class="dropdown-item notify-item"
+                    >
+                      <img
+                        src="assets/images/flags/italy.jpg"
+                        alt="user-image"
+                        class="me-1"
+                        height="12"
+                      />
+                      <span class="align-middle">Italian</span>
+                    </a>
+
+                    <!-- item-->
+                    <a
+                      href="javascript:void(0);"
+                      class="dropdown-item notify-item"
+                    >
+                      <img
+                        src="assets/images/flags/russia.jpg"
+                        alt="user-image"
+                        class="me-1"
+                        height="12"
+                      />
+                      <span class="align-middle">Russian</span>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="dropdown d-none d-lg-inline-block ms-1">
+                  <button
+                    type="button"
+                    class="btn header-item noti-icon waves-effect"
+                    data-toggle="fullscreen"
+                  >
+                    <i class="mdi mdi-fullscreen"></i>
+                  </button>
+                </div>
+
+                <div class="dropdown d-inline-block">
+                  <button
+                    type="button"
+                    class="btn header-item noti-icon waves-effect"
+                    id="page-header-notifications-dropdown"
+                    data-bs-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    <i class="mdi mdi-bell-outline"></i>
+                    <span class="badge rounded-pill bg-danger">3</span>
+                  </button>
+                  <div
+                    class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0"
+                    aria-labelledby="page-header-notifications-dropdown"
+                  >
+                    <div class="p-3">
+                      <div class="row align-items-center">
+                        <div class="col">
+                          <h6 class="m-0">Notifications</h6>
+                        </div>
+                        <div class="col-auto">
+                          <a href="#!" class="small"> View All</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div data-simplebar style="max-height: 230px">
+                      <a href="#" class="text-reset notification-item">
+                        <div class="d-flex align-items-start">
+                          <div class="avatar-xs me-3">
+                            <span
+                              class="avatar-title bg-primary rounded-circle font-size-16"
+                            >
+                              <i class="bx bx-cart"></i>
+                            </span>
+                          </div>
+                          <div class="flex-1">
+                            <h6 class="mt-0 mb-1">Your order is placed</h6>
+                            <div class="font-size-12 text-muted">
+                              <p class="mb-1">
+                                If several languages coalesce the grammar
+                              </p>
+                              <p class="mb-0">
+                                <i class="mdi mdi-clock-outline"></i> 3 min ago
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </a>
+                      <a href="#" class="text-reset notification-item">
+                        <div class="d-flex align-items-start">
+                          <img
+                            src="assets/images/users/avatar-3.jpg"
+                            class="me-3 rounded-circle avatar-xs"
+                            alt="user-pic"
+                          />
+                          <div class="flex-1">
+                            <h6 class="mt-0 mb-1">James Lemire</h6>
+                            <div class="font-size-12 text-muted">
+                              <p class="mb-1">
+                                It will seem like simplified English.
+                              </p>
+                              <p class="mb-0">
+                                <i class="mdi mdi-clock-outline"></i> 1 hours
+                                ago
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </a>
+                      <a href="#" class="text-reset notification-item">
+                        <div class="d-flex align-items-start">
+                          <div class="avatar-xs me-3">
+                            <span
+                              class="avatar-title bg-success rounded-circle font-size-16"
+                            >
+                              <i class="bx bx-badge-check"></i>
+                            </span>
+                          </div>
+                          <div class="flex-1">
+                            <h6 class="mt-0 mb-1">Your item is shipped</h6>
+                            <div class="font-size-12 text-muted">
+                              <p class="mb-1">
+                                If several languages coalesce the grammar
+                              </p>
+                              <p class="mb-0">
+                                <i class="mdi mdi-clock-outline"></i> 3 min ago
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </a>
+
+                      <a href="#" class="text-reset notification-item">
+                        <div class="d-flex align-items-start">
+                          <img
+                            src="assets/images/users/avatar-4.jpg"
+                            class="me-3 rounded-circle avatar-xs"
+                            alt="user-pic"
+                          />
+                          <div class="flex-1">
+                            <h6 class="mt-0 mb-1">Salena Layfield</h6>
+                            <div class="font-size-12 text-muted">
+                              <p class="mb-1">
+                                As a skeptical Cambridge friend of mine
+                                occidental.
+                              </p>
+                              <p class="mb-0">
+                                <i class="mdi mdi-clock-outline"></i> 1 hours
+                                ago
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="p-2 border-top d-grid">
+                      <a
+                        class="btn btn-sm btn-link font-size-14"
+                        href="javascript:void(0)"
+                      >
+                        <i class="mdi mdi-arrow-right-circle me-1"></i> View
+                        More..
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="dropdown d-inline-block">
+                  <button
+                    type="button"
+                    class="btn header-item waves-effect"
+                    id="page-header-user-dropdown"
+                    data-bs-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    <img
+                      class="rounded-circle header-profile-user"
+                      src="assets/images/users/avatar-2.jpg"
+                      alt="Header Avatar"
+                    />
+                    <span class="d-none d-xl-inline-block ms-1">Patrick</span>
+                    <i
+                      class="mdi mdi-chevron-down d-none d-xl-inline-block"
+                    ></i>
+                  </button>
+                  <div class="dropdown-menu dropdown-menu-end">
+                    <!-- item-->
+                    <a class="dropdown-item" href="pages-profile.html"
+                      ><i class="bx bx-user font-size-16 align-middle me-1"></i>
+                      Profile</a
+                    >
+                  </div>
+                </div>
+
+                <div class="dropdown d-inline-block">
+                  <button
+                    type="button"
+                    class="btn header-item noti-icon right-bar-toggle waves-effect"
+                  >
+                    <i class="mdi mdi-settings-outline"></i>
+                  </button>
+                </div>
+              </div>
+              <div>
+                <!-- LOGO -->
+                <div class="navbar-brand-box">
+                  <a href="index.html" class="logo logo-dark">
+                    <span class="logo-sm">
+                      <img src="assets/images/logo-municipio.png" alt="" height="20" />
+                    </span>
+                    <span class="logo-lg">
+                      <img
+                        src="assets/images/logo-dark.png"
+                        alt=""
+                        height="17"
+                      />
+                    </span>
+                  </a>
+
+                  <a href="index.html" class="logo logo-light">
+                    <span class="logo-sm">
+                      <img src="assets/images/logo-municipio.png" alt="" height="20" />
+                    </span>
+                    <span class="logo-lg">
+                      <img
+                        src="assets/images/logo-municipio.png"
+                        alt=""
+                        height="59"
+                      />
+                    </span>
+                  </a>
+                </div>
+
+                <button
+                  type="button"
+                  class="btn btn-sm px-3 font-size-16 header-item toggle-btn waves-effect"
+                  id="vertical-menu-btn"
+                >
+                  <i class="fa fa-fw fa-bars"></i>
+                </button>
+
+                <!-- App Search-->
+                <form class="app-search d-none d-lg-inline-block">
+                  <div class="position-relative">
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Pesquisar..."
+                    />
+                    <span class="bx bx-search-alt"></span>
+                  </div>
+                </form>
+
+                <div
+                  class="dropdown dropdown-mega d-none d-lg-inline-block ms-2"
+                >
+                  <button
+                    type="button"
+                    class="btn header-item waves-effect"
+                    data-bs-toggle="dropdown"
+                    aria-haspopup="false"
+                    aria-expanded="false"
+                  >
+                    Mega Menu
+                    <i class="mdi mdi-chevron-down"></i>
+                  </button>
+                  <div class="dropdown-menu dropdown-megamenu">
+                    <div class="row">
+                      <div class="col-sm-6">
+                        <div class="row">
+                          <div class="col-md-4">
+                            <h5 class="font-size-14 mt-0">UI Components</h5>
+                            <ul class="list-unstyled megamenu-list text-muted">
+                              <li>
+                                <a href="javascript:void(0);">Lightbox</a>
+                              </li>
+                              <li>
+                                <a href="javascript:void(0);">Range Slider</a>
+                              </li>
+                              <li>
+                                <a href="javascript:void(0);">Sweet Alert</a>
+                              </li>
+                              <li>
+                                <a href="javascript:void(0);">Rating</a>
+                              </li>
+                              <li>
+                                <a href="javascript:void(0);">Forms</a>
+                              </li>
+                              <li>
+                                <a href="javascript:void(0);">Tables</a>
+                              </li>
+                              <li>
+                                <a href="javascript:void(0);">Charts</a>
+                              </li>
+                            </ul>
+                          </div>
+
+                          <div class="col-md-4">
+                            <h5 class="font-size-14 mt-0">Applications</h5>
+                            <ul class="list-unstyled megamenu-list">
+                              <li>
+                                <a href="javascript:void(0);">Ecommerce</a>
+                              </li>
+                              <li>
+                                <a href="javascript:void(0);">Calendar</a>
+                              </li>
+                              <li>
+                                <a href="javascript:void(0);">Email</a>
+                              </li>
+                              <li>
+                                <a href="javascript:void(0);">Projects</a>
+                              </li>
+                              <li>
+                                <a href="javascript:void(0);">Tasks</a>
+                              </li>
+                              <li>
+                                <a href="javascript:void(0);">Contacts</a>
+                              </li>
+                            </ul>
+                          </div>
+
+                          <div class="col-md-4">
+                            <h5 class="font-size-14 mt-0">Extra Pages</h5>
+                            <ul class="list-unstyled megamenu-list">
+                              <li>
+                                <a href="javascript:void(0);">Light Sidebar</a>
+                              </li>
+                              <li>
+                                <a href="javascript:void(0);"
+                                  >Compact Sidebar</a
+                                >
+                              </li>
+                              <li>
+                                <a href="javascript:void(0);"
+                                  >Horizontal layout</a
+                                >
+                              </li>
+                              <li>
+                                <a href="javascript:void(0);">Maintenance</a>
+                              </li>
+                              <li>
+                                <a href="javascript:void(0);">Coming Soon</a>
+                              </li>
+                              <li>
+                                <a href="javascript:void(0);">Timeline</a>
+                              </li>
+                              <li>
+                                <a href="javascript:void(0);">FAQs</a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="row">
+                          <div class="col-sm-6">
+                            <h5 class="font-size-14 mt-0">Components</h5>
+                            <div class="px-lg-2">
+                              <div class="row g-0">
+                                <div class="col">
+                                  <a class="dropdown-icon-item" href="#">
+                                    <img
+                                      src="assets/images/brands/github.png"
+                                      alt="Github"
+                                    />
+                                    <span>GitHub</span>
+                                  </a>
+                                </div>
+                                <div class="col">
+                                  <a class="dropdown-icon-item" href="#">
+                                    <img
+                                      src="assets/images/brands/bitbucket.png"
+                                      alt="bitbucket"
+                                    />
+                                    <span>Bitbucket</span>
+                                  </a>
+                                </div>
+                                <div class="col">
+                                  <a class="dropdown-icon-item" href="#">
+                                    <img
+                                      src="assets/images/brands/dribbble.png"
+                                      alt="dribbble"
+                                    />
+                                    <span>Dribbble</span>
+                                  </a>
+                                </div>
+                              </div>
+
+                              <div class="row g-0">
+                                <div class="col">
+                                  <a class="dropdown-icon-item" href="#">
+                                    <img
+                                      src="assets/images/brands/dropbox.png"
+                                      alt="dropbox"
+                                    />
+                                    <span>Dropbox</span>
+                                  </a>
+                                </div>
+                                <div class="col">
+                                  <a class="dropdown-icon-item" href="#">
+                                    <img
+                                      src="assets/images/brands/mail_chimp.png"
+                                      alt="mail_chimp"
+                                    />
+                                    <span>Mail Chimp</span>
+                                  </a>
+                                </div>
+                                <div class="col">
+                                  <a class="dropdown-icon-item" href="#">
+                                    <img
+                                      src="assets/images/brands/slack.png"
+                                      alt="slack"
+                                    />
+                                    <span>Slack</span>
+                                  </a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="col-sm-6">
+                            <div>
+                              <div
+                                class="card text-white mb-0 overflow-hidden text-white-50"
+                                style="
+                                  background-image: url('assets/images/megamenu-img.png');
+                                  background-size: cover;
+                                "
+                              >
+                                <div class="card-img-overlay"></div>
+                                <div class="card-body">
+                                  <div class="row">
+                                    <div class="col-xl-6">
+                                      <h4 class="text-white mb-3">Sale</h4>
+
+                                      <h5 class="text-white-50">
+                                        Up to
+                                        <span class="font-size-24 text-white"
+                                          >50 %</span
+                                        >
+                                        Off
+                                      </h5>
+                                      <p>
+                                        At vero eos accusamus et iusto odio.
+                                      </p>
+                                      <div class="mb-4">
+                                        <a
+                                          href="#"
+                                          class="btn btn-success btn-sm"
+                                          >View more</a
+                                        >
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </header>
+        <!-- ========== Left Sidebar Start ========== -->
+        <div class="vertical-menu">
+          <div class="h-100">
+            <div class="user-wid text-center py-4">
+              <div class="user-img">
+                <img
+                  src="assets/images/users/avatar-2.jpg"
+                  alt=""
+                  class="avatar-md mx-auto rounded-circle"
+                />
+              </div>
+
+              <div class="mt-3">
+                <a href="#" class="text-dark fw-medium font-size-16"
+                  >Patrick Becker</a
+                >
+                <p class="text-body mt-1 mb-0 font-size-13">Município</p>
+              </div>
+            </div>
+
+                        <!--- Sidemenu -->
+                        <div id="sidebar-menu">
+                          <!-- Left Menu Start -->
+                          <ul class="metismenu list-unstyled" id="side-menu">
+                            <li class="menu-title">Menu</li>
+            
+                            <li>
+                              <a href="javascript: void(0);" class="waves-effect">
+                                <i class="mdi mdi-airplay"></i
+                                ><span class="badge rounded-pill bg-info float-end">2</span>
+                                <span>Dashboard</span>
+                              </a>
+                            </li>
+            
+                            <li>
+                              <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                <i class="mdi mdi-account-cash"></i>
+                                <span>Impostos</span>
+                              </a>
+                              <ul class="sub-menu" aria-expanded="true">
+                                <li>
+                                  <a href="javascript: void(0);" class="has-arrow"
+                                    >Predial Autárquico</a
+                                  >
+                                  <ul class="sub-menu" aria-expanded="true">
+                                    <li>
+                                      <a href="./resquest-ipra.html">
+                                        <i class="mdi mdi-coin-outline"></i>
+                                        <span>Requisitar</span>
+                                      </a>
+                                    </li>
+                                    <li>
+                                      <a href="./predial.html">
+                                        <i class="mdi mdi-history"></i>
+                                        <span>Histórico</span>
+                                      </a>
+                                    </li>
+                                  </ul>
+                                </li>
+                                <li>
+                                  <a href="javascript: void(0);" class="has-arrow"
+                                    >Autárquico de Veículos</a
+                                  >
+                                  <ul class="sub-menu" aria-expanded="true">
+                                    <li>
+                                      <a href="./predial.html">
+                                        <i class="mdi mdi-coin-outline"></i>
+                                        <span>Pagar</span>
+                                      </a>
+                                    </li>
+                                    <li>
+                                      <a href="./predial.html">
+                                        <i class="mdi mdi-history"></i>
+                                        <span>Histórico</span>
+                                      </a>
+                                    </li>
+                                  </ul>
+                                </li>
+                                <li>
+                                  <a href="javascript: void(0);" class="has-arrow"
+                                    >Pessoal Autárquico</a
+                                  >
+                                  <ul class="sub-menu" aria-expanded="true">
+                                    <li>
+                                      <a href="./predial.html">
+                                        <i class="mdi mdi-coin-outline"></i>
+                                        <span>Pagar</span>
+                                      </a>
+                                    </li>
+                                    <li>
+                                      <a href="./predial.html">
+                                        <i class="mdi mdi-history"></i>
+                                        <span>Histórico</span>
+                                      </a>
+                                    </li>
+                                  </ul>
+                                </li>
+                                <li>
+                                  <a href="javascript: void(0);" class="has-arrow"
+                                    >Autárquico da Sisa</a
+                                  >
+                                  <ul class="sub-menu" aria-expanded="true">
+                                    <li>
+                                      <a href="./predial.html">
+                                        <i class="mdi mdi-coin-outline"></i>
+                                        <span>Pagar</span>
+                                      </a>
+                                    </li>
+                                    <li>
+                                      <a href="./predial.html">
+                                        <i class="mdi mdi-history"></i>
+                                        <span>Histórico</span>
+                                      </a>
+                                    </li>
+                                  </ul>
+                                </li>
+                                <li>
+                                  <a href="javascript: void(0);" class="has-arrow"
+                                    >Taxa Por Actividade Económica</a
+                                  >
+                                  <ul class="sub-menu" aria-expanded="true">
+                                    <li>
+                                      <a href="./predial.html">
+                                        <i class="mdi mdi-coin-outline"></i>
+                                        <span>Pagar</span>
+                                      </a>
+                                    </li>
+                                    <li>
+                                      <a href="./predial.html">
+                                        <i class="mdi mdi-history"></i>
+                                        <span>Histórico</span>
+                                      </a>
+                                    </li>
+                                  </ul>
+                                </li>
+                              </ul>
+                            </li>
+                            <li>
+                              <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                <i class="mdi mdi-license"></i>
+                                <span>Licenças</span>
+                              </a>
+                              <ul class="sub-menu" aria-expanded="true">
+                                <li>
+                                  <a
+                                    href="javascript: void(0);"
+                                    class="has-arrow waves-effect"
+                                    >De Construção</a
+                                  >
+                                  <ul class="sub-menu" aria-expanded="true">
+                                    <li>
+                                      <a href="./predial.html">
+                                        <i class="mdi mdi-offer"></i>
+                                        <span>Requisitar</span>
+                                      </a>
+                                    </li>
+                                    <li>
+                                      <a href="./predial.html">
+                                        <i class="mdi mdi-history"></i>
+                                        <span>Histórico</span>
+                                      </a>
+                                    </li>
+                                  </ul>
+                                </li>
+                              </ul>
+                              <ul class="sub-menu" aria-expanded="true">
+                                <li>
+                                  <a
+                                    href="javascript: void(0);"
+                                    class="has-arrow waves-effect"
+                                    >Transporte</a
+                                  >
+                                  <ul class="sub-menu" aria-expanded="true">
+                                    <li>
+                                      <a href="./predial.html">
+                                        <i class="mdi mdi-offer"></i>
+                                        <span>Requisitar</span>
+                                      </a>
+                                    </li>
+                                    <li>
+                                      <a href="./predial.html">
+                                        <i class="mdi mdi-history"></i>
+                                        <span>Histórico</span>
+                                      </a>
+                                    </li>
+                                  </ul>
+                                </li>
+                              </ul>
+                            </li>
+                            <li>
+                              <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                <i class="mdi mdi-passport-biometric"></i>
+                                <span>Alvarás</span>
+                              </a>
+                              <ul class="sub-menu" aria-expanded="true">
+                                <li>
+                                  <a
+                                    href="javascript: void(0);"
+                                    class="has-arrow waves-effect"
+                                    >De Construção</a
+                                  >
+                                  <ul class="sub-menu" aria-expanded="true">
+                                    <li>
+                                      <a href="./predial.html">
+                                        <i class="mdi mdi-offer"></i>
+                                        <span>Requisitar</span>
+                                      </a>
+                                    </li>
+                                    <li>
+                                      <a href="./predial.html">
+                                        <i class="mdi mdi-history"></i>
+                                        <span>Histórico</span>
+                                      </a>
+                                    </li>
+                                  </ul>
+                                </li>
+                              </ul>
+                              <ul class="sub-menu" aria-expanded="true">
+                                <li>
+                                  <a
+                                    href="javascript: void(0);"
+                                    class="has-arrow waves-effect"
+                                    >Transporte</a
+                                  >
+                                  <ul class="sub-menu" aria-expanded="true">
+                                    <li>
+                                      <a href="./predial.html">
+                                        <i class="mdi mdi-offer"></i>
+                                        <span>Requisitar</span>
+                                      </a>
+                                    </li>
+                                    <li>
+                                      <a href="./predial.html">
+                                        <i class="mdi mdi-history"></i>
+                                        <span>Histórico</span>
+                                      </a>
+                                    </li>
+                                  </ul>
+                                </li>
+                              </ul>
+                            </li>
+                            <li>
+                              <a href="calendar.html" class="waves-effect">
+                                <i class="mdi mdi-logout"></i>
+                                <span>Sair</span>
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+                        <!-- Sidebar -->
+
+
+          </div>
+        </div>
+        <!-- Left Sidebar End -->
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+          <div class="page-content">
+            <!-- start page title -->
+            <div class="row">
+              <div class="col-12">
+                <div
+                  class="page-title-box d-flex align-items-center justify-content-between"
+                >
+                  <h4 class="page-title mb-0 font-size-18">Requisição do IPRA</h4>
+
+                  <div class="page-title-right" hidden>
+                    <ol class="breadcrumb m-0">
+                      <li class="breadcrumb-item">
+                        <a href="javascript: void(0);">Forms</a>
+                      </li>
+                      <li class="breadcrumb-item active">Form Elements</li>
+                    </ol>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- end page title -->
+
+            <div class="row">
+              <div class="col-12">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">INFORMAÇÔES DA PROPIEDADE</h4>
+                    <p class="card-title-desc">
+                      Preenche correctamente o formulario para poder requisitar o IPRA com sucesso
+                    </p>
+
+
+                    <form
+                    id="form-horizontal"
+                    class="form-horizontal form-wizard-wrapper confirmation-form"
+                  >
+                    <h3>Gerais</h3>
+                    <fieldset class="mb-3">
+                      <div class="row">
+                        <div class="col-6">
+                          <label for="inputSelectCountry" class="form-label"
+                            >Idade do Imóvel</label
+                          >
+                          <select
+                            class="form-select"
+                            id="inputSelectCountry"
+                            aria-label="Default select example"
+                          >
+                            <option selected>---Selecione aqui---</option>
+                            <option value="1">Menos de 05 anos</option>
+                            <option value="2">De 06 a 10 anos</option>
+                            <option value="3">De 11 a 15 anos</option>
+                            <option value="3">De 16 a 20 anos</option>
+                            <option value="3">De 21 a 30 anos</option>
+                            <option value="3">De 31 a 40 anos</option>
+                            <option value="3">De 41 a 50 anos</option>
+                            <option value="3">Mais 50 anos</option>
+                          </select>
+                        </div>
+                        <div class="col-6">
+                          <label for="inputSelectCountry" class="form-label"
+                            >Ocupação</label
+                          >
+                          <select
+                            class="form-select"
+                            id="inputSelectCountry"
+                            aria-label="Default select example"
+                          >
+                            <option selected>---Selecione aqui---</option>
+                            <option value="1">Não Edificado</option>
+                            <option value="2">Ruínas</option>
+                            <option value="3">Em Demolição</option>
+                            <option value="3">Contrução Paralizada</option>
+                            <option value="3">Contrução Em Andamento</option>
+                            <option value="3">Contruído</option>
+                          </select>
+                        </div>
+                      </div>
+
+                      <div class="row mt-2">
+                        <div class="col-6">
+                          <label for="inputSelectCountry" class="form-label"
+                            >Finalidade</label
+                          >
+                          <select
+                            class="form-select"
+                            id="inputSelectCountry"
+                            aria-label="Default select example"
+                          >
+                            <option selected>---Selecione aqui---</option>
+                            <option value="1">Terreno Vago</option>
+                            <option value="2">Habitação</option>
+                            <option value="3">Agricula e Pecuaria</option>
+                            <option value="3">Outros</option>
+                          </select>
+                        </div>
+                        <div class="col-6">
+                          <label for="inputSelectCountry" class="form-label"
+                            >Patrimônio</label
+                          >
+                          <select
+                            class="form-select"
+                            id="inputSelectCountry"
+                            aria-label="Default select example"
+                          >
+                            <option selected>---Selecione aqui---</option>
+                            <option value="1">Publico</option>
+                            <option value="2">Particular</option>
+                            <option value="3">Religioso</option>
+                          </select>
+                        </div>
+                      </div>
+                     
+                      <fieldset
+                      style="border: 5px dotted rgba(0, 0, 0, 0.178)"
+                      class="px-3 py-3 mt-4"
+                    >
+                      <legend style="font-size: 16px; font-weight: bold;">Localização do Imóvel</legend>
+
+                      <div class="row">
+                          <div class="col-6">
+                            <label for="inputUsername" class="form-label"
+                              >Tipo</label
+                            >
+                            <input
+                              type="email"
+                              class="form-control"
+                              id="inputUsername"
+                              placeholder="Informe o tipo de imóvel"
+                            />
+                          </div>
+                          <div class="col-6">
+                            <label for="inputUsername" class="form-label"
+                              >Denominação da via</label
+                            >
+                            <input
+                              type="email"
+                              class="form-control"
+                              id="inputUsername"
+                              placeholder="Informe a denominação da via"
+                            />
+                          </div>
+                        </div>
+                        <div class="row mt-2">
+
+                          <div class="col-4">
+                          <label for="inputUsername" class="form-label"
+                            >Código da via</label
+                          >
+                          <input
+                            type="email"
+                            class="form-control"
+                            id="inputUsername"
+                            placeholder="Informe o código da via"
+                          />
+                        </div>
+
+                        <div class="col-4">
+                          <label for="inputUsername" class="form-label"
+                            >Face da quadra</label
+                          >
+                          <input
+                            type="email"
+                            class="form-control"
+                            id="inputUsername"
+                            placeholder="Informe a face da quadra"
+                          />
+                        </div>
+
+                        <div class="col-4">
+                          <label for="inputUsername" class="form-label"
+                            >Número de polícia</label
+                          >
+                          <input
+                            type="email"
+                            class="form-control"
+                            id="inputUsername"
+                            placeholder="Informe o número de polícia"
+                          />
+                        </div>
+
+                        </div>
+
+                        <div class="row mt-2">
+
+                          <div class="col-4">
+                          <label for="inputUsername" class="form-label"
+                            >Andar</label
+                          >
+                          <input
+                            type="email"
+                            class="form-control"
+                            id="inputUsername"
+                            placeholder="Informe o andar"
+                          />
+                        </div>
+
+                        <div class="col-4">
+                          <label for="inputUsername" class="form-label"
+                            >Número da porta/Flat</label
+                          >
+                          <input
+                            type="email"
+                            class="form-control"
+                            id="inputUsername"
+                            placeholder="Informe o número da porta/Flat"
+                          />
+                        </div>
+
+                        <div class="col-4">
+                          <label for="inputUsername" class="form-label"
+                            >Número de polícia</label
+                          >
+                          <input
+                            type="email"
+                            class="form-control"
+                            id="inputUsername"
+                            placeholder="Informe o número de polícia"
+                          />
+                        </div>
+
+                        </div>
+
+                        <div class="row mt-2">
+
+                          <div class="col-6">
+                          <label for="inputUsername" class="form-label"
+                            >Bairo</label
+                          >
+                          <input
+                            type="email"
+                            class="form-control"
+                            id="inputUsername"
+                            placeholder="Informe o bairo"
+                          />
+                        </div>
+
+                        <div class="col-6">
+                          <label for="inputUsername" class="form-label"
+                            >Quarteirão</label
+                          >
+                          <input
+                            type="email"
+                            class="form-control"
+                            id="inputUsername"
+                            placeholder="Informe o quarteirão"
+                          />
+                        </div>
+
+                        </div>
+
+                        <div class="row mt-2">
+
+                          <div class="col-4">
+                          <label for="inputUsername" class="form-label"
+                            >Parcela</label
+                          >
+                          <input
+                            type="email"
+                            class="form-control"
+                            id="inputUsername"
+                            placeholder="Informe a parcela"
+                          />
+                        </div>
+
+                        <div class="col-4">
+                          <label for="inputUsername" class="form-label"
+                            >Talhão</label
+                          >
+                          <input
+                            type="email"
+                            class="form-control"
+                            id="inputUsername"
+                            placeholder="Informe o talhão"
+                          />
+                        </div>
+
+                        <div class="col-4">
+                          <label for="inputUsername" class="form-label"
+                            >Zona</label
+                          >
+                          <input
+                            type="email"
+                            class="form-control"
+                            id="inputUsername"
+                            placeholder="Informe o número de zona"
+                          />
+                        </div>
+
+                        </div>
+
+                        <div class="row mt-2">
+
+                          <div class="col-6">
+                          <label for="inputUsername" class="form-label"
+                            >Tipo da via</label
+                          >
+                          <input
+                            type="email"
+                            class="form-control"
+                            id="inputUsername"
+                            placeholder="Informe o tipo da via"
+                          />
+                        </div>
+
+                        <div class="col-6">
+                          <label for="inputUsername" class="form-label"
+                            >Denominação anterior da via</label
+                          >
+                          <input
+                            type="email"
+                            class="form-control"
+                            id="inputUsername"
+                            placeholder="Informe a denominação anterior da via"
+                          />
+                        </div>
+
+                        </div>
+
+                    </fieldset>
+
+                    </fieldset>
+                    <h3>Dimonsões</h3>
+                    <fieldset class="mb-3">
+                      <fieldset
+                        style="border: 5px dotted rgba(0, 0, 0, 0.178)"
+                        class="px-3 py-3"
+                      >
+                        <legend  style="font-size: 16px; font-weight: bold;">Dimensões</legend>
+                          <div class="row">
+                            <div class="col-3">
+                            <label for="inputUsername" class="form-label"
+                              >Frontal</label
+                            >
+                            <input
+                              type="email"
+                              class="form-control"
+                              id="inputUsername"
+                              placeholder="0.0.0,00"
+                            />
+                          </div>
+
+                          <div class="col-3">
+                            <label for="inputUsername" class="form-label"
+                              >Lateral Esquerda</label
+                            >
+                            <input
+                              type="email"
+                              class="form-control"
+                              id="inputUsername"
+                              placeholder="0.0.0,00"
+                            />
+                          </div>
+                          <div class="col-3">
+                            <label for="inputUsername" class="form-label"
+                              >Código da via</label
+                            >
+                            <input
+                              type="email"
+                              class="form-control"
+                              id="inputUsername"
+                              placeholder="0.0.0,00"
+                            />
+                          </div>
+
+                          <div class="col-3">
+                            <label for="inputUsername" class="form-label"
+                              >Código da face</label
+                            >
+                            <input
+                              type="email"
+                              class="form-control"
+                              id="inputUsername"
+                              placeholder="0.0.0,00"
+                            />
+                          </div>
+                          </div>
+
+                          <div class="row mt-2">
+                            <div class="col-4">
+                            <label for="inputUsername" class="form-label"
+                              >Posterior</label
+                            >
+                            <input
+                              type="email"
+                              class="form-control"
+                              id="inputUsername"
+                              placeholder="0.0.0,00"
+                            />
+                          </div>
+                          <div class="col-4">
+                            <label for="inputUsername" class="form-label"
+                              >Código da via</label
+                            >
+                            <input
+                              type="email"
+                              class="form-control"
+                              id="inputUsername"
+                              placeholder="0.0.0,00"
+                            />
+                          </div>
+                            <div class="col-4">
+                              <label for="inputUsername" class="form-label"
+                                >Código da face</label
+                              >
+                              <input
+                                type="email"
+                                class="form-control"
+                                id="inputUsername"
+                                placeholder="0.0.0,00"
+                              />
+                            </div>
+                          </div>
+
+                          <div class="row mt-2">
+                            <div class="col-4">
+                            <label for="inputUsername" class="form-label"
+                              >Lateral direita</label
+                            >
+                            <input
+                              type="email"
+                              class="form-control"
+                              id="inputUsername"
+                              placeholder="0.0.0,00"
+                            />
+                          </div>
+                          <div class="col-4">
+                            <label for="inputUsername" class="form-label"
+                              >Código da via</label
+                            >
+                            <input
+                              type="email"
+                              class="form-control"
+                              id="inputUsername"
+                              placeholder="0.0.0,00"
+                            />
+                          </div>
+                            <div class="col-4">
+                              <label for="inputUsername" class="form-label"
+                                >Código da face</label
+                              >
+                              <input
+                                type="email"
+                                class="form-control"
+                                id="inputUsername"
+                                placeholder="0.0.0,00"
+                              />
+                            </div>
+                          </div>
+
+                      </fieldset>
+
+                      <h4 hidden class="card-title mt-3">Documentos adicionados</h4>
+
+                              <div class="table-rep-plugin" hidden>
+                                  <div class="table-responsive mb-0" data-pattern="priority-columns">
+                                      <table id="tech-companies-1" class="table table-striped">
+                                          <thead>
+                                              <tr>
+                                                  <th data-priority="1">Tipo de documento</th>
+                                                  <th data-priority="3">Número</th>
+                                                  <th data-priority="3">Emissão</th>
+                                                  <th data-priority="3">Validade</th>
+                                                  <th data-priority="3">Ação</th>
+                                              </tr>
+                                          </thead>
+                                          <tbody>
+                                              <tr>
+                                                  <th>Bilhete de Identidade</th>
+                                                  <td>87388347829Y</td>
+                                                  <td>22/05/2024</td>
+                                                  <td>22/05/2027</td>
+                                                  <td><a href="" class="btn btn-primary">Visualizar</a></td>
+                                              </tr>
+                                              <tr>
+                                                  <th>NUIT</th>
+                                                  <td>87388347829Y</td>
+                                                  <td>22/05/2024</td>
+                                                  <td>22/05/2027</td>
+                                                  <td><a href="" class="btn btn-primary">Visualizar</a></td>
+                                              </tr>
+                                          </tbody>
+                                      </table>
+                                  </div>
+
+                              </div>
+
+                      <div class="col-12" hidden>
+                        <label for="inputSelectCountry" class="form-label"
+                          >Distrito</label
+                        >
+                        <select
+                          class="form-select"
+                          id="inputSelectCountry"
+                          aria-label="Default select example"
+                        >
+                          <option selected>India</option>
+                          <option value="1">United Kingdom</option>
+                          <option value="2">America</option>
+                          <option value="3">Dubai</option>
+                        </select>
+                      </div>
+
+                      <div hidden class="col-12">
+                        <label for="inputUsername" class="form-label"
+                          >Nome de usuário</label
+                        >
+                        <input
+                          type="email"
+                          class="form-control"
+                          id="inputUsername"
+                          placeholder="Jhon"
+                        />
+                      </div>
+                      <div hidden class="col-12">
+                        <label for="inputEmailAddress" class="form-label"
+                          >Contactos</label
+                        >
+                        <input
+                          type="email"
+                          class="form-control"
+                          id="inputEmailAddress"
+                          placeholder="example@user.com"
+                        />
+                      </div>
+                    </fieldset>
+
+                    
+                    <h3>Áreas</h3>
+                    <fieldset class="mb-3">
+
+                      
+
+                      <fieldset class="mb-3">
+                        <fieldset
+                          style="border: 5px dotted rgba(0, 0, 0, 0.178)"
+                          class="px-3 py-3"
+                        >
+                          <legend  style="font-size: 16px; font-weight: bold;">Informações sobre as áreas</legend>
+                            <div class="row">
+                              <div class="col-4">
+                              <label for="inputUsername" class="form-label"
+                                >Áreas do terreno</label
+                              >
+                              <input
+                                type="email"
+                                class="form-control"
+                                id="inputUsername"
+                                placeholder="000000,00"
+                              />
+                            </div>
+  
+                            <div class="col-4">
+                              <label for="inputUsername" class="form-label"
+                                >Área edificada</label
+                              >
+                              <input
+                                type="email"
+                                class="form-control"
+                                id="inputUsername"
+                                placeholder="000000,00"
+                              />
+                            </div>
+                            <div class="col-4">
+                              <label for="inputUsername" class="form-label"
+                                >Área que serve de logradouro</label
+                              >
+                              <input
+                                type="email"
+                                class="form-control"
+                                id="inputUsername"
+                                placeholder="000000,00"
+                              />
+                            </div>
+  
+                            </div>
+
+                              </fieldset>
+                            </fieldset>
+                          </fieldset>
+
+                          <h3>Mais Detalhes</h3>
+                    <fieldset class="mb-3">
+
+                      
+
+                        <fieldset class="mb-3">
+                          <div class="row mb-2">
+                            <div class="col-6">
+                              <fieldset
+                                style="border: 5px dotted rgba(0, 0, 0, 0.178)"
+                                class="px-3 py-3"
+                              >
+                                <legend  style="font-size: 16px; font-weight: bold;">Propriedade propria?</legend>
+                                <div class="form-check mb-2">
+                                  <input
+                                    class="form-check-input"
+                                    type="radio"
+                                    name="flexRadioDefault"
+                                    id="flexRadioDefault1"
+                                  />
+                                  <label
+                                    class="form-check-label"
+                                    for="flexRadioDefault1"
+                                  >
+                                    Sim
+                                  </label>
+                                </div>
+                                <div class="form-check">
+                                  <input
+                                    class="form-check-input"
+                                    type="radio"
+                                    name="flexRadioDefault"
+                                    id="flexRadioDefault2"
+                                  />
+                                  <label
+                                    class="form-check-label"
+                                    for="flexRadioDefault2"
+                                  >
+                                    Não
+                                  </label>
+                                </div>
+                              </fieldset>
+                            </div>
+
+                            <div class="col-6">
+                              <fieldset
+                                style="border: 5px dotted rgba(0, 0, 0, 0.178)"
+                                class="px-3 py-3"
+                              >
+                                <legend  style="font-size: 16px; font-weight: bold;">Exerce actividades comerciais?</legend>
+                                <div class="form-check mb-2">
+                                  <input
+                                    class="form-check-input"
+                                    type="radio"
+                                    name="company"
+                                    id="company1"
+                                  />
+                                  <label
+                                    class="form-check-label"
+                                    for="company1"
+                                  >
+                                    Sim
+                                  </label>
+                                </div>
+                                <div class="form-check">
+                                  <input
+                                    class="form-check-input"
+                                    type="radio"
+                                    name="company"
+                                    id="company2"
+                                  />
+                                  <label
+                                    class="form-check-label"
+                                    for="company2"
+                                  >
+                                    Não
+                                  </label>
+                                </div>
+                              </fieldset>
+                            </div>
+                          </div>
+
+
+                          <div class="card">
+                            <div class="card-body">
+
+                                <!-- Nav tabs -->
+                                <ul class="nav nav-tabs nav-tabs-custom nav-justified" role="tablist">
+                                  
+                                    <li class="nav-item">
+                                      <a class="nav-link active" data-bs-toggle="tab" href="#moreData" role="tab">
+                                          <span class="d-block d-sm-none"><i class="far fa-envelope"></i></span>
+                                          <span class="d-none d-sm-block">Mais dados</span>
+                                      </a>
+                                  </li>
+                                    <li class="nav-item" >
+                                        <a class="nav-link" data-bs-toggle="tab" href="#proprietario" role="tab">
+                                            <span class="d-block d-sm-none"><i class="fas fa-home"></i></span>
+                                            <span class="d-none d-sm-block"> Proprietário</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" data-bs-toggle="tab" href="#empresa" role="tab">
+                                            <span class="d-block d-sm-none"><i class="far fa-user"></i></span>
+                                            <span class="d-none d-sm-block">Dados da empresa</span>
+                                        </a>
+                                    </li>
+                                </ul>
+
+                                <!-- Tab panes -->
+                                <div class="tab-content p-3 text-muted">
+                                  
+                                    <div class="tab-pane active" id="moreData" role="tabpanel">
+                                        <fieldset
+                                        style="border: 5px dotted rgba(0, 0, 0, 0.178)"
+                                        class="px-3 py-3"
+                                      >
+                                        <legend  style="font-size: 16px; font-weight: bold;">Mais dados</legend>
+                                          <div class="row">
+                                            <div class="col-12">
+                                            <label for="inputUsername" class="form-label"
+                                              >Finalidade do Imóvel</label
+                                            >
+                                            <textarea name="finalidade" id="finalidade" class="form-control"></textarea>
+                                          </div>
+                
+                                          </div>
+
+                                          <div class="row mt-2">
+                                            <div class="col-12">
+                                            <label for="inputUsername" class="form-label"
+                                              >Descrição Pormenorizada do Imóvel</label
+                                            >
+                                            <textarea name="finalidade" id="finalidade" class="form-control"></textarea>
+                                          </div>
+                
+                                          </div>
+
+                                          <div class="row mt-2">
+                                            <div class="col-12">
+                                            <label for="inputUsername" class="form-label"
+                                              >Observações e Informações Completas</label
+                                            >
+                                            <textarea name="finalidade" id="finalidade" class="form-control"></textarea>
+                                          </div>
+                
+                                          </div>
+                                      </fieldset>
+                                    </div>
+                                    <div  class="tab-pane" id="proprietario" role="tabpanel">                                       
+                                          <fieldset
+                                          style="border: 5px dotted rgba(0, 0, 0, 0.178)"
+                                          class="px-3 py-3"
+                                        >
+                                          <legend  style="font-size: 16px; font-weight: bold;">Informações sobre o proprietário</legend>
+                                            <div class="row">
+                                              <div class="col-4">
+                                              <label for="inputUsername" class="form-label"
+                                                >Primeiro nome</label
+                                              >
+                                              <input
+                                                type="email"
+                                                class="form-control"
+                                                id="inputUsername"
+                                                placeholder="Informe o nome"
+                                              />
+                                            </div>
+                  
+                                            <div class="col-4">
+                                              <label for="inputUsername" class="form-label"
+                                                >Outros nomes</label
+                                              >
+                                              <input
+                                                type="email"
+                                                class="form-control"
+                                                id="inputUsername"
+                                                placeholder="Informe os outros nomes"
+                                              />
+                                            </div>
+                                            <div class="col-4">
+                                              <label for="inputUsername" class="form-label"
+                                                >Apelido</label
+                                              >
+                                              <input
+                                                type="email"
+                                                class="form-control"
+                                                id="inputUsername"
+                                                placeholder="Informe o apelido"
+                                              />
+                                            </div>
+                  
+                                            </div>
+
+                                            <div class="row mt-2">
+                                              <div class="col-6">
+                                              <label for="inputUsername" class="form-label"
+                                                >Número do BI</label
+                                              >
+                                              <input
+                                                type="email"
+                                                class="form-control"
+                                                id="inputUsername"
+                                                placeholder="Informe o número do BI"
+                                              />
+                                              </div>
+                  
+                                            <div class="col-6">
+                                              <label for="inputUsername" class="form-label"
+                                                >NUIT do proprietário</label
+                                              >
+                                              <input
+                                                type="email"
+                                                class="form-control"
+                                                id="inputUsername"
+                                                placeholder="Informe o NUIT"
+                                              />
+                                            </div>
+                                        
+                  
+                                            </div>
+
+                                            <div class="row mt-2">
+                                              <div class="col-6">
+                                              <label for="inputUsername" class="form-label"
+                                                >Tipo</label
+                                              >
+                                              <input
+                                                type="email"
+                                                class="form-control"
+                                                id="inputUsername"
+                                                placeholder="Informe o tipo de propretário"
+                                                />
+                                                </div>
+
+                                                <div class="col-6">
+                                                  <label for="inputUsername" class="form-label"
+                                                    >Denominação da via</label
+                                                  >
+                                                  <input
+                                                    type="email"
+                                                    class="form-control"
+                                                    id="inputUsername"
+                                                    placeholder="Informe a denominação da via"
+                                                    />
+                                                    </div>
+                                              </div>
+
+                                              <div class="row mt-2">
+                                                <div class="col-4">
+                                                <label for="inputUsername" class="form-label"
+                                                  >Número de polícia</label
+                                                >
+                                                <input
+                                                  type="email"
+                                                  class="form-control"
+                                                  id="inputUsername"
+                                                  placeholder="Informe o número de polícia"
+                                                  />
+                                                  </div>
+  
+                                                  <div class="col-4">
+                                                    <label for="inputUsername" class="form-label"
+                                                      >Andar</label
+                                                    >
+                                                    <input
+                                                      type="email"
+                                                      class="form-control"
+                                                      id="inputUsername"
+                                                      placeholder="Informe o andar"
+                                                      />
+                                                      </div>
+
+                                                  <div class="col-4">
+                                                    <label for="inputUsername" class="form-label"
+                                                      >Número da porta/flat</label
+                                                    >
+                                                    <input
+                                                      type="email"
+                                                      class="form-control"
+                                                      id="inputUsername"
+                                                      placeholder="Informe o número da porta/flat"
+                                                      />
+                                                      </div>
+                                                </div>
+
+                                                <div class="row mt-2">
+                                                  <div class="col-4">
+                                                  <label for="inputUsername" class="form-label"
+                                                    >Bairro</label
+                                                  >
+                                                  <input
+                                                    type="email"
+                                                    class="form-control"
+                                                    id="inputUsername"
+                                                    placeholder="Informe bairro"
+                                                    />
+                                                    </div>
+    
+                                                    <div class="col-4">
+                                                      <label for="inputUsername" class="form-label"
+                                                        >Município</label
+                                                      >
+                                                      <input
+                                                        type="email"
+                                                        class="form-control"
+                                                        id="inputUsername"
+                                                        placeholder="Informe o município"
+                                                        />
+                                                        </div>
+  
+                                                    <div class="col-4">
+                                                      <label for="inputUsername" class="form-label"
+                                                        >Caixa postal</label
+                                                      >
+                                                      <input
+                                                        type="email"
+                                                        class="form-control"
+                                                        id="inputUsername"
+                                                        placeholder="Informe a caixa postal"
+                                                        />
+                                                        </div>
+                                                  </div>
+                                        </fieldset>
+                                    </div>
+                                    <div class="tab-pane" id="empresa" role="tabpanel">
+                                        <fieldset
+                                        style="border: 5px dotted rgba(0, 0, 0, 0.178)"
+                                        class="px-3 py-3"
+                                      >
+                                        <legend  style="font-size: 16px; font-weight: bold;">Informações sobre a empresa</legend>
+                                          <div class="row">
+                                            <div class="col-6">
+                                            <label for="inputUsername" class="form-label"
+                                              >Nome da empresa</label
+                                            >
+                                            <input
+                                              type="email"
+                                              class="form-control"
+                                              id="inputUsername"
+                                              placeholder="Informe o nome da empresa"
+                                            />
+                                          </div>
+                
+                                          <div class="col-6">
+                                            <label for="inputUsername" class="form-label"
+                                              >NUIT</label
+                                            >
+                                            <input
+                                              type="email"
+                                              class="form-control"
+                                              id="inputUsername"
+                                              placeholder="Informe o NUIT"
+                                            />
+                                          </div>
+                
+                                          </div>
+                                      </fieldset>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                          </fieldset>
+                        </fieldset>
+
+
+                          </div>
+                        </div>
+                          <!-- end row -->
+                        </div>
+                        <!-- End Page-content -->
+              
+                        <footer class="footer">
+                          <div class="container-fluid">
+                            <div class="row">
+                              <div class="col-sm-6">
+                                <script>
+                                  document.write(new Date().getFullYear());
+                                </script>
+                                © Qovex.
+                              </div>
+                              <div class="col-sm-6">
+                                <div class="text-sm-end d-none d-sm-block">
+                                  Design & Develop by Themesbrand
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </footer>
+                      </div>
+                      <!-- end main content-->
+                    </div>
+                    <!-- END layout-wrapper -->
+                  </div>
+                  <!-- end container-fluid -->
+              
+                  <!-- Right Sidebar -->
+                  <div class="right-bar">
+                    <div data-simplebar class="h-100">
+                      <div class="rightbar-title px-3 py-4">
+                        <a href="javascript:void(0);" class="right-bar-toggle float-end">
+                          <i class="mdi mdi-close noti-icon"></i>
+                        </a>
+                        <h5 class="m-0">Settings</h5>
+                      </div>
+              
+                      <!-- Settings -->
+                      <hr class="mt-0" />
+                      <h6 class="text-center mb-0">Choose Layouts</h6>
+              
+                      <div class="p-4">
+                        <div class="mb-2">
+                          <img
+                            src="assets/images/layouts/layout-1.jpg"
+                            class="img-fluid img-thumbnail"
+                            alt=""
+                          />
+                        </div>
+              
+                        <div class="form-check form-switch mb-3">
+                          <input
+                            type="checkbox"
+                            class="form-check-input theme-choice"
+                            id="light-mode-switch"
+                            checked
+                          />
+                          <label class="form-check-label" for="light-mode-switch"
+                            >Light Mode</label
+                          >
+                        </div>
+              
+                        <div class="mb-2">
+                          <img
+                            src="assets/images/layouts/layout-2.jpg"
+                            class="img-fluid img-thumbnail"
+                            alt=""
+                          />
+                        </div>
+              
+                        <div class="form-check form-switch mb-3">
+                          <input
+                            type="checkbox"
+                            class="form-check-input theme-choice"
+                            id="dark-mode-switch"
+                            data-bsStyle="assets/css/bootstrap-dark.min.css"
+                            data-appStyle="assets/css/app-dark.min.css"
+                          />
+                          <label class="form-check-label" for="dark-mode-switch"
+                            >Dark Mode</label
+                          >
+                        </div>
+              
+                        <div class="mb-2">
+                          <img
+                            src="assets/images/layouts/layout-3.jpg"
+                            class="img-fluid img-thumbnail"
+                            alt=""
+                          />
+                        </div>
+                        <div class="form-check form-switch mb-5">
+                          <input
+                            type="checkbox"
+                            class="form-check-input theme-choice"
+                            id="rtl-mode-switch"
+                            data-appStyle="assets/css/app-rtl.min.css"
+                          />
+                          <label class="form-check-label" for="rtl-mode-switch"
+                            >RTL Mode</label
+                          >
+                        </div>
+                      </div>
+                    </div>
+                    <!-- end slimscroll-menu-->
+                  </div>
+                  <!-- /Right-bar -->
+              
+                  <!-- Right bar overlay-->
+                  <div class="rightbar-overlay"></div>
+              
+                  <!-- JAVASCRIPT -->
+                  <!-- JAVASCRIPT -->
+                  <script src="assets/libs/jquery/jquery.min.js"></script>
+                  <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+                  <script src="assets/libs/metismenu/metisMenu.min.js"></script>
+                  <script src="assets/libs/simplebar/simplebar.min.js"></script>
+                  <script src="assets/libs/node-waves/waves.min.js"></script>
+                  <script src="assets/libs/jquery-sparkline/jquery.sparkline.min.js"></script>
+              
+                      <!-- form wizard -->
+    <script src="assets/libs/jquery-steps/build/jquery.steps.min.js"></script>
+    <!-- form wizard init -->
+    <script src="assets/js/pages/form-wizard.init.js"></script>
+
+                  <!-- App js -->
+                  <script src="assets/js/app.js"></script>
+                </body>
+              
+                <!-- Mirrored from themesdesign.in/qovex-node/layouts/form-elements.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 11 Jun 2024 08:15:54 GMT -->
+              </html>
+              
