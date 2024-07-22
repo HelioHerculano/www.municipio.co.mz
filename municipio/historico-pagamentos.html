@@ -36,11 +36,20 @@
       rel="stylesheet"
       type="text/css"
     />
+
+    <style>
+      .active-method {
+          background-color: #ffcc00 !important;
+          border-color: #ffcc00 !important;
+          color: black !important;
+      }
+  </style>
   </head>
 
   <body data-layout="detached" data-topbar="colored">
     <!-- <body data-layout="horizontal" data-topbar="dark"> -->
 
+      
     <div class="container-fluid">
       <!-- Begin page -->
       <div id="layout-wrapper">
@@ -848,7 +857,9 @@
                                                 <td>190 999 MZN</td>
                                                 <td><span class="badge rounded-pill badge-soft-danger font-size-11">Pedente</span></td>
                                                 <td>
-                                                  <a href="#" class="btn btn-primary btn-sm"><i class="fas fa-hand-holding-usd"></i></a>
+                                                  <a href="#" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#paymentModal">
+                                                    <i class="fas fa-hand-holding-usd"></i>
+                                                </a>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -874,6 +885,39 @@
                 </div>
               </div>
             <!-- End All -->
+
+
+            <div class="modal fade" id="paymentModal" tabindex="-1" role="dialog" aria-labelledby="paymentModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                  <div class="modal-content" style="background-color: #3e8e23; color: white; border-radius: 15px;">
+                      <div class="modal-header">
+                          <h5 class="modal-title" id="paymentModalLabel">Métodos de Pagamento</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                          </button>
+                      </div>
+                      <div class="modal-body">
+                          <div class="card text-center" style="background-color: rgb(29, 71, 3); color: white;">
+                              <div class="card-header d-flex justify-content-center" style="gap: 10px;">
+                                  <button class="btn btn-primary payment-method" id="mpesa" style="flex: 1;">MPesa</button>
+                                  <button class="btn btn-primary payment-method" id="emola" style="flex: 1;">E-mola</button>
+                                  <button class="btn btn-primary payment-method" id="bim" style="flex: 1;">BIM</button>
+                              </div>
+                              <div class="card-body">
+                                  <div id="phone-number" style="display: block;">+258 xxxxxxxxxxx</div>
+                                  <div id="bank-details" style="display: none; margin-top: 20px;">
+                                      Detalhes Bancários: <br>Banco BIM,<br> Conta: 123456789
+                                  </div>
+                              </div>
+                              <div class="card-footer text-center">
+                                  <button class="btn btn-success" id="submit-button" style="display: block; background-color: #3e8e23;">Efectuar o Pagamento</button>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
 
             <div class="row" hidden>
               <div class="col-lg-6">
@@ -1023,6 +1067,33 @@
     <!-- apexcharts init -->
     <script src="assets/js/pages/apexcharts.init.js"></script>
 
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        const methods = document.querySelectorAll('.payment-method');
+
+        methods.forEach(method => {
+            method.addEventListener('click', function() {
+                methods.forEach(btn => {
+                    btn.classList.remove('active-method');
+                });
+                method.classList.add('active-method');
+
+                if (method.id === 'bim') {
+                    document.getElementById('phone-number').style.display = 'none';
+                    document.getElementById('submit-button').style.display = 'none';
+                    document.getElementById('bank-details').style.display = 'block';
+                } else {
+                    document.getElementById('phone-number').style.display = 'block';
+                    document.getElementById('submit-button').style.display = 'block';
+                    document.getElementById('bank-details').style.display = 'none';
+                }
+            });
+        });
+    </script>
+
+    
     <!-- jquery.vectormap map -->
     <script src="assets/libs/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.min.js"></script>
     <script src="assets/libs/admin-resources/jquery.vectormap/maps/jquery-jvectormap-us-merc-en.js"></script>

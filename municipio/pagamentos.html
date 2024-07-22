@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pop-up de Pagamento</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .container-custom {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 15px;
+            padding: 20px;
+            background-color: rgb(29, 71, 3);
+            color: white;
+            text-align: center;
+        }
+        .payment-methods {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .payment-method {
+            flex: 1;
+        }
+        .active-method {
+            background-color: #ffcc00;
+            border-color: #ffcc00;
+            color: black;
+        }
+        #bank-details {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="container-custom mx-auto text-center">
+            <div class="payment-methods">
+                <button class="btn btn-primary payment-method" id="mpesa">MPesa</button>
+                <button class="btn btn-primary payment-method" id="emola">E-mola</button>
+                <button class="btn btn-primary payment-method" id="bim">BIM</button>
+            </div>
+            <div id="phone-number">+258 xxxxxxxxxxx</div>
+            <div id="submit-button"><button class="btn btn-success mt-3" id="submit-button">Efectuar o Pagamento</button></div>
+            
+            <div id="bank-details" class="mt-3">
+                Detalhes Bancários: <br>Banco BIM,<br> Conta: 123456789
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        const methods = document.querySelectorAll('.payment-method');
+
+        methods.forEach(method => {
+            method.addEventListener('click', function() {
+                methods.forEach(btn => btn.classList.remove('active-method'));
+                method.classList.add('active-method');
+
+                if (method.id === 'bim') {
+                    document.getElementById('phone-number').style.display = 'none';
+                    document.getElementById('submit-button').style.display = 'none';
+                    document.getElementById('bank-details').style.display = 'block';
+                } else {
+                    document.getElementById('phone-number').style.display = 'block';
+                    document.getElementById('submit-button').style.display = 'block';
+                    document.getElementById('bank-details').style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
