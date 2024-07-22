@@ -1567,12 +1567,13 @@
                                       <input
                                         class="form-check-input"
                                         type="radio"
-                                        name="flexRadioDefault"
-                                        id="flexRadioDefault1"
+                                        name="owner"
+                                        id="owner1"
+                                        value="1"
                                       />
                                       <label
                                         class="form-check-label"
-                                        for="flexRadioDefault1"
+                                        for="owner1"
                                       >
                                         Sim
                                       </label>
@@ -1581,12 +1582,13 @@
                                       <input
                                         class="form-check-input"
                                         type="radio"
-                                        name="flexRadioDefault"
-                                        id="flexRadioDefault2"
+                                        name="owner"
+                                        id="owner2"
+                                        value="2"
                                       />
                                       <label
                                         class="form-check-label"
-                                        for="flexRadioDefault2"
+                                        for="owner2"
                                       >
                                         Não
                                       </label>
@@ -1606,6 +1608,7 @@
                                         type="radio"
                                         name="company"
                                         id="company1"
+                                        value="1"
                                       />
                                       <label
                                         class="form-check-label"
@@ -1620,6 +1623,7 @@
                                         type="radio"
                                         name="company"
                                         id="company2"
+                                        value="2"
                                       />
                                       <label
                                         class="form-check-label"
@@ -1645,13 +1649,13 @@
                                               <span class="d-none d-sm-block">Mais dados</span>
                                           </a>
                                       </li>
-                                        <li class="nav-item" >
+                                        <li class="nav-item tab_owner" hidden>
                                             <a class="nav-link" data-bs-toggle="tab" href="#proprietario" role="tab">
                                                 <span class="d-block d-sm-none"><i class="fas fa-home"></i></span>
                                                 <span class="d-none d-sm-block"> Proprietário</span>
                                             </a>
                                         </li>
-                                        <li class="nav-item">
+                                        <li class="nav-item tab_company" hidden>
                                             <a class="nav-link" data-bs-toggle="tab" href="#empresa" role="tab">
                                                 <span class="d-block d-sm-none"><i class="far fa-user"></i></span>
                                                 <span class="d-none d-sm-block">Dados da empresa</span>
@@ -2146,28 +2150,6 @@
               
                   <!-- JAVASCRIPT -->
 
-                  <script>
-
-                    document.addEventListener('DOMContentLoaded', (event) => {
-                      const radio1 = document.getElementById('owner1');
-                      const radio2 = document.getElementById('owner2');
-                    
-                      radio1.addEventListener('change', handleRadioChange);
-                      radio2.addEventListener('change', handleRadioChange);
-                    
-                      function handleRadioChange(event) {
-                        alert("jhdfklfkl")
-                        if (radio1.checked) {
-                          console.log('Sim selecionado');
-                          // Adicione o código adicional para quando "Sim" for selecionado
-                        } else if (radio2.checked) {
-                          console.log('Não selecionado');
-                          // Adicione o código adicional para quando "Não" for selecionado
-                        }
-                      }
-                    });
-                    
-                  </script>
 
                   <!-- JAVASCRIPT -->
                   <script src="assets/libs/jquery/jquery.min.js"></script>
@@ -2199,6 +2181,27 @@
                         $('.list-proprety').removeAttr('hidden')
                       }
                     }
+                  </script>
+
+                  
+                  <script>
+                    $(document).ready(function() {
+                      $('input[name=owner]').on("change",function(){
+                        if($(this).val() == 1){
+                          $('.tab_owner').removeAttr('hidden')
+                        }else{
+                          $('.tab_owner').attr('hidden',true)
+                        }
+                      })
+
+                      $('input[name=company]').on("change",function(){
+                        if($(this).val() == 1){
+                          $('.tab_company').removeAttr('hidden')
+                        }else{
+                          $('.tab_company').attr('hidden',true)
+                        }
+                      })
+                    });
                   </script>
                 </body>
               
