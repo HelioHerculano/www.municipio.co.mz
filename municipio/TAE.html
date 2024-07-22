@@ -883,7 +883,7 @@
                   class="page-title-box d-flex align-items-center justify-content-between"
                 >
                   <h4 class="page-title mb-0 font-size-18">
-                    Pagamento da Taxa Por Actividade Economica
+                    Taxa Por Actividade Economica(TAE)
                   </h4>
 
                   <div class="page-title-right">
@@ -907,7 +907,7 @@
                       class="form-horizontal form-wizard-wrapper"
                     >
                       <h3>Dados de Localização</h3>
-                      
+
                       <fieldset>
                         <div class="row">
                           <div class="col-md-6">
@@ -918,68 +918,33 @@
                                 >Distrito Municipal</label
                               >
                               <div class="col-lg-9">
-                                <select class="form-control select2">
-                                  <option>Select</option>
-                                  <optgroup label="Alaskan/Hawaiian Time Zone">
-                                    <option value="AK">Alaska</option>
-                                    <option value="HI">Hawaii</option>
-                                  </optgroup>
-                                  <optgroup label="Pacific Time Zone">
-                                    <option value="CA">California</option>
-                                    <option value="NV">Nevada</option>
-                                    <option value="OR">Oregon</option>
-                                    <option value="WA">Washington</option>
-                                  </optgroup>
-                                  <optgroup label="Mountain Time Zone">
-                                    <option value="AZ">Arizona</option>
-                                    <option value="CO">Colorado</option>
-                                    <option value="ID">Idaho</option>
-                                    <option value="MT">Montana</option>
-                                    <option value="NE">Nebraska</option>
-                                    <option value="NM">New Mexico</option>
-                                    <option value="ND">North Dakota</option>
-                                    <option value="UT">Utah</option>
-                                    <option value="WY">Wyoming</option>
-                                  </optgroup>
-                                  <optgroup label="Central Time Zone">
-                                    <option value="AL">Alabama</option>
-                                    <option value="AR">Arkansas</option>
-                                    <option value="IL">Illinois</option>
-                                    <option value="IA">Iowa</option>
-                                    <option value="KS">Kansas</option>
-                                    <option value="KY">Kentucky</option>
-                                    <option value="LA">Louisiana</option>
-                                    <option value="MN">Minnesota</option>
-                                    <option value="MS">Mississippi</option>
-                                    <option value="MO">Missouri</option>
-                                    <option value="OK">Oklahoma</option>
-                                    <option value="SD">South Dakota</option>
-                                    <option value="TX">Texas</option>
-                                    <option value="TN">Tennessee</option>
-                                    <option value="WI">Wisconsin</option>
-                                  </optgroup>
-                                  <optgroup label="Eastern Time Zone">
-                                    <option value="CT">Connecticut</option>
-                                    <option value="DE">Delaware</option>
-                                    <option value="FL">Florida</option>
-                                    <option value="GA">Georgia</option>
-                                    <option value="IN">Indiana</option>
-                                    <option value="ME">Maine</option>
-                                    <option value="MD">Maryland</option>
-                                    <option value="MA">Massachusetts</option>
-                                    <option value="MI">Michigan</option>
-                                    <option value="NH">New Hampshire</option>
-                                    <option value="NJ">New Jersey</option>
-                                    <option value="NY">New York</option>
-                                    <option value="NC">North Carolina</option>
-                                    <option value="OH">Ohio</option>
-                                    <option value="PA">Pennsylvania</option>
-                                    <option value="RI">Rhode Island</option>
-                                    <option value="SC">South Carolina</option>
-                                    <option value="VT">Vermont</option>
-                                    <option value="VA">Virginia</option>
-                                    <option value="WV">West Virginia</option>
-                                  </optgroup>
+                                <select
+                                  class="form-select"
+                                  id="inputSelectCountry"
+                                  aria-label="Default select example"
+                                >
+                                  <option selected>---Selecione aqui---</option>
+                                  <option value="1">
+                                    Distrito Municipal KaMpfumu
+                                  </option>
+                                  <option value="2">
+                                    Distrito Municipal Nlhamankulu
+                                  </option>
+                                  <option value="3">
+                                    Distrito Municipal KaMaxakeni
+                                  </option>
+                                  <option value="4">
+                                    Distrito Municipal KaMavota
+                                  </option>
+                                  <option value="5">
+                                    Distrito Municipal KaMubukwana
+                                  </option>
+                                  <option value="6">
+                                    Distrito Municipal KaTembe
+                                  </option>
+                                  <option value="7">
+                                    Distrito Municipal KaNyaka
+                                  </option>
                                 </select>
                               </div>
                             </div>
@@ -989,15 +954,21 @@
                               <label
                                 for="txtLastNameBilling"
                                 class="col-lg-3 col-form-label"
-                                >Mobile No.</label
+                                >Bairro</label
                               >
                               <div class="col-lg-9">
-                                <input
-                                  id="txtLastNameBilling"
-                                  name="txtLastNameBilling"
-                                  type="text"
-                                  class="form-control"
-                                />
+                                <select
+                                  class="form-select"
+                                  id="inputSelectCountry"
+                                  aria-label="Default select example"
+                                >
+                                  <option selected>---Selecione aqui---</option>
+                                  <option value="1">Chamissava</option>
+                                  <option value="2">Inguide</option>
+                                  <option value="3">Incassane</option>
+                                  <option value="4">Guachene</option>
+                                  <option value="5">Chali</option>
+                                </select>
                               </div>
                             </div>
                           </div>
@@ -1008,10 +979,11 @@
                               <label
                                 for="txtCompanyBilling"
                                 class="col-lg-3 col-form-label"
-                                >Landline No.</label
+                                >Parcela</label
                               >
                               <div class="col-lg-9">
                                 <input
+                                  placeholder="Informe a parcela do imóvel"
                                   id="txtCompanyBilling"
                                   name="txtCompanyBilling"
                                   type="text"
@@ -1025,7 +997,7 @@
                               <label
                                 for="txtEmailAddressBilling"
                                 class="col-lg-3 col-form-label"
-                                >Email Address</label
+                                >Quarteirão</label
                               >
                               <div class="col-lg-9">
                                 <input
@@ -1033,54 +1005,20 @@
                                   name="txtEmailAddressBilling"
                                   type="text"
                                   class="form-control"
+                                  placeholder="Informe o quarteirão do imóvel"
                                 />
                               </div>
                             </div>
                           </div>
                         </div>
-                        <div class="row">
-                          <div class="col-md-6">
-                            <div class="mb-3 row">
-                              <label
-                                for="txtAddress1Billing"
-                                class="col-lg-3 col-form-label"
-                                >Address 1</label
-                              >
-                              <div class="col-lg-9">
-                                <textarea
-                                  id="txtAddress1Billing"
-                                  name="txtAddress1Billing"
-                                  rows="4"
-                                  class="form-control"
-                                ></textarea>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-md-6">
-                            <div class="mb-3 row">
-                              <label
-                                for="txtAddress2Billing"
-                                class="col-lg-3 col-form-label"
-                                >Warehouse Address</label
-                              >
-                              <div class="col-lg-9">
-                                <textarea
-                                  id="txtAddress2Billing"
-                                  name="txtAddress2Billing"
-                                  rows="4"
-                                  class="form-control"
-                                ></textarea>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
+
                         <div class="row">
                           <div class="col-md-6">
                             <div class="mb-3 row">
                               <label
                                 for="txtCityBilling"
                                 class="col-lg-3 col-form-label"
-                                >Company Type</label
+                                >Avenida/Rua</label
                               >
                               <div class="col-lg-9">
                                 <input
@@ -1088,6 +1026,7 @@
                                   name="txtCityBilling"
                                   type="text"
                                   class="form-control"
+                                  placeholder="Informe a avenida ou rua"
                                 />
                               </div>
                             </div>
@@ -1097,7 +1036,7 @@
                               <label
                                 for="txtStateProvinceBilling"
                                 class="col-lg-3 col-form-label"
-                                >Live Market A/C</label
+                                >Número de Polícia</label
                               >
                               <div class="col-lg-9">
                                 <input
@@ -1105,6 +1044,7 @@
                                   name="txtStateProvinceBilling"
                                   type="text"
                                   class="form-control"
+                                  placeholder="Informe o número de polícia"
                                 />
                               </div>
                             </div>
@@ -1112,35 +1052,58 @@
                         </div>
 
                         <div class="row">
-                          <div class="col-md-6">
+                          <div class="col-md-4">
                             <div class="mb-3 row">
                               <label
                                 for="txtTelephoneBilling"
                                 class="col-lg-3 col-form-label"
-                                >Product Category</label
                               >
+                                Andar
+                              </label>
                               <div class="col-lg-9">
                                 <input
                                   id="txtTelephoneBilling"
                                   name="txtTelephoneBilling"
                                   type="text"
                                   class="form-control"
+                                  placeholder="Informe o número do andar"
                                 />
                               </div>
                             </div>
                           </div>
-                          <div class="col-md-6">
+                          <div class="col-md-4">
                             <div class="mb-3 row">
                               <label
                                 for="txtFaxBilling"
                                 class="col-lg-3 col-form-label"
-                                >Product Sub Category</label
                               >
+                                Número da Porta
+                              </label>
                               <div class="col-lg-9">
                                 <input
                                   id="txtFaxBilling"
                                   name="txtFaxBilling"
                                   type="text"
+                                  class="form-control"
+                                  placeholder="Informe o número da porta"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-4">
+                            <div class="mb-3 row">
+                              <label
+                                for="txtThirdColumn"
+                                class="col-lg-3 col-form-label"
+                              >
+                                Talhão
+                              </label>
+                              <div class="col-lg-9">
+                                <input
+                                  id="txtThirdColumn"
+                                  name="txtThirdColumn"
+                                  type="text"
+                                  placeholder="Informe o número do talhão"
                                   class="form-control"
                                 />
                               </div>
@@ -1148,15 +1111,30 @@
                           </div>
                         </div>
                       </fieldset>
-                      <h3>Company Document</h3>
+                      <h3>Actividade Comercial</h3>
                       <fieldset>
                         <div class="row">
+                          <div class="mb-3 row">
+                            <label
+                              for="example-text-input"
+                              class="col-md-2 col-form-label"
+                              >Nome da Empresa/ Designação Comercial</label
+                            >
+                            <div class="col-md-10">
+                              <input
+                                class="form-control"
+                                type="text"
+                                placeholder="Informe o nome da empresa"
+                                id="example-text-input"
+                              />
+                            </div>
+                          </div>
                           <div class="col-md-6">
                             <div class="mb-3 row">
                               <label
                                 for="txtFirstNameShipping"
                                 class="col-lg-3 col-form-label"
-                                >PAN Card</label
+                                >Número de Licença</label
                               >
                               <div class="col-lg-9">
                                 <input
@@ -1164,6 +1142,7 @@
                                   name="txtFirstNameShipping"
                                   type="text"
                                   class="form-control"
+                                  placeholder="Informe o número de licença da empresa"
                                 />
                               </div>
                             </div>
@@ -1173,7 +1152,7 @@
                               <label
                                 for="txtLastNameShipping"
                                 class="col-lg-3 col-form-label"
-                                >VAT/TIN No.</label
+                                >NUIT</label
                               >
                               <div class="col-lg-9">
                                 <input
@@ -1181,200 +1160,326 @@
                                   name="txtLastNameShipping"
                                   type="text"
                                   class="form-control"
-                                />
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="row">
-                          <div class="col-md-6">
-                            <div class="mb-3 row">
-                              <label
-                                for="txtCompanyShipping"
-                                class="col-lg-3 col-form-label"
-                                >CST No.</label
-                              >
-                              <div class="col-lg-9">
-                                <input
-                                  id="txtCompanyShipping"
-                                  name="txtCompanyShipping"
-                                  type="text"
-                                  class="form-control"
-                                />
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-md-6">
-                            <div class="mb-3 row">
-                              <label
-                                for="txtEmailAddressShipping"
-                                class="col-lg-3 col-form-label"
-                                >Service Tax No.</label
-                              >
-                              <div class="col-lg-9">
-                                <input
-                                  id="txtEmailAddressShipping"
-                                  name="txtEmailAddressShipping"
-                                  type="text"
-                                  class="form-control"
-                                />
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="row">
-                          <div class="col-md-6">
-                            <div class="mb-3 row">
-                              <label
-                                for="txtCityShipping"
-                                class="col-lg-3 col-form-label"
-                                >Company UIN</label
-                              >
-                              <div class="col-lg-9">
-                                <input
-                                  id="txtCityShipping"
-                                  name="txtCityShipping"
-                                  type="text"
-                                  class="form-control"
-                                />
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-md-6">
-                            <div class="mb-3 row">
-                              <label
-                                for="txtStateProvinceShipping"
-                                class="col-lg-3 col-form-label"
-                                >Declaration</label
-                              >
-                              <div class="col-lg-9">
-                                <input
-                                  id="txtStateProvinceShipping"
-                                  name="txtStateProvinceShipping"
-                                  type="text"
-                                  class="form-control"
+                                  placeholder="Informe o número de identificação tributária"
                                 />
                               </div>
                             </div>
                           </div>
                         </div>
                       </fieldset>
-                      <h3>Bank Details</h3>
+                      <h3>Proprietário(a)</h3>
                       <fieldset>
                         <div class="row">
-                          <div class="col-md-6">
-                            <div class="mb-3 row">
-                              <label
-                                for="txtNameCard"
-                                class="col-lg-3 col-form-label"
-                                >Name on Card</label
-                              >
-                              <div class="col-lg-9">
-                                <input
-                                  id="txtNameCard"
-                                  name="txtNameCard"
-                                  type="text"
-                                  class="form-control"
-                                />
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-md-6">
-                            <div class="mb-3 row">
-                              <label
-                                for="ddlCreditCardType"
-                                class="col-lg-3 col-form-label"
-                                >Credit Card Type</label
-                              >
-                              <div class="col-lg-9">
-                                <select
-                                  id="ddlCreditCardType"
-                                  name="ddlCreditCardType"
-                                  class="form-select"
-                                >
-                                  <option value="">--Please Select--</option>
-                                  <option value="AE">American Express</option>
-                                  <option value="VI">Visa</option>
-                                  <option value="MC">MasterCard</option>
-                                  <option value="DI">Discover</option>
-                                </select>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="row">
-                          <div class="col-md-6">
-                            <div class="mb-3 row">
-                              <label
-                                for="txtCreditCardNumber"
-                                class="col-lg-3 col-form-label"
-                                >Credit Card Number</label
-                              >
-                              <div class="col-lg-9">
-                                <input
-                                  id="txtCreditCardNumber"
-                                  name="txtCreditCardNumber"
-                                  type="text"
-                                  class="form-control"
-                                />
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-md-6">
-                            <div class="mb-3 row">
-                              <label
-                                for="txtCardVerificationNumber"
-                                class="col-lg-3 col-form-label"
-                                >Card Verification Number</label
-                              >
-                              <div class="col-lg-9">
-                                <input
-                                  id="txtCardVerificationNumber"
-                                  name="txtCardVerificationNumber"
-                                  type="text"
-                                  class="form-control"
-                                />
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="row">
-                          <div class="col-md-6">
-                            <div class="mb-3 row">
-                              <label
-                                for="txtExpirationDate"
-                                class="col-lg-3 col-form-label"
-                                >Expiration Date</label
-                              >
-                              <div class="col-lg-9">
-                                <input
-                                  id="txtExpirationDate"
-                                  name="txtExpirationDate"
-                                  type="text"
-                                  class="form-control"
-                                />
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </fieldset>
-                      <h3>Confirm Detail</h3>
-                      <fieldset>
-                        <div class="p-3">
-                          <div class="form-check">
-                            <input
-                              type="checkbox"
-                              class="form-check-input"
-                              id="flexCheckDefault1"
-                            />
+                          <div class="mb-3 row">
                             <label
-                              class="form-check-label"
-                              for="flexCheckDefault1"
-                              >I agree with the Terms and Conditions.</label
+                              for="example-text-input"
+                              class="col-md-2 col-form-label"
+                              >Nome Completo do(a) Proprietário(a)</label
                             >
+                            <div class="col-md-10">
+                              <input
+                                class="form-control"
+                                type="text"
+                                placeholder="Informe o seu nome Completo"
+                                id="example-text-input"
+                              />
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="mb-3 row">
+                              <label
+                                for="txtFirstNameShipping"
+                                class="col-lg-3 col-form-label"
+                                >Bilhete de Identidade</label
+                              >
+                              <div class="col-lg-9">
+                                <input
+                                  id="txtFirstNameShipping"
+                                  name="txtFirstNameShipping"
+                                  type="text"
+                                  class="form-control"
+                                  placeholder="Informe o bilhete de identidade"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="mb-3 row">
+                              <label
+                                for="txtLastNameShipping"
+                                class="col-lg-3 col-form-label"
+                                >NUIT</label
+                              >
+                              <div class="col-lg-9">
+                                <input
+                                  id="txtLastNameShipping"
+                                  name="txtLastNameShipping"
+                                  type="text"
+                                  class="form-control"
+                                  placeholder="Informe o número de identificação tributária"
+                                />
+                              </div>
+                            </div>
                           </div>
                         </div>
+                      </fieldset>
+                      <h3>Imobiliária e Actividade</h3>
+                      <fieldset>
+                        <div class="row">
+                          <h3 class="text-center my-custom-title m-2">
+                            Dados da Unidade Imobiliária
+                          </h3>
+                          <div class="mb-3 row">
+                            <label
+                              for="example-text-input"
+                              class="col-md-2 col-form-label"
+                              >Aréa do imóvel</label
+                            >
+                            <div class="col-md-10">
+                              <input
+                                class="form-control"
+                                type="text"
+                                placeholder="Informe a aréa do imóvel"
+                                id="example-text-input"
+                              />
+                            </div>
+                          </div>
+
+                          <h3 class="text-center my-custom-title mt-2">
+                            Dados do Tipo de Actividade
+                          </h3>
+
+                          <div class="col-md-6">
+                            <div class="form-check">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                id="industrial"
+                                name="activities"
+                                value="Industrial"
+                              />
+                              <label class="form-check-label" for="industrial">
+                                Industrial
+                              </label>
+                            </div>
+                            <div class="form-check">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                id="comercial"
+                                name="activities"
+                                value="Comercial"
+                              />
+                              <label class="form-check-label" for="comercial">
+                                Comercial
+                              </label>
+                            </div>
+                            <div class="form-check">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                id="servicos"
+                                name="activities"
+                                value="Prestação de Serviços"
+                              />
+                              <label class="form-check-label" for="servicos">
+                                Prestação de Serviços
+                              </label>
+                            </div>
+                            <div class="form-check">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                id="servicos-financeiros"
+                                name="activities"
+                                value="Prestação de Serviços Financeiros"
+                              />
+                              <label
+                                class="form-check-label"
+                                for="servicos-financeiros"
+                              >
+                                Prestação de Serviços Financeiros
+                              </label>
+                            </div>
+                            <div class="form-check">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                id="hotelaria"
+                                name="activities"
+                                value="Hotelaria"
+                              />
+                              <label class="form-check-label" for="hotelaria">
+                                Hotelaria
+                              </label>
+                            </div>
+                            <div class="form-check">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                id="construcao"
+                                name="activities"
+                                value="Construção"
+                              />
+                              <label class="form-check-label" for="construcao">
+                                Construção
+                              </label>
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="form-check">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                id="agricola"
+                                name="activities"
+                                value="Agrícola e Pecuária"
+                              />
+                              <label class="form-check-label" for="agricola">
+                                Agrícola e Pecuária
+                              </label>
+                            </div>
+                            <div class="form-check">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                id="pesqueira"
+                                name="activities"
+                                value="Pesqueira"
+                              />
+                              <label class="form-check-label" for="pesqueira">
+                                Pesqueira
+                              </label>
+                            </div>
+                            <div class="form-check">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                id="producao"
+                                name="activities"
+                                value="Produção e Distribuição de eletricidade e água"
+                              />
+                              <label class="form-check-label" for="producao">
+                                Produção e Distribuição de eletricidade e água
+                              </label>
+                            </div>
+                            <div class="form-check">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                id="transporte"
+                                name="activities"
+                                value="Transporte e Comunicação"
+                              />
+                              <label class="form-check-label" for="transporte">
+                                Transporte e Comunicação
+                              </label>
+                            </div>
+                            <div class="form-check">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                id="restauracao"
+                                name="activities"
+                                value="Restauração"
+                              />
+                              <label class="form-check-label" for="restauracao">
+                                Restauração
+                              </label>
+                            </div>
+                            <div class="form-check">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                id="outras"
+                                name="activities"
+                                value="Outras actividades"
+                              />
+                              <label class="form-check-label" for="outras">
+                                Outras actividades
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                      </fieldset>
+
+                      <h3>Observações</h3>
+                      <fieldset>
+                        <div class="mb-3">
+                          <label class="form-label"
+                            >Observações e informações complementares</label
+                          >
+                          <div>
+                            <textarea class="form-control" rows="5"></textarea>
+                          </div>
+                        </div>
+                      </fieldset>
+                      <h3>Arrendamento</h3>
+                      <fieldset>
+                        <legend>Em caso de Arrendamento, preecha as seguintes informações</legend>
+                        <form
+                          action="/upload"
+                          method="post"
+                          enctype="multipart/form-data"
+                        >
+                          <div class="mb-3">
+                            <label for="fileInput" class="form-label"
+                              >Introduza o Certidao de Registo Predial</label
+                            >
+                            <input
+                              class="form-control"
+                              type="file"
+                              id="fileInput"
+                              name="fileInput"
+                            />
+                            <div class="mb-3">
+                            <label for="fileInput" class="form-label"
+                              >Introduza o SISA</label
+                            >
+                            <input
+                              class="form-control"
+                              type="file"
+                              id="fileInput"
+                              name="fileInput"
+                            />
+                            <div class="mb-3">
+                            <label for="fileInput" class="form-label"
+                              >Introduza o Alvará</label
+                            >
+                            <input
+                              class="form-control"
+                              type="file"
+                              id="fileInput"
+                              name="fileInput"
+                            />
+                          </div>
+                          <div class="form-check">
+                            <label class="form-check-label" for="comercial">
+                                imóvel próprio
+                              </label>  
+                            <input
+                                class="form-check-input"
+                                type="checkbox"
+                                id="proprio"
+                                name="proprio"
+                                value="proprio"
+                              />
+                              
+                          </div>
+                          <div class="form-check">
+                            <label class="form-check-label" for="comercial">
+                                imóvel arrendado
+                              </label>  
+                            <input
+                                class="form-check-input"
+                                type="checkbox"
+                                id="arrendado"
+                                name="arrendado"
+                                value="arrendado"
+                              />
+                              
+                          </div>
+                        </form>
                       </fieldset>
                     </form>
                   </div>
