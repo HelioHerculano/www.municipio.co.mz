@@ -1,4 +1,12 @@
 @import url(https://fonts.cdnfonts.com/css/sf-ui-text-2);
+
+/* Harrison CSS */
+.my-custom-title {
+  color: #333; /* Cor do texto */
+  font-size: 24px; /* Tamanho da fonte */
+  font-weight: bold; /* Peso da fonte */
+  margin-bottom: 25px; /* Espaçamento inferior */
+}
 #page-topbar {
   position: fixed;
   top: 0;
