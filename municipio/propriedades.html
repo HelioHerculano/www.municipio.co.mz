@@ -546,7 +546,6 @@
 
             <!--- Sidemenu -->
             <div id="sidebar-menu">
-              <!-- Left Menu Start -->
               <ul class="metismenu list-unstyled" id="side-menu">
                 <li class="menu-title">Menu</li>
 
@@ -557,11 +556,10 @@
                     <span>Dashboard</span>
                   </a>
                 </li>
-
                 <li>
                   <a href="javascript: void(0);" class="has-arrow waves-effect">
                     <i class="mdi mdi-account-cash"></i>
-                    <span>Impostos</span>
+                    <span>Impostos & Taxas</span>
                   </a>
                   <ul class="sub-menu" aria-expanded="true">
                     <li>
@@ -569,10 +567,16 @@
                         >Predial Autárquico</a
                       >
                       <ul class="sub-menu" aria-expanded="true">
-                        <li>
-                          <a href="">
+                        <li hidden>
+                          <a href="./resquest-ipra.html">
                             <i class="mdi mdi-coin-outline"></i>
-                            <span>Pagar</span>
+                            <span>Registar Propriedade</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="./propriedades.html">
+                            <i class="fas fa-home"></i>
+                            <span>Propriedades</span>
                           </a>
                         </li>
                         <li>
@@ -583,7 +587,7 @@
                         </li>
                       </ul>
                     </li>
-                    <li>
+                    <li hidden>
                       <a href="javascript: void(0);" class="has-arrow"
                         >Autárquico de Veículos</a
                       >
@@ -602,7 +606,7 @@
                         </li>
                       </ul>
                     </li>
-                    <li>
+                    <li hidden>
                       <a href="javascript: void(0);" class="has-arrow"
                         >Pessoal Autárquico</a
                       >
@@ -621,7 +625,7 @@
                         </li>
                       </ul>
                     </li>
-                    <li>
+                    <li hidden>
                       <a href="javascript: void(0);" class="has-arrow"
                         >Autárquico da Sisa</a
                       >
@@ -642,13 +646,13 @@
                     </li>
                     <li>
                       <a href="javascript: void(0);" class="has-arrow"
-                        >Taxa Por Actividade Económica</a
+                        >Taxa Por Actividade Económica (TAE)</a
                       >
                       <ul class="sub-menu" aria-expanded="true">
                         <li>
-                          <a href="./predial.html">
+                          <a href="./TAE.html">
                             <i class="mdi mdi-coin-outline"></i>
-                            <span>Pagar</span>
+                            <span>Requisitar</span>
                           </a>
                         </li>
                         <li>
@@ -788,12 +792,10 @@
               <div class="col-12">
                 <div
                   class="page-title-box d-flex align-items-center justify-content-between">
-                  <h4 class="page-title mb-0 font-size-18">Propriedades</h4>
+                  <h4 class="page-title mb-0 font-size-18">Gestão de Propriedades</h4>
                   <div class="page-title-right">
                     <ol class="breadcrumb m-0">
-                      <li class="breadcrumb-item active">
-                        Estatisticas do utente
-                      </li>
+                      <a style="background-color: white; color:#388A1C" href="./resquest-ipra.html" class="btn btn-primary">Registar propriedades</a>
                     </ol>
                   </div>
                 </div>
@@ -811,7 +813,7 @@
                         <div class="col-lg-12">
                             <div class="card">
                                 <div class="card-body">
-                                    <h4 class="card-title">Lista de Propriedades</h4>
+                                    <h4 class="card-title">Minhas Propriedades</h4>
                                     <div class="table-responsive table-striped">
                                       <table class="table mb-0">
                                         <thead>
@@ -820,8 +822,10 @@
                                                 <th>Patrimônio</th>
                                                 <th>Localização</th>
                                                 <th>Tipo de Propriedade</th>
-                                                <th>Aprovado</th>
-                                                <th>Ações</th>
+                                                <th>Pagamentos pendentes</th>
+                                                <th>Vistoria</th>
+                                                <th>Estado</th>
+                                                <th style="width: 150px;">Ações</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -830,11 +834,13 @@
                                                 <td>Particular</td>
                                                 <td>25 de Setembro</td>
                                                 <td>HN Center</td>
-                                                <td><span class="badge rounded-pill badge-soft-success font-size-11">Sim</span></td>
+                                                <td>0</td>
+                                                <td><span class="badge rounded-pill badge-soft-success font-size-11">Feita</span></td>
+                                                <td><span class="badge rounded-pill badge-soft-success font-size-11">Aprovado</span></td>
                                                 <td>
-                                                  <a href="/municipio/detalhes-contribuente.html" class="btn btn-info btn-sm"><i class="mdi mdi-eye"></i></a>
+                                                  <a href="./detalhes-contribuente.html" class="btn btn-info btn-sm"><i class="mdi mdi-eye"></i></a>
                                                   <a href="#" class="btn btn-primary btn-sm"><i class="fas fa-edit"></i></a>
-                                                  <a href="/municipio/historico-pagamentos.html" class="btn btn-success btn-sm"><i class="fas fa-hand-holding-usd"></i></a>
+                                                  <a href="./historico-pagamentos.html" class="btn btn-success btn-sm"><i class="fas fa-hand-holding-usd"></i></a>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -842,11 +848,13 @@
                                                 <td>Particular</td>
                                                 <td>Av das FPLM</td>
                                                 <td>Oficina</td>
-                                                <td><span class="badge rounded-pill badge-soft-success font-size-11">Sim</span></td>
+                                                <td>0</td>
+                                                <td><span class="badge rounded-pill badge-soft-danger font-size-11">----</span></td>
+                                                <td><span class="badge rounded-pill badge-soft-success font-size-11">Aprovado</span></td>
                                                 <td>
-                                                  <a href="/municipio/detalhes-contribuente.html" class="btn btn-info btn-sm"><i class="mdi mdi-eye"></i></a>
+                                                  <a href="./detalhes-contribuente.html" class="btn btn-info btn-sm"><i class="mdi mdi-eye"></i></a>
                                                   <a href="#" class="btn btn-primary btn-sm"><i class="fas fa-edit"></i></a>
-                                                  <a href="/municipio/historico-pagamentos.html" class="btn btn-success btn-sm"><i class="fas fa-hand-holding-usd"></i></a>
+                                                  <a href="./historico-pagamentos.html" class="btn btn-success btn-sm"><i class="fas fa-hand-holding-usd"></i></a>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -854,7 +862,9 @@
                                                 <td>Religioso</td>
                                                 <td>Magoanine CMC</td>
                                                 <td>Igreja Assembleia</td>
-                                                <td><span class="badge rounded-pill badge-soft-danger font-size-11">Não</span></td>
+                                                <td>0</td>
+                                                <td><span class="badge rounded-pill badge-soft-warning font-size-11">Aguardando</span></td>
+                                                <td><span class="badge rounded-pill badge-soft-warning font-size-11">Pendente</span></td>
                                                 <td>
                                                   <a href="#" class="btn btn-info btn-sm"><i class="mdi mdi-eye"></i></a>
                                                   <a href="#" class="btn btn-primary btn-sm"><i class="fas fa-edit"></i></a>
@@ -866,7 +876,10 @@
                                               <td>Particular</td>
                                               <td>25 de Junho</td>
                                               <td>Centro Comercial</td>
-                                              <td><span class="badge rounded-pill badge-soft-danger font-size-11">Não</span></td>
+                                              <td>0</td>
+                                              <td><span class="badge rounded-pill badge-soft-success font-size-11">Feita</span></td>
+
+                                              <td><span class="badge rounded-pill badge-soft-danger font-size-11">Reprovado</span></td>
                                               <td>
                                                 <a href="#" class="btn btn-info btn-sm"><i class="mdi mdi-eye"></i></a>
                                                 <a href="#" class="btn btn-primary btn-sm"><i class="fas fa-edit"></i></a>
