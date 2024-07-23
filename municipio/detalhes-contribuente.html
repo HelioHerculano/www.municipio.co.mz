@@ -797,7 +797,7 @@
 
                   <div class="page-title-right">
                     <ol class="breadcrumb m-0">
-                      <li class="breadcrumb-item active">
+                      <li class="breadcrumb-item active" hidden>
                         Estatisticas do utente
                       </li>
                     </ol>
@@ -806,27 +806,6 @@
               </div>
             </div>
 
-            <!-- Nav tabs -->
-
-
-            <div class="card">
-              <div class="card-body">
-                <ul class="nav nav-pills nav-justified" role="tablist">
-                    <li class="nav-item waves-effect waves-light">
-                        <a class="nav-link active" data-bs-toggle="tab" href="#impostos" role="tab">
-                            <span class="d-block d-sm-none"><i class="fas fa-home"></i></span>
-                            <span class="d-none d-sm-block"><i class="fas fa-align-justify"></i> Dados Gerais e Dimensões</span>
-                        </a>
-                    </li>
-                    <li class="nav-item waves-effect waves-light">
-                        <a class="nav-link" data-bs-toggle="tab" href="#licencas" role="tab">
-                            <span class="d-block d-sm-none"><i class="far fa-user"></i></span>
-                            <span class="d-none d-sm-block"><i class="fas fa-plus"></i> Mais Detalhes</span>
-                        </a>
-                    </li>
-                </ul>
-              </div>  
-          </div> 
 
 
           <div class="tab-content p-3 text-muted">
@@ -836,91 +815,353 @@
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="card-body">
-                          <div class="table-responsive">
-                            <table class="table">
-                                <thead>
-                                  <tr>
-                                    <td colspan="4" class="text-center"><strong><h5>Dados Gerais</h5></strong></td>
-                                  </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td><strong>Ocupacao</strong></td>
-                                        <td>Ruinas</td>
-                                        <td style="border-left: 1px solid #dee2e6;"><Strong>Patrimonio</Strong></td>
-                                        <td>Religioso</td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>Tipo</strong></td>
-                                        <td>AAAAAAA</td>
-                                        <td style="border-left: 1px solid #dee2e6;"><strong>Denominação da Via</strong></td>
-                                        <td>AH123</td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>Codigo da Via</strong></td>
-                                        <td>BBBBBBBB</td>
-                                        <td style="border-left: 1px solid #dee2e6;"><strong>Face da Quadra</strong></td>
-                                        <td>BG MAPUTO</td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>Numero de Policia</strong></td>
-                                        <td>112</td>
-                                        <td style="border-left: 1px solid #dee2e6;"><strong>Andar</strong></td>
-                                        <td>12</td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>Numero da Porta / Flat</strong></td>
-                                        <td>12</td>
-                                        <td style="border-left: 1px solid #dee2e6;"><strong>Bairro</strong></td>
-                                        <td>25 de Junho</td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>Quarteirao</strong></td>
-                                        <td>15</td>
-                                        <td style="border-left: 1px solid #dee2e6;"><strong>Parcela</strong></td>
-                                        <td>40x40</td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>Talhao</strong></td>
-                                        <td>15</td>
-                                        <td style="border-left: 1px solid #dee2e6;"><strong>Zona</strong></td>
-                                        <td>25 de Setembro</td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>Tipo da Via</strong></td>
-                                        <td>Alcatroada</td>
-                                        <td style="border-left: 1px solid #dee2e6;"><strong>Denominação Anterior da Via</strong></td>
-                                        <td>Choupal</td>
-                                    </tr>
-                                    <tr>
-                                      <td colspan="4" class="text-center"><strong><h5>Dimensões</h5></strong></td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>Frontal</strong></td>
-                                        <td>30m</td>
-                                        <td style="border-left: 1px solid #dee2e6;"><strong>Lateral Esquerda</strong></td>
-                                        <td>30m</td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>Codigo da Via</strong></td>
-                                        <td>HH234</td>
-                                        <td style="border-left: 1px solid #dee2e6;"><strong>Codigo da Face</strong></td>
-                                        <td>JKL 250</td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>Posterior</strong></td>
-                                        <td>HH234</td>
-                                        <td style="border-left: 1px solid #dee2e6;"><strong>Codigo da Via</strong></td>
-                                        <td>JKL 250</td>
-                                    </tr>                                  
-                                    <tr>
-                                        <td><strong>Codigo da Face</strong></td>
-                                        <td>HH234</td>
-                                        <td style="border-left: 1px solid #dee2e6;"><strong>Lateral Direita</strong></td>
-                                        <td>JKL 250</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                          <div class="row">
+                            <div class="col-12 d-flex justify-content-end">
+                              <div class="btn-group" role="group" aria-label="Basic example">
+                                <button type="button" class="btn btn-danger">Alocar para vistoria</button>
+                                <button type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="btn btn-primary">Avaliar</button>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-8">                              
+                              <fieldset
+                                style="border: 5px dotted rgba(0, 0, 0, 0.178)"
+                                class="px-3 py-3 my-4"
+                              >
+                                <legend style="font-size: 18px; font-weight: bold;">Dados Gerais</legend>
+  
+                                <div class="row">
+                                  <div class="col"><strong>Idade do Imóvel:</strong> Menos de 5 anos</div>
+                                  <div class="col"><strong>Ocupação:</strong> Ruínas</div>
+                                </div>
+                                
+                                <div class="row mt-4">
+                                  <div class="col"><strong>Finalidade:</strong> Terreno Vago</div>
+                                  <div class="col"><strong>Patrimônio:</strong> Publico</div>
+                                </div>
+
+                                <div class="row mt-4">
+                                  <div class="col"><strong>Propriédade propria?:</strong> Não</div>
+                                  <div class="col"><strong>Exerce actividade comercial?:</strong> Sim</div>
+                                </div>
+  
+                              </fieldset>
+                            </div>
+                            <div class="col">
+                              <fieldset
+                                style="border: 5px dotted rgba(0, 0, 0, 0.178)"
+                                class="px-3 py-3 my-4"
+                              >
+  
+                                <div class="row">
+                                  <div class="col text-center"><strong>Vistoria</strong> <br> <span class="badge rounded-pill badge-soft-warning font-size-11">Aguardando</span></div>
+                                  <div class="col text-center"><strong>Estado</strong> <br> <span class="badge rounded-pill badge-soft-warning font-size-11">Pendente</span></div>
+                                </div>
+  
+                              </fieldset>
+                            </div>
+                          </div>
+
+                              <!-- Nav tabs -->
+                              <ul class="nav nav-tabs nav-tabs-custom nav-justified" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" data-bs-toggle="tab" href="#location" role="tab">
+                                        <span class="d-block d-sm-none"><i class="fas fa-home"></i></span>
+                                        <span class="d-none d-sm-block">Localização</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-bs-toggle="tab" href="#profile1" role="tab">
+                                        <span class="d-block d-sm-none"><i class="far fa-user"></i></span>
+                                        <span class="d-none d-sm-block">Dimensões & Áreas</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-bs-toggle="tab" href="#owner-data" role="tab">
+                                        <span class="d-block d-sm-none"><i class="far fa-envelope"></i></span>
+                                        <span class="d-none d-sm-block">Propriétario</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-bs-toggle="tab" href="#company-data" role="tab">
+                                        <span class="d-block d-sm-none"><i class="fas fa-cog"></i></span>
+                                        <span class="d-none d-sm-block">Dados da empresa</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link" data-bs-toggle="tab" href="#more-data" role="tab">
+                                      <span class="d-block d-sm-none"><i class="fas fa-cog"></i></span>
+                                      <span class="d-none d-sm-block">Mais Detalhes</span>
+                                  </a>
+                              </li>
+                            </ul>
+
+                            <!-- Tab panes -->
+                            <div class="tab-content p-3 text-muted">
+                                <div class="tab-pane active" id="location" role="tabpanel">
+                                  <fieldset
+                                  style="border: 5px dotted rgba(0, 0, 0, 0.178)"
+                                  class="px-3 py-3 mt-4"
+                                >
+                                  <legend style="font-size: 18px; font-weight: bold;">Localização do Imóvel</legend>
+        
+                                  <div class="row mt-4">
+                                      <div class="col-4"><strong>Tipo:</strong> T3</div>
+                                      <div class="col-8"><strong>Denominação da via:</strong> Felipe Samuel Magaia</div>
+                                    </div>
+                                    <div class="row mt-4">
+        
+                                      <div class="col-4"><strong>Código da via:</strong> KJ5671</div>
+        
+                                    <div class="col-4"><strong>Face da quadra:</strong> TY5373</div>
+        
+                                    <div class="col-4"><strong>Número de polícia:</strong> 67382
+                                    </div>
+        
+                                    </div>
+        
+                                    <div class="row mt-4">
+        
+                                      <div class="col-4"><strong>Andar:</strong> 4
+                                    </div>
+        
+                                    <div class="col-4">
+                                      <strong>Número da porta/Flat:</strong> 7
+                                    </div>
+        
+                                    <div class="col-4">
+                                      <strong>Número de polícia:</strong> 5
+                                    </div>
+        
+                                    </div>
+        
+                                    <div class="row mt-4">
+        
+                                      <div class="col-4">
+                                        <strong>Bairo:</strong> KaMavhota
+                                    </div>
+        
+                                    <div class="col-4">
+                                      <strong>Quarteirão:</strong> Q90
+                                    </div>
+                                    
+                                    <div class="col-4">
+                                      <strong>Parcela:</strong> 06
+                                    </div>
+
+                                    </div>
+        
+                                    <div class="row mt-4">
+        
+                                    <div class="col-4">
+                                      <strong>Talhão:</strong> 40x80
+                                    </div>
+        
+                                    <div class="col-4">
+                                      <strong>Zona:</strong> Zona
+                                    </div>
+
+                                    <div class="col-4">
+                                      <strong>Tipo da via:</strong> Via urbana
+                                  </div>
+        
+                                    </div>
+        
+                                    <div class="row mt-4">
+        
+        
+                                    <div class="col-6">
+                                      <strong>Denominação anterior da via:</strong> EN4
+                                    </div>
+        
+                                    </div>
+        
+                                </fieldset>
+                                </div>
+                                <div class="tab-pane" id="profile1" role="tabpanel">
+                                    <p class="mb-0">
+                                      <fieldset
+                                      style="border: 5px dotted rgba(0, 0, 0, 0.178)"
+                                      class="px-3 py-3 mt-4"
+                                    >
+                                      <legend style="font-size: 18px; font-weight: bold;">Dimensões</legend>
+
+                                        <div class="row mt-4">
+            
+                                          <div class="col-4"><strong>Frontal:</strong> 200 m</div>
+            
+                                        <div class="col-4"><strong>Lateral Esquerda:</strong> 200 m</div>
+            
+                                        <div class="col-4"><strong>Código da via:</strong> HJ245
+                                        </div>
+            
+                                        </div>
+            
+                                        <div class="row mt-4">
+            
+                                          <div class="col-4"><strong>Posterior:</strong> 200 m
+                                        </div>
+            
+                                        <div class="col-4">
+                                          <strong>Código da via:</strong> UK10
+                                        </div>
+            
+                                        <div class="col-4">
+                                          <strong>Código da face:</strong> OP12
+                                        </div>
+            
+                                        </div>
+            
+                                        <div class="row mt-4">
+            
+                                          <div class="col-4">
+                                            <strong>Lateral direita:</strong> 200 m
+                                        </div>
+            
+                                        <div class="col-4">
+                                          <strong>Código da via:</strong> QUT637
+                                        </div>
+                                        
+                                        <div class="col-4">
+                                          <strong>Código da face:</strong> UPR3245
+                                        </div>
+    
+                                        </div>
+            
+            
+                                    </fieldset>
+
+                                    <fieldset
+                                    style="border: 5px dotted rgba(0, 0, 0, 0.178)"
+                                    class="px-3 py-3 mt-4"
+                                  >
+                                    <legend style="font-size: 18px; font-weight: bold;">Informações sobre as áreas</legend>
+
+                                      <div class="row mt-4">
+          
+                                        <div class="col-4"><strong>Áreas do terreno:</strong> 200 m</div>
+          
+                                      <div class="col-4"><strong>Área edificada:</strong> 200 m</div>
+          
+                                      <div class="col-4"><strong>Área que serve de logradouro:</strong> 200 m
+                                      </div>
+          
+                                      </div>
+          
+          
+                                  </fieldset>
+                                </div>
+                                <div class="tab-pane" id="owner-data" role="tabpanel">
+                                  <fieldset
+                                  style="border: 5px dotted rgba(0, 0, 0, 0.178)"
+                                  class="px-3 py-3 mt-4"
+                                >
+                                  <legend style="font-size: 18px; font-weight: bold;">Informações gerais</legend>
+
+                                    <div class="row mt-4">
+        
+                                      <div class="col-4"><strong>Nome:</strong> Hélio Mocumbi</div>
+        
+                                    <div class="col-4"><strong>Número do BI:</strong> 7358793983Q</div>
+        
+                                    <div class="col-4"><strong>NUIT:</strong> 678987654
+                                    </div>
+        
+                                    </div>
+        
+                                </fieldset>
+
+                                <fieldset
+                                style="border: 5px dotted rgba(0, 0, 0, 0.178)"
+                                class="px-3 py-3 mt-4"
+                              >
+                                <legend style="font-size: 18px; font-weight: bold;">Endereço</legend>
+
+                                  <div class="row mt-4">
+      
+                                    <div class="col-4"><strong>Denominação da via:</strong> Karl Max</div>
+      
+                                  <div class="col-4"><strong>Número de polícia:</strong> 1234</div>
+      
+                                  <div class="col-4"><strong>Andar:</strong> 4
+                                  </div>
+      
+                                  </div>
+
+                                  <div class="row mt-4">
+      
+                                    <div class="col-4"><strong>Número da porta/flat:</strong> 17</div>
+      
+                                  <div class="col-4"><strong>Bairro:</strong> Sumerchild</div>
+      
+                                  <div class="col-4"><strong>Município:</strong> Maputo
+                                  </div>
+      
+                                  </div>
+
+                                  <div class="row mt-4">
+      
+                                    <div class="col-4"><strong>Caixa postal:</strong> 1114</div>
+      
+                                  </div>
+                                  
+      
+                              </fieldset>
+                                </div>
+                                <div class="tab-pane" id="company-data" role="tabpanel">
+                                  <fieldset
+                                  style="border: 5px dotted rgba(0, 0, 0, 0.178)"
+                                  class="px-3 py-3"
+                                >
+                                  <legend  style="font-size: 16px; font-weight: bold;">Informações sobre a empresa</legend>
+                                    <div class="row">
+                                      <div class="col-6"><strong>Nome da empresa:</strong> TECHSOLUTIONS</div>
+          
+                                      <div class="col-4"><strong>NUIT:</strong> 12131984</div>
+          
+                                    </div>
+                                </fieldset>
+                                </div>
+                                <div class="tab-pane" id="more-data" role="tabpanel">
+                                  <fieldset
+                                  style="border: 5px dotted rgba(0, 0, 0, 0.178)"
+                                  class="px-3 py-3"
+                                >
+                                  <legend  style="font-size: 16px; font-weight: bold;">Mais dados</legend>
+                                    <div class="row">
+                                      <div class="col-12">
+                                      <label for="inputUsername" class="form-label"
+                                        >Finalidade do Imóvel</label
+                                      >
+                                      <textarea rows="4" disabled name="finalidade" id="finalidade" class="form-control">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, minus. Dignissimos perferendis laudantium eius amet et, ducimus repellendus facilis quidem maiores alias nobis eos repudiandae temporibus. Porro fugiat quod nisi! Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore suscipit illo repellat error consequuntur! Quis voluptatum maiores veritatis cupiditate in asperiores expedita consequatur aperiam fugiat vitae officia sunt, reprehenderit iusto!</textarea>
+                                    </div>
+          
+                                    </div>
+
+                                    <div class="row mt-2">
+                                      <div class="col-12">
+                                      <label for="inputUsername" class="form-label"
+                                        >Descrição Pormenorizada do Imóvel</label
+                                      >
+                                      <textarea rows="4" disabled name="finalidade" id="finalidade" class="form-control">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, minus. Dignissimos perferendis laudantium eius amet et, ducimus repellendus facilis quidem maiores alias nobis eos repudiandae temporibus. Porro fugiat quod nisi! Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore suscipit illo repellat error consequuntur! Quis voluptatum maiores veritatis cupiditate in asperiores expedita consequatur aperiam fugiat vitae officia sunt, reprehenderit iusto!</textarea>
+
+                                    </div>
+          
+                                    </div>
+
+                                    <div class="row mt-2">
+                                      <div class="col-12">
+                                      <label for="inputUsername" class="form-label"
+                                        >Observações e Informações Completas</label
+                                      >
+                                      <textarea rows="4" disabled name="finalidade" id="finalidade" class="form-control">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, minus. Dignissimos perferendis laudantium eius amet et, ducimus repellendus facilis quidem maiores alias nobis eos repudiandae temporibus. Porro fugiat quod nisi! Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore suscipit illo repellat error consequuntur! Quis voluptatum maiores veritatis cupiditate in asperiores expedita consequatur aperiam fugiat vitae officia sunt, reprehenderit iusto!</textarea>
+
+                                    </div>
+          
+                                    </div>
+                                </fieldset>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -928,94 +1169,7 @@
                 </div>
             </div>
         
-            <div class="tab-pane" id="licencas" role="tabpanel">
-              <!-- Pedentes -->
-                <div class="row">
-                        <div class="col-lg-12">
-                            <div class="card">
-                                <div class="card-body">
-                                  <div class="table-responsive">
-                                    <table class="table">
-                                        <thead>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                              <td colspan="4" class="text-center"><strong><h5>Áreas do Terreno</h5></strong></td>
-                                            </tr>
-                                            <tr>
-                                                <td><strong>Areas do Terro </strong></td>
-                                                <td>100m2</td>
-                                                <td style="border-left: 1px solid #dee2e6;"><strong>Area Edificada</strong></td>
-                                                <td>75m2</td>
-                                            </tr>
-                                            <tr>
-                                                <td><strong>Área que serve de logradouro</strong></td>
-                                                <td>10m2</td>
-                                                <td><strong></strong></td>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                              <td colspan="4" class="text-center"><strong><h5>Mais Dados</h5></strong></td>
-                                            </tr>
-                                            <tr>
-                                              <td><strong>Finalidade do Imóvel</strong></td>
-                                              <td colspan="3">AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</td>
-                                            </tr>
-                                            <tr>
-                                              <td><strong>Descrição Pormenorizada do Imóvel</strong></td>
-                                              <td colspan="3">AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</td>
-                                            </tr>
-                                            <tr>
-                                              <td><strong>Observações e Informações Completas</strong></td>
-                                              <td colspan="3">AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</td>
-                                            </tr>
-                                            <tr>
-                                              <td colspan="4" class="text-center"><strong><h5>Detalhes do Proprietario</h5></strong></td>
-                                            </tr>
-                                            <tr>
-                                              <td><strong>Primeiro Nome </strong></td>
-                                              <td>Angelo Massinga da Costa</td>
-                                              <td style="border-left: 1px solid #dee2e6;"><strong>Outros Nomes</strong></td>
-                                              <td>AAAAAAAA</td>
-                                          </tr>
-                                            <tr>
-                                              <td><strong>Número do BI</strong></td>
-                                              <td>11111111111B</td>
-                                              <td style="border-left: 1px solid #dee2e6;"><strong>NUIT do proprietário</strong></td>
-                                              <td>AAAAAA</td>
-                                          </tr>
-                                            <tr>
-                                              <td><strong>Tipo de Proprietario</strong></td>
-                                              <td>Estado</td>
-                                              <td style="border-left: 1px solid #dee2e6;"><strong>Denominação da via</strong></td>
-                                              <td>AAAAAA</td>
-                                          </tr>
-                                            <tr>
-                                              <td><strong>Número de polícia</strong></td>
-                                              <td>112</td>
-                                              <td style="border-left: 1px solid #dee2e6;"><strong>Andar</strong></td>
-                                              <td>16</td>
-                                          </tr>
-                                            <tr>
-                                              <td><strong>Número da porta/flat</strong></td>
-                                              <td>112</td>
-                                              <td style="border-left: 1px solid #dee2e6;"><strong>Bairro</strong></td>
-                                              <td>Vundiça</td>
-                                          </tr>
-                                            <tr>
-                                              <td><strong>Município</strong></td>
-                                              <td>Maputo</td>
-                                              <td style="border-left: 1px solid #dee2e6;"><strong>Caixa postal</strong></td>
-                                              <td>122</td>
-                                          </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                                </div>
-                            </div>
-                        </div>
-                </div>
-            </div>
+            
 
 
         <!-- end main content-->
@@ -1104,6 +1258,73 @@
     </div>
     <!-- /Right-bar -->
 
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static"
+        data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Avaliar Propriédade
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div>
+                        <div class="form-check mb-2">
+                          <input
+                            class="form-check-input"
+                            type="radio"
+                            name="evaluate"
+                            id="evaluate1"
+                            value="1"
+                          />
+                          <label
+                            class="form-check-label"
+                            for="evaluate1"
+                          >
+                            Aprovar
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input
+                            class="form-check-input"
+                            type="radio"
+                            name="evaluate"
+                            id="evaluate2"
+                            value="2"
+                          />
+                          <label
+                            class="form-check-label"
+                            for="evaluate2"
+                          >
+                            Reprovar
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row mt-4 coment-field" hidden>
+                    <div class="col-12">
+                      <label for="inputUsername" class="form-label">Comentário</label>
+                      <textarea rows="4" name="comment" id="comment" class="form-control"></textarea>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger"
+                        data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button"
+                        class="btn btn-primary">Avaliar</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+
     <!-- Right bar overlay-->
     <div class="rightbar-overlay"></div>
 
@@ -1129,6 +1350,18 @@
     <script src="assets/js/pages/dashboard.init.js"></script>
 
     <script src="assets/js/app.js"></script>
+
+    <script>
+      $(document).ready(function() {
+        $('input[name=evaluate]').on("change",function(){
+          if($(this).val() == 1){
+            $('.coment-field').attr('hidden',true)
+          }else{
+            $('.coment-field').removeAttr('hidden')
+          }
+        })
+      });
+    </script>
   </body>
 
   <!-- Mirrored from themesdesign.in/qovex-node/layouts/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 11 Jun 2024 08:15:20 GMT -->
