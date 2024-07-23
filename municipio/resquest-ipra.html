@@ -2190,9 +2190,9 @@
                     $(document).ready(function() {
                       $('input[name=owner]').on("change",function(){
                         if($(this).val() == 1){
-                          $('.tab_owner').removeAttr('hidden')
-                        }else{
                           $('.tab_owner').attr('hidden',true)
+                        }else{
+                          $('.tab_owner').removeAttr('hidden')
                         }
                       })
 
