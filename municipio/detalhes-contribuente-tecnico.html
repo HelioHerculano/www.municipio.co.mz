@@ -848,6 +848,7 @@
   
                               </fieldset>
                             </div>
+                            
                             <div class="col">
                               <fieldset
                                 style="border: 5px dotted rgba(0, 0, 0, 0.178)"
@@ -865,8 +866,15 @@
 
                               <!-- Nav tabs -->
                               <ul class="nav nav-tabs nav-tabs-custom nav-justified" role="tablist">
+                                
                                 <li class="nav-item">
-                                    <a class="nav-link active" data-bs-toggle="tab" href="#location" role="tab">
+                                  <a class="nav-link active" data-bs-toggle="tab" href="#data-municipe" role="tab">
+                                      <span class="d-block d-sm-none"><i class="fas fa-home"></i></span>
+                                      <span class="d-none d-sm-block">Dados do municipe</span>
+                                  </a>
+                              </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-bs-toggle="tab" href="#location" role="tab">
                                         <span class="d-block d-sm-none"><i class="fas fa-home"></i></span>
                                         <span class="d-none d-sm-block">Localização</span>
                                     </a>
@@ -897,9 +905,45 @@
                               </li>
                             </ul>
 
+                             <!-- Tab panes -->
+
                             <!-- Tab panes -->
                             <div class="tab-content p-3 text-muted">
-                                <div class="tab-pane active" id="location" role="tabpanel">
+
+                              <div class="tab-pane active" id="data-municipe" role="tabpanel">
+                                <fieldset style="border: 5px dotted rgba(0, 0, 0, 0.178)"
+                                class="px-3 py-3 mt-4">
+                                <legend style="font-size: 18px; font-weight: bold;">Dados
+                                </legend>
+
+                                <div class="row mt-4">
+                                    <div class="col-6"><strong>Apelido:</strong> Matusse</div>
+                                    <div class="col-6"><strong>Provincia</strong> Cidade de
+                                        Maputo</div>
+                                </div>
+
+                                <div class="row mt-4">
+                                    <div class="col-6"><strong>Nome:</strong> Joel Mateus</div>
+                                    <div class="col-6"><strong>Distrito Municipal:</strong>
+                                        KaMavota</div>
+                                </div>
+
+                                <div class="row mt-4">
+                                    <div class="col-6"><strong>E-mail:</strong>
+                                        municipio@cmm.gov.mz</div>
+                                    <div class="col-6"><strong>Contacto Principal:</strong>+258
+                                        84 863 1256</div>
+                                </div>
+                                <div class="row mt-4">
+                                    <div class="col-6"><strong>Endereço:</strong> Magoanine C
+                                    </div>
+                                    <div class="col-6"><strong>Contacto Alternativo:</strong>
+                                        +258 82 863 1256</div>
+                                </div>
+                            </fieldset>
+                              </div>
+
+                                <div class="tab-pane" id="location" role="tabpanel">
                                   <fieldset
                                   style="border: 5px dotted rgba(0, 0, 0, 0.178)"
                                   class="px-3 py-3 mt-4"
