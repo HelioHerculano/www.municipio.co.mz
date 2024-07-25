@@ -34,6 +34,94 @@
   </head>
 
   <body>
+
+    <style>
+      .form-check-input:checked {
+        background-color: #2b6e25;
+        border-color: #2b6e25;
+      }
+
+      .nav-primary.nav-tabs .nav-link.active {
+        color: #fff;
+        border-color: #388A1C #388A1C #fff;
+        background: #388A1C;
+      }
+
+      .nav-link:focus,
+      .nav-link:hover {
+        color: #388A1C;
+      }
+
+      .nav-link {
+        color: #388A1C;
+      }
+
+      .special_radio {
+        display: none;
+      }
+
+      .special_radio_label {
+        position: relative;
+        color: #388A1C;
+        font-family: "Poppins", sans-serif;
+        font-size: 18px;
+        border: 2px solid #388A1C;
+        border-radius: 5px;
+        padding: 10px 50px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+      }
+
+      .special_radio_label:before {
+        content: " ";
+        height: 20px;
+        width: 20px;
+        border: 12px solid #388A1C;
+        border-radius: 50%;
+        margin-right: 20px;
+      }
+
+      .special_radio:checked + .special_radio_label {
+        background-color: #388A1C;
+        color: white;
+      }
+
+      .special_radio:checked + .special_radio_label:before {
+        height: 16px;
+        width: 16px;
+        border: 15px solid white;
+        background-color: #388A1C;
+      }
+
+      /* Media Queries for Responsive Design */
+      @media (max-width: 576px) {
+        .row.mb-3 {
+          flex-direction: column;
+        }
+
+        .col-6 {
+          width: 100%;
+          margin-bottom: 10px;
+        }
+
+        .special_radio_label {
+          width: 100%;
+          padding: 10px;
+          text-align: center;
+        }
+
+        .special_radio_label:before {
+          display: none;
+        }
+      }
+
+        .full-height {
+            height: 100vh;
+        }
+    </style>
+
+
     <!--wrapper-->
     <div class="wrapper">
       <div class="section-authentication-cover">
@@ -76,6 +164,40 @@
                         Preencha os detalhes abaixo para criar sua conta
                       </p>
                     </div>
+
+                    <div class="row mb-3 type_user">
+                      <h5 class="mb-3">Que tipo municipe és?</h5>
+                      <div class="col-6">
+                        <input
+                          class="special_radio"
+                          type="radio"
+                          name="size"
+                          value="2"
+                          id="small"
+                          checked
+                        />
+                        <label class="special_radio_label" for="small"
+                          >Individual</label
+                        >
+                      </div>
+                      <div class="col-6">
+                        <input
+                          class="special_radio"
+                          type="radio"
+                          name="size"
+                          value="1"
+                          id="large"
+                        />
+                        <label class="special_radio_label" for="large"
+                          >Empresa</label
+                        >
+                      </div>
+
+                      <div hidden class="col-12 mt-5 text-center">
+                        <div onclick="RemoveHidden()" class="btn btn-primary btn-lg">Proximo <i class="fas fa-arrow-circle-right"></i></div>
+                      </div>
+                    </div>
+
                     <div class="form-body">
                       <form class="row g-3">
                         <div class="col-6">
