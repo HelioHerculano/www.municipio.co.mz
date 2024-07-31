@@ -1,130 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Video Gallery</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
-    <style>
-        .document-container {
-            margin-top: 20px;
-            border-radius: 15px;
-            border-color: black;
-            padding: 15px;
-        }
-        .document-icon {
-            font-size: 50px; /* Reduzido o tamanho dos ícones para telas pequenas */
-            color: #87CEFA;
-            transition: transform 0.3s ease;
-        }
-        .document-icon:hover {
-            transform: scale(1.1);
-            cursor: pointer;
-        }
-        .document-title {
-            font-size: 10px; /* Reduzido o tamanho do texto */
-            color: #87CEFA;
-            margin-top: 5px; /* Reduzido o espaço acima do texto */
-        }
-        .category-title {
-            margin-top: 15px;
-            font-size: 16px; /* Reduzido o tamanho do título */
-            color: #87CEFA;
-        }
-        a {
-            color: #87CEFA;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-    </style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+    }
+
+    .gallery-container {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: 80vh;
+      overflow: hidden;
+    }
+
+    .top-column {
+      width: 100%;
+      height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #262262;
+      position: relative;
+      border-radius: 30px;
+    }
+
+    .top-column iframe {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 30px;
+    }
+
+    .bottom-column {
+      width: 100%;
+      height: 20vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #ffffff;
+      position: relative;
+      overflow: hidden;
+      margin-top: 2%;
+    }
+
+    .slider {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .bottom-column iframe {
+      width: calc(25% - 10px);
+      height: 100%;
+      margin: 0 5px;
+      cursor: pointer;
+      object-fit: cover;
+    }
+
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: #ffffff;
+      color: #000000;
+      padding: 10px;
+      cursor: pointer;
+      font-size: 50px;
+      z-index: 1;
+    }
+
+    .arrow.left {
+      left: 10px;
+    }
+
+    .arrow.right {
+      right: 10px;
+    }
+
+    .arrow.hidden {
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      .top-column {
+        height: 50vh;
+      }
+
+      .bottom-column {
+        height: 30vh;
+      }
+
+      .bottom-column iframe {
+        width: calc(50% - 10px);
+      }
+    }
+  </style>
 </head>
-
-    <div class="container">
-        <div class="document-container" style="border: 3px solid rgba(0, 0, 0, 0.178)">
-            <h2 style="color:#87CEFA;">Documentos e Relatórios</h2>
-            <p style="color:#87CEFA; font-size: 14px">(página de depósito de conteúdo documental sobre os ODS, parcerias e relatórios sobre progressos e RNV)</p>
-            
-            <div class="category">
-                <h4 class="category-title">1. Veja os documentos que permitem compreender melhor os ODS.</h4>
-                <div class="row">
-                    <div class="col-6 col-sm-4 col-md-3 text-center">
-                        <i class="fas fa-folder document-icon"></i>
-                        <p class="document-title"><a href="#">Relatório</a></p>
-                    </div>
-                    <div class="col-6 col-sm-4 col-md-3 text-center">
-                        <i class="fas fa-folder document-icon"></i>
-                        <p class="document-title"><a href="#">Relatório</a></p>
-                    </div>
-                    <div class="col-6 col-sm-4 col-md-3 text-center">
-                        <i class="fas fa-folder document-icon"></i>
-                        <p class="document-title"><a href="#">Relatório</a></p>
-                    </div>
-                    <div class="col-6 col-sm-4 col-md-3 text-center">
-                        <i class="fas fa-folder document-icon"></i>
-                        <p class="document-title"><a href="#">Relatório</a></p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="category">
-                <h4 class="category-title">2. Materiais de Moçambique sobre ODS na região e em organizações africanas.</h4>
-                <div class="row">
-                    <div class="col-6 col-sm-4 col-md-3 text-center">
-                        <i class="fas fa-folder document-icon"></i>
-                        <p class="document-title"><a href="#">Relatório</a></p>
-                    </div>
-                    <div class="col-6 col-sm-4 col-md-3 text-center">
-                        <i class="fas fa-folder document-icon"></i>
-                        <p class="document-title"><a href="#">Relatório</a></p>
-                    </div>
-                    <div class="col-6 col-sm-4 col-md-3 text-center">
-                        <i class="fas fa-folder document-icon"></i>
-                        <p class="document-title"><a href="#">Relatório</a></p>
-                    </div>
-                    <div class="col-6 col-sm-4 col-md-3 text-center">
-                        <i class="fas fa-folder document-icon"></i>
-                        <p class="document-title"><a href="#">Relatório</a></p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="category">
-                <h4 class="category-title">3. Documentos sobre os ODS em Moçambique (Relatórios Nacionais)</h4>
-                <div class="row">
-                    <div class="col-6 col-sm-4 col-md-3 text-center">
-                        <i class="fas fa-folder document-icon"></i>
-                        <p class="document-title"><a href="#">Relatório</a></p>
-                    </div>
-                    <div class="col-6 col-sm-4 col-md-3 text-center">
-                        <i class="fas fa-folder document-icon"></i>
-                        <p class="document-title"><a href="#">Relatório</a></p>
-                    </div>
-                    <div class="col-6 col-sm-4 col-md-3 text-center">
-                        <i class="fas fa-folder document-icon"></i>
-                        <p class="document-title"><a href="#">Relatório</a></p>
-                    </div>
-                    <div class="col-6 col-sm-4 col-md-3 text-center">
-                        <i class="fas fa-folder document-icon"></i>
-                        <p class="document-title"><a href="#">Relatório</a></p>
-                    </div>
-                    <div class="col-6 col-sm-4 col-md-3 text-center">
-                        <i class="fas fa-folder document-icon"></i>
-                        <p class="document-title"><a href="#">Relatório</a></p>
-                    </div>
-                    <div class="col-6 col-sm-4 col-md-3 text-center">
-                        <i class="fas fa-folder document-icon"></i>
-                        <p class="document-title"><a href="#">Relatório</a></p>
-                    </div>
-                    <div class="col-6 col-sm-4 col-md-3 text-center">
-                        <i class="fas fa-folder document-icon"></i>
-                        <p class="document-title"><a href="#">Relatório</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
+<body>
+  <div class="gallery-container">
+    <div class="top-column">
+      <iframe
+        id="active-video"
+        src="https://youtu.be/-XAIZIiUCT0"
+        frameborder="0"
+        allowfullscreen
+      ></iframe>
     </div>
-    
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <div class="bottom-column">
+      <div class="arrow left hidden" id="prev">&lt;</div>
+      <div class="slider" id="video-slider">
+        <iframe
+          src="https://youtu.be/0pdRR2O5_gA"
+          frameborder="0"
+          allowfullscreen
+        ></iframe>
+        <iframe
+          src="https://youtu.be/lnyt8SdcGeE"
+          frameborder="0"
+          allowfullscreen
+        ></iframe>
+        <iframe
+          src="https://youtu.be/2eu3W_tW8_8"
+          frameborder="0"
+          allowfullscreen
+        ></iframe>
+        <iframe
+          src="https://youtu.be/c5qoDrAjeAc"
+          frameborder="0"
+          allowfullscreen
+        ></iframe>
+        <iframe
+          src="https://youtu.be/Oe0yeqpEDE8"
+          frameborder="0"
+          allowfullscreen
+        ></iframe>
+        <iframe
+          src="https://youtu.be/iQeyS_oRKN4"
+          frameborder="0"
+          allowfullscreen
+        ></iframe>
+        <iframe
+          src="https://youtu.be/ucOx-zkxIek"
+          frameborder="0"
+          allowfullscreen
+        ></iframe>
+        <iframe
+          src="https://youtu.be/5Owpna6eCSo"
+          frameborder="0"
+          allowfullscreen
+        ></iframe>
+      </div>
+      <div class="arrow right" id="next">&gt;</div>
+    </div>
+  </div>
 
+  <script>
+    let index = 0;
+    const videos = document.querySelectorAll(".slider iframe");
+    const slider = document.getElementById("video-slider");
+    const prevArrow = document.getElementById("prev");
+    const nextArrow = document.getElementById("next");
+    const activeVideo = document.getElementById("active-video");
+
+    function updateActiveVideo(videoSrc) {
+      activeVideo.src = videoSrc;
+      activeVideo.play();
+    }
+
+    function updateSlider() {
+      const width = videos[0].clientWidth + 10; // width of iframe + margin
+      const offset = -index * width;
+      slider.style.transform = `translateX(${offset}px)`;
+      updateArrows();
+    }
+
+    function updateArrows() {
+      prevArrow.classList.toggle("hidden", index === 0);
+      nextArrow.classList.toggle("hidden", index >= videos.length - 4);
+    }
+
+    function nextSlide() {
+      if (index < videos.length - 4) {
+        index++;
+      } else {
+        index = 0; // Volta ao primeiro vídeo
+      }
+      updateSlider();
+    }
+
+    function prevSlide() {
+      if (index > 0) {
+        index--;
+      }
+      updateSlider();
+    }
+
+    videos.forEach((video, i) => {
+      video.addEventListener("click", () => {
+        updateActiveVideo(video.src);
+      });
+    });
+
+    nextArrow.addEventListener("click", nextSlide);
+    prevArrow.addEventListener("click", prevSlide);
+
+    setInterval(nextSlide, 5000); // Slide a cada 5 segundos
+  </script>
+</body>
+</html>
