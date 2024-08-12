@@ -1,219 +1,1297 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Video Gallery</title>
-  <style>
-    * {
-      box-sizing: border-box;
+<style>
+  .container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .column {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .folder {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+
+  .folder-header {
+    display: flex;
+    flex-direction: row;
+    align-items: left;
+    padding: 10px;
+    cursor: pointer;
+  }
+
+  .folder-header img {
+    margin-bottom: 5px;
+  }
+
+  .folder-content {
+    display: none;
+    padding: 0;
+    list-style: none;
+  }
+
+  .folder-content li {
+    padding: 10px;
+  }
+
+  .icon {
+    margin-right: 0;
+    /* Adjusted margin for mobile alignment */
+  }
+
+  .folder-header span {
+    margin: auto 0;
+    padding-left: 5px;
+    flex-direction: row;
+    align-items: left;
+  }
+
+  .btn-warning {
+    background-color: #2a2e7d;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    border-radius: 4px;
+  }
+
+  .btn-warning img {
+    margin-right: 5px;
+  }
+
+  .btn-warning:hover {
+    background-color: #3b44a1;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .btn-warning:active {
+    background-color: #2a2e7d;
+    box-shadow: inset 0px 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  @media (max-width: 768px) {
+    .container {
+      grid-template-columns: 1fr;
     }
 
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #f0f0f0;
+    .folder-header {
+      flex-direction: row;
     }
 
-    .gallery-container {
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-      height: 80vh;
-      overflow: hidden;
+    .folder-header span {
+      margin: auto 0;
+      padding-left: 5px;
+      flex-direction: row;
+      align-items: left;
     }
 
-    .top-column {
-      width: 100%;
-      height: 60vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-color: #262262;
-      position: relative;
-      border-radius: 30px;
+    .folder-header img {
+      margin-bottom: 5px;
     }
+  }
 
-    .top-column iframe {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 30px;
-    }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
 
-    .bottom-column {
-      width: 100%;
-      height: 20vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-color: #ffffff;
-      position: relative;
-      overflow: hidden;
-      margin-top: 2%;
-    }
+  th,
+  td {
+    text-align: left;
+    padding: 8px;
+    border: 1px solid #ddd;
+    margin: 2px;
+  }
 
-    .slider {
-      display: flex;
-      transition: transform 0.5s ease-in-out;
-    }
+  th {
+    background-color: #f0f0f0;
+  }
 
-    .bottom-column iframe {
-      width: calc(25% - 10px);
-      height: 100%;
-      margin: 0 5px;
-      cursor: pointer;
-      object-fit: cover;
-    }
+  .Visualizar Artigo-btn {
+    background-color: #4caf50;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    cursor: pointer;
+  }
+</style>
 
-    .arrow {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background-color: #ffffff;
-      color: #000000;
-      padding: 10px;
-      cursor: pointer;
-      font-size: 50px;
-      z-index: 1;
-    }
-
-    .arrow.left {
-      left: 10px;
-    }
-
-    .arrow.right {
-      right: 10px;
-    }
-
-    .arrow.hidden {
-      display: none;
-    }
-
-    @media (max-width: 768px) {
-      .top-column {
-        height: 50vh;
-      }
-
-      .bottom-column {
-        height: 30vh;
-      }
-
-      .bottom-column iframe {
-        width: calc(50% - 10px);
-      }
-    }
-  </style>
-</head>
-<body>
-  <div class="gallery-container">
-    <div class="top-column">
-      <iframe
-        id="active-video"
-        src="https://youtu.be/-XAIZIiUCT0"
-        frameborder="0"
-        allowfullscreen
-      ></iframe>
-    </div>
-    <div class="bottom-column">
-      <div class="arrow left hidden" id="prev">&lt;</div>
-      <div class="slider" id="video-slider">
-        <iframe
-          src="https://youtu.be/0pdRR2O5_gA"
-          frameborder="0"
-          allowfullscreen
-        ></iframe>
-        <iframe
-          src="https://youtu.be/lnyt8SdcGeE"
-          frameborder="0"
-          allowfullscreen
-        ></iframe>
-        <iframe
-          src="https://youtu.be/2eu3W_tW8_8"
-          frameborder="0"
-          allowfullscreen
-        ></iframe>
-        <iframe
-          src="https://youtu.be/c5qoDrAjeAc"
-          frameborder="0"
-          allowfullscreen
-        ></iframe>
-        <iframe
-          src="https://youtu.be/Oe0yeqpEDE8"
-          frameborder="0"
-          allowfullscreen
-        ></iframe>
-        <iframe
-          src="https://youtu.be/iQeyS_oRKN4"
-          frameborder="0"
-          allowfullscreen
-        ></iframe>
-        <iframe
-          src="https://youtu.be/ucOx-zkxIek"
-          frameborder="0"
-          allowfullscreen
-        ></iframe>
-        <iframe
-          src="https://youtu.be/5Owpna6eCSo"
-          frameborder="0"
-          allowfullscreen
-        ></iframe>
+<div class="container">
+  <div class="column">
+    <div class="folder">
+      <div class="folder-header" onclick="toggleVisibility('sobre_funae')">
+        <img
+          src="https://img.icons8.com/fluency/48/000000/folder-invoices.png"
+          alt="Sobre FUNAE"
+          class="icon"
+        />
+        <span>Políticas</span>
       </div>
-      <div class="arrow right" id="next">&gt;</div>
+      <ul id="sobre_funae" class="folder-content">
+        <table>
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>Visualizar Artigo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- <tr>
+              <td>Certificado de Norma ISO9001:2000</td>
+              <td>
+                <button
+                  style="
+                    padding: 8px 16px;
+                    background-color: #2a2e7d;
+                    color: #fff;
+                    border: 1px solid #ffffff;
+                    margin-top: 2px;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    transition: background-color 0.3s, border-color 0.3s;
+                  "
+                  onmouseover="this.style.backgroundColor='#3b44a1'; this.style.borderColor='#3b44a1';"
+                  onmouseout="this.style.backgroundColor='#2a2e7d'; this.style.borderColor='#ffffff';"
+                  onclick="window.open('https://funae2.techsolutions.co.mz/wp-content/uploads/2024/06/Certificado-de-Norma-ISO9001.pdf', '_blank')"
+                >
+                  <i class="fas fa-file-pdf"></i> Certificado 1
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>Certificado Made in Mozambique</td>
+              <td>
+                <button
+                  style="
+                    padding: 8px 16px;
+                    background-color: #2a2e7d;
+                    color: #fff;
+                    border: 1px solid #ffffff;
+                    margin-top: 2px;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    transition: background-color 0.3s, border-color 0.3s;
+                  "
+                  onmouseover="this.style.backgroundColor='#3b44a1'; this.style.borderColor='#3b44a1';"
+                  onmouseout="this.style.backgroundColor='#2a2e7d'; this.style.borderColor='#ffffff';"
+                  onclick="window.open('https://funae2.techsolutions.co.mz/wp-content/uploads/2024/06/Certificado-Made-In-Mozambique.pdf', '_blank')"
+                >
+                  <i class="fas fa-file-pdf"></i> Certificado 2
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>Desempenho do Funae em 2009</td>
+              <td>
+                <button
+                  style="
+                    padding: 8px 16px;
+                    background-color: #2a2e7d;
+                    color: #fff;
+                    border: 1px solid #ffffff;
+                    margin-top: 2px;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    transition: background-color 0.3s, border-color 0.3s;
+                  "
+                  onmouseover="this.style.backgroundColor='#3b44a1'; this.style.borderColor='#3b44a1';"
+                  onmouseout="this.style.backgroundColor='#2a2e7d'; this.style.borderColor='#ffffff';"
+                  onclick="window.open('https://funae2.techsolutions.co.mz/wp-content/uploads/2024/06/Desempenho-do-FUNAE-em-2009.pdf', '_blank')"
+                >
+                  <i class="fas fa-file-pdf"></i> Desempenho
+                </button>
+              </td>
+            </tr> -->
+          </tbody>
+        </table>
+      </ul>
+    </div>
+    <div class="folder">
+      <div class="folder-header" onclick="toggleVisibility('projectos')">
+        <img
+          src="https://img.icons8.com/fluency/48/000000/folder-invoices.png"
+          alt="Projectos"
+          class="icon"
+        />
+        <span>Leis</span>
+      </div>
+      <ul id="projectos" class="folder-content">
+        <table>
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>Visualizar Artigo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Lei De Autorização</td>
+              <td>
+                <button
+                  style="
+                    padding: 8px 16px;
+                    background-color: #2a2e7d;
+                    color: #fff;
+                    border: 1px solid #ffffff;
+                    margin-top: 2px;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    transition: background-color 0.3s, border-color 0.3s;
+                  "
+                  onmouseover="this.style.backgroundColor='#3b44a1'; this.style.borderColor='#3b44a1';"
+                  onmouseout="this.style.backgroundColor='#2a2e7d'; this.style.borderColor='#ffffff';"
+                  onclick="window.open('http://inp2.techsolutions.co.mz/wp-content/uploads/2024/08/Lei-De-Autorizacao.pdf', '_blank')"
+                >
+                  <i class="fas fa-file-pdf"></i> Lei 1
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>Lei Nr-2-2014</td>
+              <td>
+                <button
+                  style="
+                    padding: 8px 16px;
+                    background-color: #2a2e7d;
+                    color: #fff;
+                    border: 1px solid #ffffff;
+                    margin-top: 2px;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    transition: background-color 0.3s, border-color 0.3s;
+                  "
+                  onmouseover="this.style.backgroundColor='#3b44a1'; this.style.borderColor='#3b44a1';"
+                  onmouseout="this.style.backgroundColor='#2a2e7d'; this.style.borderColor='#ffffff';"
+                  onclick="window.open('http://inp2.techsolutions.co.mz/wp-content/uploads/2024/08/Lei-Nr-2-2014.pdf', '_blank')"
+                >
+                  <i class="fas fa-file-pdf"></i> Lei 2
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>Lei Nr-6- 2011</td>
+              <td>
+                <button
+                  style="
+                    padding: 8px 16px;
+                    background-color: #2a2e7d;
+                    color: #fff;
+                    border: 1px solid #ffffff;
+                    margin-top: 2px;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    transition: background-color 0.3s, border-color 0.3s;
+                  "
+                  onmouseover="this.style.backgroundColor='#3b44a1'; this.style.borderColor='#3b44a1';"
+                  onmouseout="this.style.backgroundColor='#2a2e7d'; this.style.borderColor='#ffffff';"
+                  onclick="window.open('http://inp2.techsolutions.co.mz/wp-content/uploads/2024/08/Lei-Nr-6-2011.pdf', '_blank')"
+                >
+                  <i class="fas fa-file-pdf"></i> Lei 3
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>Lei Nr-14-2017</td>
+              <td>
+                <button
+                  style="
+                    padding: 8px 16px;
+                    background-color: #2a2e7d;
+                    color: #fff;
+                    border: 1px solid #ffffff;
+                    margin-top: 2px;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    transition: background-color 0.3s, border-color 0.3s;
+                  "
+                  onmouseover="this.style.backgroundColor='#3b44a1'; this.style.borderColor='#3b44a1';"
+                  onmouseout="this.style.backgroundColor='#2a2e7d'; this.style.borderColor='#ffffff';"
+                  onclick="window.open('http://inp2.techsolutions.co.mz/wp-content/uploads/2024/08/Lei-Nr-14-2017.pdf')"
+                >
+                  <i class="fas fa-file-pdf"></i> Lei 4
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>Lei Nr-15-2011</td>
+              <td>
+                <button
+                  style="
+                    padding: 8px 16px;
+                    background-color: #2a2e7d;
+                    color: #fff;
+                    border: 1px solid #ffffff;
+                    margin-top: 2px;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    transition: background-color 0.3s, border-color 0.3s;
+                  "
+                  onmouseover="this.style.backgroundColor='#3b44a1'; this.style.borderColor='#3b44a1';"
+                  onmouseout="this.style.backgroundColor='#2a2e7d'; this.style.borderColor='#ffffff';"
+                  onclick="window.open('http://inp2.techsolutions.co.mz/wp-content/uploads/2024/08/Lei-Nr-15-2011.pdf', '_blank')"
+                >
+                  <i class="fas fa-file-pdf"></i> Lei 5
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>Lei Nr-21-2014</td>
+              <td>
+                <button
+                  style="
+                    padding: 8px 16px;
+                    background-color: #2a2e7d;
+                    color: #fff;
+                    border: 1px solid #ffffff;
+                    margin-top: 2px;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    transition: background-color 0.3s, border-color 0.3s;
+                  "
+                  onmouseover="this.style.backgroundColor='#3b44a1'; this.style.borderColor='#3b44a1';"
+                  onmouseout="this.style.backgroundColor='#2a2e7d'; this.style.borderColor='#ffffff';"
+                  onclick="window.open('http://inp2.techsolutions.co.mz/wp-content/uploads/2024/08/Lei-Nr-21-2014.pdf', '_blank')"
+                >
+                  <i class="fas fa-file-pdf"></i> Lei 6
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </ul>
+    </div>
+  </div>
+  <div class="column">
+    <div class="folder">
+      <div class="folder-header" onclick="toggleVisibility('publicacoes')">
+        <img
+          src="https://img.icons8.com/fluency/48/000000/folder-invoices.png"
+          alt="Publicações"
+          class="icon"
+        />
+        <span>Decretos</span>
+      </div>
+      <ul id="publicacoes" class="folder-content">
+        <table>
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>Visualizar Artigo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Decreto Nr-47-2019</td>
+              <td>
+                <button
+                  style="
+                    padding: 8px 16px;
+                    background-color: #2a2e7d;
+                    color: #fff;
+                    border: 1px solid #ffffff;
+                    margin-top: 2px;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    transition: background-color 0.3s, border-color 0.3s;
+                  "
+                  onmouseover="this.style.backgroundColor='#3b44a1'; this.style.borderColor='#3b44a1';"
+                  onmouseout="this.style.backgroundColor='#2a2e7d'; this.style.borderColor='#ffffff';"
+                  onclick="window.open('http://inp2.techsolutions.co.mz/wp-content/uploads/2024/08/decreto-Nr-47-2019.pdf', '_blank')"
+                >
+                  <i class="fas fa-file-pdf"></i> Decreto 1
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>Decreto Nr-51-2019</td>
+              <td>
+                <button
+                  style="
+                    padding: 8px 16px;
+                    background-color: #2a2e7d;
+                    color: #fff;
+                    border: 1px solid #ffffff;
+                    margin-top: 2px;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    transition: background-color 0.3s, border-color 0.3s;
+                  "
+                  onmouseover="this.style.backgroundColor='#3b44a1'; this.style.borderColor='#3b44a1';"
+                  onmouseout="this.style.backgroundColor='#2a2e7d'; this.style.borderColor='#ffffff';"
+                  onclick="window.open('https://funae.techsolutions.co.mz/wp-content/uploads/2024/05/Anuncio-Geral-1.pdf', '_blank')"
+                >
+                  <i class="fas fa-file-pdf"></i> Decreto 2
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>Decreto Nr-57-2018</td>
+              <td>
+                <button
+                  style="
+                    padding: 8px 16px;
+                    background-color: #2a2e7d;
+                    color: #fff;
+                    border: 1px solid #ffffff;
+                    margin-top: 2px;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    transition: background-color 0.3s, border-color 0.3s;
+                  "
+                  onmouseover="this.style.backgroundColor='#3b44a1'; this.style.borderColor='#3b44a1';"
+                  onmouseout="this.style.backgroundColor='#2a2e7d'; this.style.borderColor='#ffffff';"
+                  onclick="window.open('http://inp2.techsolutions.co.mz/wp-content/uploads/2024/08/Decreto-Nr-57-2018.pdf', '_blank')"
+                >
+                  <i class="fas fa-file-pdf"></i> Decreto 3
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>Decreto Nr-56-2018</td>
+              <td>
+                <button
+                  style="
+                    padding: 8px 16px;
+                    background-color: #2a2e7d;
+                    color: #fff;
+                    border: 1px solid #ffffff;
+                    margin-top: 2px;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    transition: background-color 0.3s, border-color 0.3s;
+                  "
+                  onmouseover="this.style.backgroundColor='#3b44a1'; this.style.borderColor='#3b44a1';"
+                  onmouseout="this.style.backgroundColor='#2a2e7d'; this.style.borderColor='#ffffff';"
+                  onclick="window.open('http://inp2.techsolutions.co.mz/wp-content/uploads/2024/08/Decreto-Nr-56-2018.pdf', '_blank')"
+                >
+                  <i class="fas fa-file-pdf"></i> Decreto 4
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>Decreto Nr-56-2017</td>
+              <td>
+                <button
+                  style="
+                    padding: 8px 16px;
+                    background-color: #2a2e7d;
+                    color: #fff;
+                    border: 1px solid #ffffff;
+                    margin-top: 2px;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    transition: background-color 0.3s, border-color 0.3s;
+                  "
+                  onmouseover="this.style.backgroundColor='#3b44a1'; this.style.borderColor='#3b44a1';"
+                  onmouseout="this.style.backgroundColor='#2a2e7d'; this.style.borderColor='#ffffff';"
+                  onclick="window.open('http://inp2.techsolutions.co.mz/wp-content/uploads/2024/08/Decreto-Nr-56-2017.pdf', '_blank')"
+                >
+                  <i class="fas fa-file-pdf"></i> Decreto 5
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>Decreto Nr-74-2016</td>
+              <td>
+                <button
+                  style="
+                    padding: 8px 16px;
+                    background-color: #2a2e7d;
+                    color: #fff;
+                    border: 1px solid #ffffff;
+                    margin-top: 2px;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    transition: background-color 0.3s, border-color 0.3s;
+                  "
+                  onmouseover="this.style.backgroundColor='#3b44a1'; this.style.borderColor='#3b44a1';"
+                  onmouseout="this.style.backgroundColor='#2a2e7d'; this.style.borderColor='#ffffff';"
+                  onclick="window.open('http://inp2.techsolutions.co.mz/wp-content/uploads/2024/08/Decreto-Nr-74-2016.pdf', '_blank')"
+                >
+                  <i class="fas fa-file-pdf"></i> Decreto 6
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>Decreto Nr-34-2015</td>
+              <td>
+                <button
+                  style="
+                    padding: 8px 16px;
+                    background-color: #2a2e7d;
+                    color: #fff;
+                    border: 1px solid #ffffff;
+                    margin-top: 2px;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    transition: background-color 0.3s, border-color 0.3s;
+                  "
+                  onmouseover="this.style.backgroundColor='#3b44a1'; this.style.borderColor='#3b44a1';"
+                  onmouseout="this.style.backgroundColor='#2a2e7d'; this.style.borderColor='#ffffff';"
+                  onclick="window.open('http://inp2.techsolutions.co.mz/wp-content/uploads/2024/08/Decreto-Nr-34-2015.pdf', '_blank')"
+                >
+                  <i class="fas fa-file-pdf"></i> Decreto 7
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>Decreto Nr-32-2015</td>
+              <td>
+                <button
+                  style="
+                    padding: 8px 16px;
+                    background-color: #2a2e7d;
+                    color: #fff;
+                    border: 1px solid #ffffff;
+                    margin-top: 2px;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    transition: background-color 0.3s, border-color 0.3s;
+                  "
+                  onmouseover="this.style.backgroundColor='#3b44a1'; this.style.borderColor='#3b44a1';"
+                  onmouseout="this.style.backgroundColor='#2a2e7d'; this.style.borderColor='#ffffff';"
+                  onclick="window.open('http://inp2.techsolutions.co.mz/wp-content/uploads/2024/08/Decreto-Nr-32-2015.pdf', '_blank')"
+                >
+                  <i class="fas fa-file-pdf"></i> Decreto 8
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>Decreto Nr-35-2014</td>
+              <td>
+                <button
+                  style="
+                    padding: 8px 16px;
+                    background-color: #2a2e7d;
+                    color: #fff;
+                    border: 1px solid #ffffff;
+                    margin-top: 2px;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    transition: background-color 0.3s, border-color 0.3s;
+                  "
+                  onmouseover="this.style.backgroundColor='#3b44a1'; this.style.borderColor='#3b44a1';"
+                  onmouseout="this.style.backgroundColor='#2a2e7d'; this.style.borderColor='#ffffff';"
+                  onclick="window.open('http://inp2.techsolutions.co.mz/wp-content/uploads/2024/08/Decreto-Nr-35-2014.pdf', '_blank')"
+                >
+                  <i class="fas fa-file-pdf"></i> Decreto 9
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>Decreto Nr-24-2014</td>
+              <td>
+                <button
+                  style="
+                    padding: 8px 16px;
+                    background-color: #2a2e7d;
+                    color: #fff;
+                    border: 1px solid #ffffff;
+                    margin-top: 2px;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    transition: background-color 0.3s, border-color 0.3s;
+                  "
+                  onmouseover="this.style.backgroundColor='#3b44a1'; this.style.borderColor='#3b44a1';"
+                  onmouseout="this.style.backgroundColor='#2a2e7d'; this.style.borderColor='#ffffff';"
+                  onclick="window.open('http://inp2.techsolutions.co.mz/wp-content/uploads/2024/08/Decreto-Nr-24-2014.pdf', '_blank')"
+                >
+                  <i class="fas fa-file-pdf"></i> Decreto 10
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>Decreto Nr-25-2011</td>
+              <td>
+                <button
+                  style="
+                    padding: 8px 16px;
+                    background-color: #2a2e7d;
+                    color: #fff;
+                    border: 1px solid #ffffff;
+                    margin-top: 2px;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    transition: background-color 0.3s, border-color 0.3s;
+                  "
+                  onmouseover="this.style.backgroundColor='#3b44a1'; this.style.borderColor='#3b44a1';"
+                  onmouseout="this.style.backgroundColor='#2a2e7d'; this.style.borderColor='#ffffff';"
+                  onclick="window.open('http://inp2.techsolutions.co.mz/wp-content/uploads/2024/08/Decreto-Nr-25-2011.pdf', '_blank')"
+                >
+                  <i class="fas fa-file-pdf"></i> Decreto 11
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>Decreto Nr-43-2009</td>
+              <td>
+                <button
+                  style="
+                    padding: 8px 16px;
+                    background-color: #2a2e7d;
+                    color: #fff;
+                    border: 1px solid #ffffff;
+                    margin-top: 2px;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    transition: background-color 0.3s, border-color 0.3s;
+                  "
+                  onmouseover="this.style.backgroundColor='#3b44a1'; this.style.borderColor='#3b44a1';"
+                  onmouseout="this.style.backgroundColor='#2a2e7d'; this.style.borderColor='#ffffff';"
+                  onclick="window.open('http://inp2.techsolutions.co.mz/wp-content/uploads/2024/08/Decreto-Nr-43-2009.pdf', '_blank')"
+                >
+                  <i class="fas fa-file-pdf"></i> Decreto 12
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>Decreto Nr-30-2003</td>
+              <td>
+                <button
+                  style="
+                    padding: 8px 16px;
+                    background-color: #2a2e7d;
+                    color: #fff;
+                    border: 1px solid #ffffff;
+                    margin-top: 2px;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    transition: background-color 0.3s, border-color 0.3s;
+                  "
+                  onmouseover="this.style.backgroundColor='#3b44a1'; this.style.borderColor='#3b44a1';"
+                  onmouseout="this.style.backgroundColor='#2a2e7d'; this.style.borderColor='#ffffff';"
+                  onclick="window.open('http://inp2.techsolutions.co.mz/wp-content/uploads/2024/08/Decreto-Nr-30-2003.pdf', '_blank')"
+                >
+                  <i class="fas fa-file-pdf"></i> Decreto 13
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>Decreto Lei 12-2002</td>
+              <td>
+                <button
+                  style="
+                    padding: 8px 16px;
+                    background-color: #2a2e7d;
+                    color: #fff;
+                    border: 1px solid #ffffff;
+                    margin-top: 2px;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    transition: background-color 0.3s, border-color 0.3s;
+                  "
+                  onmouseover="this.style.backgroundColor='#3b44a1'; this.style.borderColor='#3b44a1';"
+                  onmouseout="this.style.backgroundColor='#2a2e7d'; this.style.borderColor='#ffffff';"
+                  onclick="window.open('http://inp2.techsolutions.co.mz/wp-content/uploads/2024/08/Decreto-Lei-12-2002.pdf', '_blank')"
+                >
+                  <i class="fas fa-file-pdf"></i> Decreto 14
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>Decreto Financiamento - Golfinho - Atum</td>
+              <td>
+                <button
+                  style="
+                    padding: 8px 16px;
+                    background-color: #2a2e7d;
+                    color: #fff;
+                    border: 1px solid #ffffff;
+                    margin-top: 2px;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    transition: background-color 0.3s, border-color 0.3s;
+                  "
+                  onmouseover="this.style.backgroundColor='#3b44a1'; this.style.borderColor='#3b44a1';"
+                  onmouseout="this.style.backgroundColor='#2a2e7d'; this.style.borderColor='#ffffff';"
+                  onclick="window.open('http://inp2.techsolutions.co.mz/wp-content/uploads/2024/08/Decreto-Financiamento-Golfinho-Atum.pdf', '_blank')"
+                >
+                  <i class="fas fa-file-pdf"></i> Decreto 15
+                </button>
+              </td>
+            </tr>
+          </tbody>
+          
+        </table>
+      </ul>
+    </div>
+    <div class="folder">
+      <div class="folder-header" onclick="toggleVisibility('relatorios')">
+        <img
+          src="https://img.icons8.com/fluency/48/000000/folder-invoices.png"
+          alt="Relatórios"
+          class="icon"
+        />
+        <span>Relatórios</span>
+      </div>
+      <ul id="relatorios" class="folder-content">
+        <table>
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>Visualizar Artigo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Sumario Executivo Area 1 - 2015 CRA Relatorio Final</td>
+              <td>
+                <button
+                  style="
+                    padding: 8px 16px;
+                    background-color: #2a2e7d;
+                    color: #fff;
+                    border: 1px solid #ffffff;
+                    margin-top: 2px;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    transition: background-color 0.3s, border-color 0.3s;
+                  "
+                  onmouseover="this.style.backgroundColor='#3b44a1'; this.style.borderColor='#3b44a1';"
+                  onmouseout="this.style.backgroundColor='#2a2e7d'; this.style.borderColor='#ffffff';"
+                  onclick="window.open('http://inp2.techsolutions.co.mz/wp-content/uploads/2024/08/Sumario-Executivo-Area-1-2015-CRA-Relatorio-Final.pdf', '_blank')"
+                >
+                  <i class="fas fa-file-pdf"></i> Relatório 1
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>Sumario Executivo Area 1 - 2016 CRA Relatorio Final</td>
+              <td>
+                <button
+                  style="
+                    padding: 8px 16px;
+                    background-color: #2a2e7d;
+                    color: #fff;
+                    border: 1px solid #ffffff;
+                    margin-top: 2px;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    transition: background-color 0.3s, border-color 0.3s;
+                  "
+                  onmouseover="this.style.backgroundColor='#3b44a1'; this.style.borderColor='#3b44a1';"
+                  onmouseout="this.style.backgroundColor='#2a2e7d'; this.style.borderColor='#ffffff';"
+                  onclick="window.open('http://inp2.techsolutions.co.mz/wp-content/uploads/2024/08/Sumario-Executivo-Area-1-2016-CRA-Relatorio-Final.pdf', '_blank')"
+                >
+                  <i class="fas fa-file-pdf"></i> Relatório 2
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>Sumario Executivo Area 1 - 2017 CRA Relatorio Final</td>
+              <td>
+                <button
+                  style="
+                    padding: 8px 16px;
+                    background-color: #2a2e7d;
+                    color: #fff;
+                    border: 1px solid #ffffff;
+                    margin-top: 2px;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    transition: background-color 0.3s, border-color 0.3s;
+                  "
+                  onmouseover="this.style.backgroundColor='#3b44a1'; this.style.borderColor='#3b44a1';"
+                  onmouseout="this.style.backgroundColor='#2a2e7d'; this.style.borderColor='#ffffff';"
+                  onclick="window.open('http://inp2.techsolutions.co.mz/wp-content/uploads/2024/08/Sumario-Executivo-Area-1-2017-CRA-Relatorio-Final.pdf', '_blank')"
+                >
+                  <i class="fas fa-file-pdf"></i> Relatório 3
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>Relatório Final - Área 1 2018</td>
+              <td>
+                <button
+                  style="
+                    padding: 8px 16px;
+                    background-color: #2a2e7d;
+                    color: #fff;
+                    border: 1px solid #ffffff;
+                    margin-top: 2px;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    transition: background-color 0.3s, border-color 0.3s;
+                  "
+                  onmouseover="this.style.backgroundColor='#3b44a1'; this.style.borderColor='#3b44a1';"
+                  onmouseout="this.style.backgroundColor='#2a2e7d'; this.style.borderColor='#ffffff';"
+                  onclick="window.open('http://inp2.techsolutions.co.mz/wp-content/uploads/2024/08/Relatorio-Final-Area-1-2018.pdf', '_blank')"
+                >
+                  <i class="fas fa-file-pdf"></i> Relatório 4
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>Relatório Final - Área 1 2019</td>
+              <td>
+                <button
+                  style="
+                    padding: 8px 16px;
+                    background-color: #2a2e7d;
+                    color: #fff;
+                    border: 1px solid #ffffff;
+                    margin-top: 2px;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    transition: background-color 0.3s, border-color 0.3s;
+                  "
+                  onmouseover="this.style.backgroundColor='#3b44a1'; this.style.borderColor='#3b44a1';"
+                  onmouseout="this.style.backgroundColor='#2a2e7d'; this.style.borderColor='#ffffff';"
+                  onclick="window.open('http://inp2.techsolutions.co.mz/wp-content/uploads/2024/08/Relatorio-Final-Area-1-2019.pdf', '_blank')"
+                >
+                  <i class="fas fa-file-pdf"></i> Relatório 5
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </ul>
     </div>
   </div>
 
-  <script>
-    let index = 0;
-    const videos = document.querySelectorAll(".slider iframe");
-    const slider = document.getElementById("video-slider");
-    const prevArrow = document.getElementById("prev");
-    const nextArrow = document.getElementById("next");
-    const activeVideo = document.getElementById("active-video");
+  <div class="column">
+    <div class="folder">
+      <div class="folder-header" onclick="toggleVisibility('legislacao')">
+        <img
+          src="https://img.icons8.com/fluency/48/000000/folder-invoices.png"
+          alt="Legislação"
+          class="icon"
+        />
+        <span>Contratos</span>
+      </div>
+      <ul id="legislacao" class="folder-content">
+        <table>
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>Visualizar Artigo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Z5C+CCPP</td>
+              <td>
+                <button
+                  style="
+                    padding: 8px 16px;
+                    background-color: #2a2e7d;
+                    color: #fff;
+                    border: 1px solid #ffffff;
+                    margin-top: 2px;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    transition: background-color 0.3s, border-color 0.3s;
+                  "
+                  onmouseover="this.style.backgroundColor='#3b44a1'; this.style.borderColor='#3b44a1';"
+                  onmouseout="this.style.backgroundColor='#2a2e7d'; this.style.borderColor='#ffffff';"
+                  onclick="window.open('http://inp2.techsolutions.co.mz/wp-content/uploads/2024/08/Z5CCCPP.pdf', '_blank')"
+                >
+                  <i class="fas fa-file-pdf"></i> Contrato 1
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>A5_A+CCPP</td>
+              <td>
+                <button
+                  style="
+                    padding: 8px 16px;
+                    background-color: #2a2e7d;
+                    color: #fff;
+                    border: 1px solid #ffffff;
+                    margin-top: 2px;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    transition: background-color 0.3s, border-color 0.3s;
+                  "
+                  onmouseover="this.style.backgroundColor='#3b44a1'; this.style.borderColor='#3b44a1';"
+                  onmouseout="this.style.backgroundColor='#2a2e7d'; this.style.borderColor='#ffffff';"
+                  onclick="window.open('http://inp2.techsolutions.co.mz/wp-content/uploads/2024/08/A5_ACCPP.pdf', '_blank')"
+                >
+                  <i class="fas fa-file-pdf"></i> Contrato 2
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>A5B+CCPP</td>
+              <td>
+                <button
+                  style="
+                    padding: 8px 16px;
+                    background-color: #2a2e7d;
+                    color: #fff;
+                    border: 1px solid #ffffff;
+                    margin-top: 2px;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    transition: background-color 0.3s, border-color 0.3s;
+                  "
+                  onmouseover="this.style.backgroundColor='#3b44a1'; this.style.borderColor='#3b44a1';"
+                  onmouseout="this.style.backgroundColor='#2a2e7d'; this.style.borderColor='#ffffff';"
+                  onclick="window.open('http://inp2.techsolutions.co.mz/wp-content/uploads/2024/08/A5BCCPP.pdf', '_blank')"
+                >
+                  <i class="fas fa-file-pdf"></i> Contrato 3
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>EPCC+PT5+C_Ingles</td>
+              <td>
+                <button
+                  style="
+                    padding: 8px 16px;
+                    background-color: #2a2e7d;
+                    color: #fff;
+                    border: 1px solid #ffffff;
+                    margin-top: 2px;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    transition: background-color 0.3s, border-color 0.3s;
+                  "
+                  onmouseover="this.style.backgroundColor='#3b44a1'; this.style.borderColor='#3b44a1';"
+                  onmouseout="this.style.backgroundColor='#2a2e7d'; this.style.borderColor='#ffffff';"
+                  onclick="window.open('http://inp2.techsolutions.co.mz/wp-content/uploads/2024/08/EPCCPT5C_Ingles.pdf', '_blank')"
+                >
+                  <i class="fas fa-file-pdf"></i>Contrato 4
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>Z5D_CCPP</td>
+              <td>
+                <button
+                  style="
+                    padding: 8px 16px;
+                    background-color: #2a2e7d;
+                    color: #fff;
+                    border: 1px solid #ffffff;
+                    margin-top: 2px;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    transition: background-color 0.3s, border-color 0.3s;
+                  "
+                  onmouseover="this.style.backgroundColor='#3b44a1'; this.style.borderColor='#3b44a1';"
+                  onmouseout="this.style.backgroundColor='#2a2e7d'; this.style.borderColor='#ffffff';"
+                  onclick="window.open('http://inp2.techsolutions.co.mz/wp-content/uploads/2024/08/Z5D_CCPP.pdf', '_blank')"
+                >
+                  <i class="fas fa-file-pdf"></i> Contrato 5
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>Bloco+de+Buzi</td>
+              <td>
+                <button
+                  style="
+                    padding: 8px 16px;
+                    background-color: #2a2e7d;
+                    color: #fff;
+                    border: 1px solid #ffffff;
+                    margin-top: 2px;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    transition: background-color 0.3s, border-color 0.3s;
+                  "
+                  onmouseover="this.style.backgroundColor='#3b44a1'; this.style.borderColor='#3b44a1';"
+                  onmouseout="this.style.backgroundColor='#2a2e7d'; this.style.borderColor='#ffffff';"
+                  onclick="window.open('http://inp2.techsolutions.co.mz/wp-content/uploads/2024/08/BlocodeBuzi.pdf', '_blank')"
+                >
+                  <i class="fas fa-file-pdf"></i> Contrato 6
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>Area+4+ENI+(1)</td>
+              <td>
+                <button
+                  style="
+                    padding: 8px 16px;
+                    background-color: #2a2e7d;
+                    color: #fff;
+                    border: 1px solid #ffffff;
+                    margin-top: 2px;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    transition: background-color 0.3s, border-color 0.3s;
+                  "
+                  onmouseover="this.style.backgroundColor='#3b44a1'; this.style.borderColor='#3b44a1';"
+                  onmouseout="this.style.backgroundColor='#2a2e7d'; this.style.borderColor='#ffffff';"
+                  onclick="window.open('http://inp2.techsolutions.co.mz/wp-content/uploads/2024/08/Area4ENI1.pdf', '_blank')"
+                >
+                  <i class="fas fa-file-pdf"></i> Contrato 7
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>Anadark+PORt+Vrs.compressed</td>
+              <td>
+                <button
+                  style="
+                    padding: 8px 16px;
+                    background-color: #2a2e7d;
+                    color: #fff;
+                    border: 1px solid #ffffff;
+                    margin-top: 2px;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    transition: background-color 0.3s, border-color 0.3s;
+                  "
+                  onmouseover="this.style.backgroundColor='#3b44a1'; this.style.borderColor='#3b44a1';"
+                  onmouseout="this.style.backgroundColor='#2a2e7d'; this.style.borderColor='#ffffff';"
+                  onclick="window.open('http://inp2.techsolutions.co.mz/wp-content/uploads/2024/08/AnadarkPORtVrs.compressed.pdf', '_blank')"
+                >
+                  <i class="fas fa-file-pdf"></i> Contrato 8
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>II+Acordo+Complementar</td>
+              <td>
+                <button
+                  style="
+                    padding: 8px 16px;
+                    background-color: #2a2e7d;
+                    color: #fff;
+                    border: 1px solid #ffffff;
+                    margin-top: 2px;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    transition: background-color 0.3s, border-color 0.3s;
+                  "
+                  onmouseover="this.style.backgroundColor='#3b44a1'; this.style.borderColor='#3b44a1';"
+                  onmouseout="this.style.backgroundColor='#2a2e7d'; this.style.borderColor='#ffffff';"
+                  onclick="window.open('http://inp2.techsolutions.co.mz/wp-content/uploads/2024/08/IIAcordoComplementardoCCPPdaArea4OffshoredoBlocodoRovuma.pdf', '_blank')"
+                >
+                  <i class="fas fa-file-pdf"></i> Contrato 9
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>Area+Onshore+++Artumas.</td>
+              <td>
+                <button
+                  style="
+                    padding: 8px 16px;
+                    background-color: #2a2e7d;
+                    color: #fff;
+                    border: 1px solid #ffffff;
+                    margin-top: 2px;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    transition: background-color 0.3s, border-color 0.3s;
+                  "
+                  onmouseover="this.style.backgroundColor='#3b44a1'; this.style.borderColor='#3b44a1';"
+                  onmouseout="this.style.backgroundColor='#2a2e7d'; this.style.borderColor='#ffffff';"
+                  onclick="window.open('http://inp2.techsolutions.co.mz/wp-content/uploads/2024/08/AreaOnshoreArtumas.pdf', '_blank')"
+                >
+                  <i class="fas fa-file-pdf"></i> Contrato 10
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>EPCC+Bloco+3+e+6+Petronas</td>
+              <td>
+                <button
+                  style="
+                    padding: 8px 16px;
+                    background-color: #2a2e7d;
+                    color: #fff;
+                    border: 1px solid #ffffff;
+                    margin-top: 2px;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    transition: background-color 0.3s, border-color 0.3s;
+                  "
+                  onmouseover="this.style.backgroundColor='#3b44a1'; this.style.borderColor='#3b44a1';"
+                  onmouseout="this.style.backgroundColor='#2a2e7d'; this.style.borderColor='#ffffff';"
+                  onclick="window.open('http://inp2.techsolutions.co.mz/wp-content/uploads/2024/08/EPCCBloco3e6Petronas.pdf', '_blank')"
+                >
+                  <i class="fas fa-file-pdf"></i> Contrato 11
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>EPCC+Area+A+Sasol</td>
+              <td>
+                <button
+                  style="
+                    padding: 8px 16px;
+                    background-color: #2a2e7d;
+                    color: #fff;
+                    border: 1px solid #ffffff;
+                    margin-top: 2px;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    transition: background-color 0.3s, border-color 0.3s;
+                  "
+                  onmouseover="this.style.backgroundColor='#3b44a1'; this.style.borderColor='#3b44a1';"
+                  onmouseout="this.style.backgroundColor='#2a2e7d'; this.style.borderColor='#ffffff';"
+                  onclick="window.open('http://inp2.techsolutions.co.mz/wp-content/uploads/2024/08/EPCCAreaASasol.pdf', '_blank')"
+                >
+                  <i class="fas fa-file-pdf"></i> Contrato 12
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>Gasoduto.</td>
+              <td>
+                <button
+                  style="
+                    padding: 8px 16px;
+                    background-color: #2a2e7d;
+                    color: #fff;
+                    border: 1px solid #ffffff;
+                    margin-top: 2px;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    transition: background-color 0.3s, border-color 0.3s;
+                  "
+                  onmouseover="this.style.backgroundColor='#3b44a1'; this.style.borderColor='#3b44a1';"
+                  onmouseout="this.style.backgroundColor='#2a2e7d'; this.style.borderColor='#ffffff';"
+                  onclick="window.open('http://inp2.techsolutions.co.mz/wp-content/uploads/2024/08/Gasoduto.pdf', '_blank')"
+                >
+                  <i class="fas fa-file-pdf"></i> Contrato 13
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>PT5_C+CCPP</td>
+              <td>
+                <button
+                  style="
+                    padding: 8px 16px;
+                    background-color: #2a2e7d;
+                    color: #fff;
+                    border: 1px solid #ffffff;
+                    margin-top: 2px;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    transition: background-color 0.3s, border-color 0.3s;
+                  "
+                  onmouseover="this.style.backgroundColor='#3b44a1'; this.style.borderColor='#3b44a1';"
+                  onmouseout="this.style.backgroundColor='#2a2e7d'; this.style.borderColor='#ffffff';"
+                  onclick="window.open('http://inp2.techsolutions.co.mz/wp-content/uploads/2024/08/PT5_CCCPP-1.pdf', '_blank')"
+                >
+                  <i class="fas fa-file-pdf"></i> Contrato 14
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>EPCC Bloco 16 e 19 Sasol</td>
+              <td>
+                <button
+                  style="
+                    padding: 8px 16px;
+                    background-color: #2a2e7d;
+                    color: #fff;
+                    border: 1px solid #ffffff;
+                    margin-top: 2px;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    transition: background-color 0.3s, border-color 0.3s;
+                  "
+                  onmouseover="this.style.backgroundColor='#3b44a1'; this.style.borderColor='#3b44a1';"
+                  onmouseout="this.style.backgroundColor='#2a2e7d'; this.style.borderColor='#ffffff';"
+                  onclick="window.open('http://inp2.techsolutions.co.mz/wp-content/uploads/2024/08/EPCCBloco16e19Sasol.pdf', '_blank')"
+                >
+                  <i class="fas fa-file-pdf"></i> Contrato 15
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>CCPP Mazenga</td>
+              <td>
+                <button
+                  style="
+                    padding: 8px 16px;
+                    background-color: #2a2e7d;
+                    color: #fff;
+                    border: 1px solid #ffffff;
+                    margin-top: 2px;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    transition: background-color 0.3s, border-color 0.3s;
+                  "
+                  onmouseover="this.style.backgroundColor='#3b44a1'; this.style.borderColor='#3b44a1';"
+                  onmouseout="this.style.backgroundColor='#2a2e7d'; this.style.borderColor='#ffffff';"
+                  onclick="window.open('http://inp2.techsolutions.co.mz/wp-content/uploads/2024/08/CCPPMazenga.pdf', '_blank')"
+                >
+                  <i class="fas fa-file-pdf"></i>Contrato 16
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </ul>
+    </div>
+    <div class="folder">
+      <div
+        class="folder-header"
+        onclick="toggleVisibility('carteira_projectos')"
+      >
+        <img
+          src="https://img.icons8.com/fluency/48/000000/folder-invoices.png"
+          alt="Carteira de Projectos"
+          class="icon"
+        />
+        <span>Regulamentos</span>
+      </div>
+      <ul id="carteira_projectos" class="folder-content">
+        <table>
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>Visualizar Artigo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Minuta do Regulamento das Operações Petrolíferas para Consulta Pública</td>
+              <td>
+                <button
+                  style="
+                    padding: 8px 16px;
+                    background-color: #2a2e7d;
+                    color: #fff;
+                    border: 1px solid #ffffff;
+                    margin-top: 2px;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    transition: background-color 0.3s, border-color 0.3s;
+                  "
+                  onmouseover="this.style.backgroundColor='#3b44a1'; this.style.borderColor='#3b44a1';"
+                  onmouseout="this.style.backgroundColor='#2a2e7d'; this.style.borderColor='#ffffff';"
+                  onclick="window.open('http://inp2.techsolutions.co.mz/wp-content/uploads/2024/08/MinutadoRegulamentodasOperacoesPetroliferasparaConsultaPublica.pdf', '_blank')"
+                >
+                  <i class="fas fa-file-pdf"></i>Minuta
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </ul>
+    </div>
+  </div>
+</div>
 
-    function updateActiveVideo(videoSrc) {
-      activeVideo.src = videoSrc;
-      activeVideo.play();
-    }
-
-    function updateSlider() {
-      const width = videos[0].clientWidth + 10; // width of iframe + margin
-      const offset = -index * width;
-      slider.style.transform = `translateX(${offset}px)`;
-      updateArrows();
-    }
-
-    function updateArrows() {
-      prevArrow.classList.toggle("hidden", index === 0);
-      nextArrow.classList.toggle("hidden", index >= videos.length - 4);
-    }
-
-    function nextSlide() {
-      if (index < videos.length - 4) {
-        index++;
+<script>
+  function toggleVisibility(id) {
+    const allContents = document.querySelectorAll(".folder-content");
+    allContents.forEach((content) => {
+      if (content.id === id) {
+        content.style.display =
+          content.style.display === "block" ? "none" : "block";
       } else {
-        index = 0; // Volta ao primeiro vídeo
+        content.style.display = "none";
       }
-      updateSlider();
-    }
-
-    function prevSlide() {
-      if (index > 0) {
-        index--;
-      }
-      updateSlider();
-    }
-
-    videos.forEach((video, i) => {
-      video.addEventListener("click", () => {
-        updateActiveVideo(video.src);
-      });
     });
-
-    nextArrow.addEventListener("click", nextSlide);
-    prevArrow.addEventListener("click", prevSlide);
-
-    setInterval(nextSlide, 5000); // Slide a cada 5 segundos
-  </script>
-</body>
-</html>
+  }
+</script>

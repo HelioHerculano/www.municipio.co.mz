@@ -1,220 +1,164 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Video Gallery</title>
-  <style>
-    * {
-      box-sizing: border-box;
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+<style>
+    .document-container {
+        border-radius: 15px;
+        padding: 30px !important;
+        border: 2px solid #1B7EA6; border-radius: 15px;
+    }
+    .document-icon {
+        font-size: 50px;
+        color: #1B7EA6;
+        transition: transform 0.3s ease;
+    }
+    .document-icon:hover {
+        transform: scale(1.1);
+        cursor: pointer;
+    }
+    .document-title {
+        font-size: 14px;
+        font-weight: 400;
+        margin-top: 5px;
+        align-items: left;
+    }
+    .category-title {
+        margin-top: 15px;
+        font-size: 19px;
+        font-weight: bold;
+        color: #000000;
+    }
+    a {
+        color: #000000;
+        text-decoration: none;
+    }
+    a:hover {
+        text-decoration: underline;
     }
 
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #f0f0f0;
-    }
-
-    .gallery-container {
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-      height: 80vh;
-      overflow: hidden;
-    }
-
-    .top-column {
-      width: 100%;
-      height: 60vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-color: #262262;
-      position: relative;
-      border-radius: 30px;
-    }
-
-    .top-column iframe {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 30px;
-    }
-
-    .bottom-column {
-      width: 100%;
-      height: 20vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-color: #ffffff;
-      position: relative;
-      overflow: hidden;
-      margin-top: 2%;
-    }
-
-    .slider {
-      display: flex;
-      transition: transform 0.5s ease-in-out;
-    }
-
-    .bottom-column iframe {
-      width: calc(25% - 10px);
-      height: 100%;
-      margin: 0 5px;
-      cursor: pointer;
-      object-fit: cover;
-    }
-
-    .arrow {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background-color: #ffffff;
-      color: #000000;
-      padding: 10px;
-      cursor: pointer;
-      font-size: 50px;
-      z-index: 1;
-    }
-
-    .arrow.left {
-      left: 10px;
-    }
-
-    .arrow.right {
-      right: 10px;
-    }
-
-    .arrow.hidden {
-      display: none;
-    }
-
-    @media (max-width: 768px) {
-      .top-column {
-        height: 50vh;
-      }
-
-      .bottom-column {
-        height: 30vh;
-      }
-
-      .bottom-column iframe {
-        width: calc(50% - 10px);
-      }
-    }
-  </style>
+    
+</style>
 </head>
-<body>
-  <div class="gallery-container">
-    <div class="top-column">
-      <iframe
-        id="active-video"
-        src="https://www.youtube.com/embed/-XAIZIiUCT0"
-        frameborder="0"
-        allowfullscreen
-      ></iframe>
-    </div>
-    <div class="bottom-column">
-      <div class="arrow left hidden" id="prev">&lt;</div>
-      <div class="slider" id="video-slider">
-        <iframe
-          src="https://www.youtube.com/embed/0pdRR2O5_gA"
-          frameborder="0"
-          allowfullscreen
-        ></iframe>
-        <iframe
-          src="https://www.youtube.com/embed/lnyt8SdcGeE"
-          frameborder="0"
-          allowfullscreen
-        ></iframe>
-        <iframe
-          src="https://www.youtube.com/embed/2eu3W_tW8_8"
-          frameborder="0"
-          allowfullscreen
-        ></iframe>
-        <iframe
-          src="https://www.youtube.com/embed/c5qoDrAjeAc"
-          frameborder="0"
-          allowfullscreen
-        ></iframe>
-        <iframe
-          src="https://www.youtube.com/embed/Oe0yeqpEDE8"
-          frameborder="0"
-          allowfullscreen
-        ></iframe>
-        <iframe
-          src="https://www.youtube.com/embed/iQeyS_oRKN4"
-          frameborder="0"
-          allowfullscreen
-        ></iframe>
-        <iframe
-          src="https://www.youtube.com/embed/ucOx-zkxIek"
-          frameborder="0"
-          allowfullscreen
-        ></iframe>
-        <iframe
-  src="https://www.youtube.com/embed/-XAIZIiUCT0?controls=0&modestbranding=1&rel=0"
-  frameborder="0"
-  allowfullscreen
-></iframe>
 
+<div class="container">
+  <div class="document-container">
+      <h2 style="color:#1B7EA6;">Documentos e Relatórios</h2>
+      <p style="color:#000; font-weight:bold; font-size: 15px">
+          <span>(página de depósito de conteúdo documental sobre os ODS, parcerias e relatórios sobre progressos e RNV)</span>
+      </p>
+
+      <div class="category">
+          <h4 class="category-title" style="margin-top: 5%;">1. Voluntary <span style="color: #1B7EA6;">National Review 2020.</span></h4>
+          <div class="row">
+              <div class="col-6 col-sm-4 col-md-3 text-center">
+                  <i class="fas fa-folder document-icon"></i>
+                  <p class="document-title"><span><a href="https://ods.techsolutions.co.mz/wp-content/uploads/2024/07/Letter-from-Permanent-Mission-of-Mozambique.pdf" target="_blank">Letter from Permanent Mission of Mozambique</a></span></p>
+              </div>
+              <div class="col-6 col-sm-4 col-md-3 text-center">
+                  <i class="fas fa-folder document-icon"></i>
+                  <p class="document-title"><span><a href="https://ods.techsolutions.co.mz/wp-content/uploads/2024/07/Main-Messages-Letter-of-Permanent-Mission-of-Mozambique.pdf" target="_blank">Main Messages Letter of Permanent Mission of Mozambique</a></span></p>
+              </div>
+              <div class="col-6 col-sm-4 col-md-3 text-center">
+                  <i class="fas fa-folder document-icon"></i>
+                  <p class="document-title"><span><a href="https://ods.techsolutions.co.mz/wp-content/uploads/2024/07/Mozambique-Key-Messages-VNR-2020.pdf" target="_blank">Mozambique Key Messages VNR 2020</a></span></p>
+              </div>
+              <div class="col-6 col-sm-4 col-md-3 text-center">
+                  <i class="fas fa-folder document-icon"></i>
+                  <p class="document-title"><span><a href="https://ods.techsolutions.co.mz/wp-content/uploads/2024/07/Statistic-of-Global-National-ODS.pdf" target="_blank">Statistic of Global National ODS</a></span></p>
+              </div>
+              <div class="col-6 col-sm-4 col-md-3 text-center">
+                  <i class="fas fa-folder document-icon"></i>
+                  <p class="document-title"><span><a href="https://ods.techsolutions.co.mz/wp-content/uploads/2024/07/VNR-2020-Letter.pdf" target="_blank">VNR 2020 Letter</a></span></p>
+              </div>
+              <div class="col-6 col-sm-4 col-md-3 text-center">
+                  <i class="fas fa-folder document-icon"></i>
+                  <p class="document-title"><span><a href="https://ods.techsolutions.co.mz/wp-content/uploads/2024/07/VNR-2020-Report-English.pdf" target="_blank">VNR 2020 Report [English]</a></span></p>
+              </div>
+          </div>
       </div>
-      <div class="arrow right" id="next">&gt;</div>
-    </div>
+
+      <div class="category">
+          <h4 class="category-title">2. Documents<span style="color: #1B7EA6;"> & Reports</span></h4>
+          <div class="row">
+              <div class="col-6 col-sm-4 col-md-3 text-center">
+                  <i class="fas fa-folder document-icon"></i>
+                  <p class="document-title"><span><a href="https://ods.techsolutions.co.mz/wp-content/uploads/2024/07/Chemicals.pdf" target="_blank">Chemicals</a></span></p>
+              </div>
+              <div class="col-6 col-sm-4 col-md-3 text-center">
+                  <i class="fas fa-folder document-icon"></i>
+                  <p class="document-title"><span><a href="https://ods.techsolutions.co.mz/wp-content/uploads/2024/07/Consumption_Production.pdf" target="_blank">Consumption_Production</a></span></p>
+              </div>
+              <div class="col-6 col-sm-4 col-md-3 text-center">
+                  <i class="fas fa-folder document-icon"></i>
+                  <p class="document-title"><span><a href="https://ods.techsolutions.co.mz/wp-content/uploads/2024/07/ENVIRONMENTAL-AUDIT.pdf" target="_blank">ENVIRONMENTAL AUDIT</a></span></p>
+              </div>
+              <div class="col-6 col-sm-4 col-md-3 text-center">
+                  <i class="fas fa-folder document-icon"></i>
+                  <p class="document-title"><span><a href="https://ods.techsolutions.co.mz/wp-content/uploads/2024/07/Full_Report.pdf" target="_blank">Full_Report</a></span></p>
+              </div>
+              <div class="col-6 col-sm-4 col-md-3 text-center">
+                  <i class="fas fa-folder document-icon"></i>
+                  <p class="document-title"><span><a href="https://ods.techsolutions.co.mz/wp-content/uploads/2024/07/Mining.pdf" target="_blank">Mining</a></span></p>
+              </div>
+              <div class="col-6 col-sm-4 col-md-3 text-center">
+                  <i class="fas fa-folder document-icon"></i>
+                  <p class="document-title"><span><a href="https://ods.techsolutions.co.mz/wp-content/uploads/2024/07/nsds_csd18Mozamique.pdf" target="_blank">nsds_csd18Mozamique</a></span></p>
+              </div>
+              <div class="col-6 col-sm-4 col-md-3 text-center">
+                  <i class="fas fa-folder document-icon"></i>
+                  <p class="document-title"><span><a href="https://ods.techsolutions.co.mz/wp-content/uploads/2024/07/Transport.pdf" target="_blank">Transport</a></span></p>
+              </div>
+              <div class="col-6 col-sm-4 col-md-3 text-center">
+                  <i class="fas fa-folder document-icon"></i>
+                  <p class="document-title"><span><a href="https://ods.techsolutions.co.mz/wp-content/uploads/2024/07/Waste_Management.pdf" target="_blank">Waste_Management</a></span></p>
+              </div>
+          </div>
+      </div>
+
+      <div class="category">
+          <h4 class="category-title">3. Statements</h4>
+          <div class="row">
+              <div class="col-6 col-sm-4 col-md-3 text-center">
+                  <i class="fas fa-folder document-icon"></i>
+                  <p class="document-title"><span><a href="https://ods.techsolutions.co.mz/wp-content/uploads/2024/07/17246mozambique.pdf" target="_blank">Cooperação Multilateral</a></span></p>
+              </div>
+              <div class="col-6 col-sm-4 col-md-3 text-center">
+                  <i class="fas fa-folder document-icon"></i>
+                  <p class="document-title"><span><a href="https://ods.techsolutions.co.mz/wp-content/uploads/2024/07/19321mozambique.pdf" target="_blank">Protecting Our Planet And Combatting Climate Change</a></span></p>
+              </div>
+              <div class="col-6 col-sm-4 col-md-3 text-center">
+                  <i class="fas fa-folder document-icon"></i>
+                  <p class="document-title"><span><a href="https://ods.techsolutions.co.mz/wp-content/uploads/2024/07/20518mozambique-eng-.pdf" target="_blank">Adoption of the Development Agend Post 2015</a></span></p>
+              </div>
+              <div class="col-6 col-sm-4 col-md-3 text-center">
+                  <i class="fas fa-folder document-icon"></i>
+                  <p class="document-title"><span><a href="https://ods.techsolutions.co.mz/wp-content/uploads/2024/07/23879Mozambique_E.pdf" target="_blank">Statement by H.E. Mr. A. Mondlane, Min. of Sea, Inland Waters, & Fish.</a></span></p>
+              </div>
+              <div class="col-6 col-sm-4 col-md-3 text-center">
+                  <i class="fas fa-folder document-icon"></i>
+                  <p class="document-title"><span><a href="https://ods.techsolutions.co.mz/wp-content/uploads/2024/07/24747reportofthecochairofpartnershipdialogue3.pdf" target="_blank">Ocean Conference, Plenary Meeting</a></span></p>
+              </div>
+              <div class="col-6 col-sm-4 col-md-3 text-center">
+                  <i class="fas fa-folder document-icon"></i>
+                  <p class="document-title"><span><a href="https://ods.techsolutions.co.mz/wp-content/uploads/2024/07/25843mozambique.pdf" target="_blank">His Excellency Mr Antonio Gumende</a></span></p>
+              </div>
+              <div class="col-6 col-sm-4 col-md-3 text-center">
+                  <i class="fas fa-folder document-icon"></i>
+                  <p class="document-title"><span><a href="https://ods.techsolutions.co.mz/wp-content/uploads/2024/07/Mozambique.pdf" target="_blank">Statement</a></span></p>
+              </div>
+              <div class="col-6 col-sm-4 col-md-3 text-center">
+                  <i class="fas fa-folder document-icon"></i>
+                  <p class="document-title"><span><a href="https://ods.techsolutions.co.mz/wp-content/uploads/2024/07/mozambique_3004.pdf" target="_blank">Distinguished Delegates</a></span></p>
+              </div>
+          </div>
+      </div>
   </div>
+</div>
 
-  <script>
-    let index = 0;
-    const videos = document.querySelectorAll(".slider iframe");
-    const slider = document.getElementById("video-slider");
-    const prevArrow = document.getElementById("prev");
-    const nextArrow = document.getElementById("next");
-    const activeVideo = document.getElementById("active-video");
 
-    function updateActiveVideo(videoSrc) {
-      activeVideo.src = videoSrc;
-      activeVideo.play();
-    }
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
-    function updateSlider() {
-      const width = videos[0].clientWidth + 10; // width of iframe + margin
-      const offset = -index * width;
-      slider.style.transform = `translateX(${offset}px)`;
-      updateArrows();
-    }
-
-    function updateArrows() {
-      prevArrow.classList.toggle("hidden", index === 0);
-      nextArrow.classList.toggle("hidden", index >= videos.length - 4);
-    }
-
-    function nextSlide() {
-      if (index < videos.length - 4) {
-        index++;
-      } else {
-        index = 0; // Volta ao primeiro vídeo
-      }
-      updateSlider();
-    }
-
-    function prevSlide() {
-      if (index > 0) {
-        index--;
-      }
-      updateSlider();
-    }
-
-    videos.forEach((video, i) => {
-      video.addEventListener("click", () => {
-        updateActiveVideo(video.src);
-      });
-    });
-
-    nextArrow.addEventListener("click", nextSlide);
-    prevArrow.addEventListener("click", prevSlide);
-
-    setInterval(nextSlide, 5000); // Slide a cada 5 segundos
-  </script>
-</body>
-</html>
